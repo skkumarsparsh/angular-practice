@@ -1,0 +1,22 @@
+<div>
+  <ul>
+    <li *ngFor="let name of names">
+      <app-single [arr]="name"></app-single>
+    </li>
+  </ul>
+  <form>
+    <div>
+      <div>
+        <label for="Name">Enter Name:</label>
+        <input name="Name" #newname>
+        <br/>
+        <br/>
+        <label for="Link">Enter Link:</label>
+        <input name="Link" #newlink>
+      </div>
+      <div>
+        <button (click)="onClick(newname, newlink)">Submit!</button>
+      </div>
+    </div>
+  </form>
+</div>
