@@ -25,7 +25,7 @@ export class MultipleComponent implements OnInit {
         }
       }
     }
-    //console.log(`${n.value}, ${link.value}`);
+
     this.names.push(new Arr(n.value,"http://"+link.value));
     this.count += 1;
     n.value='';
