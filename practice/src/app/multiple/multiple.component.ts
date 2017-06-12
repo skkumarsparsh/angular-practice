@@ -20,6 +20,20 @@ export class MultipleComponent implements OnInit {
     return false;
   }
 
+  onClick2(name: Arr) {
+    for(var i = this.names.length - 1; i >= 0; i--) {
+      if(this.count==0)
+      {
+        alert('No elements');
+        return false;
+      }
+      if(this.names[i] === name) {
+         this.names.splice(i, 1);
+      }
+    }
+    this.count -= 1;
+  }
+
   constructor() {
     this.names = []
   }
