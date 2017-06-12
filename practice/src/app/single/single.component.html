@@ -1,3 +1,12 @@
 <div>
-  <a href={{arr.link}}>{{arr.name}}</a>
+  <ul>
+    <li *ngFor="let n of names">
+      <div>
+        <div>
+          <a href={{n.link}}>{{n.name}}</a>
+        </div>
+        <button (click)="onClick2(n)" align="right">Delete!</button>
+      </div>
+    </li>
+  </ul>
 </div>

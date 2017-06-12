@@ -1,3 +1,7 @@
+<div align="right">
+    Count: {{count}}
+</div>
 <div align="center">
-    <app-multiple [count]="count"></app-multiple>
+    <app-multiple (countUp)="countUp()" (ns)="getnames($event)"></app-multiple>
+    <app-single (countDown)="countDown()" [getcount]="getCount()" [names]="names"></app-single>
 </div>

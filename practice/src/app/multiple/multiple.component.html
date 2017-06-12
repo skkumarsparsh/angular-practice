@@ -1,6 +1,3 @@
-<div align="right">
-    Count: {{count}}
-</div>
   <form>
     <div>
       <div>
@@ -17,13 +14,3 @@
       </div>
     </div>
   </form>
-  <div>
-    <ul>
-      <li *ngFor="let name of names">
-        <div>
-          <app-single [arr]="name"></app-single>
-          <button (click)="onClick2(name)" align="right">Delete!</button>
-        </div>
-      </li>
-    </ul>
-</div>
