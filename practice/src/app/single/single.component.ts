@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { Arr } from './arr.model';
+import { Arr } from './../multiple/arr.model';
 
 @Component({
   selector: 'app-single',
