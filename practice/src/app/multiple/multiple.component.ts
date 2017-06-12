@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input} from '@angular/core';
 import { Arr } from './arr.model';
+import { AppComponent } from './../app.component';
 
 @Component({
   selector: 'app-multiple',
@@ -8,19 +9,19 @@ import { Arr } from './arr.model';
 })
 export class MultipleComponent implements OnInit {
   names: Arr[];
+  @Input() count:number;
 
-  onClick(n: HTMLInputElement, link: HTMLInputElement): boolean {
+  onClick1(n: HTMLInputElement, link: HTMLInputElement): boolean {
     console.log(`${n.value}, ${link.value}`);
     this.names.push(new Arr(n.value,"http://"+link.value));
+    this.count += 1;
     n.value='';
     link.value='';
     return false;
   }
 
   constructor() {
-    this.names = [new Arr("test1","http://www.google.com"),
-                  new Arr("test2","http://www.bing.com")
-                ]
+    this.names = []
   }
 
   ngOnInit() {

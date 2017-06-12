@@ -1,9 +1,6 @@
-<div>
-  <ul>
-    <li *ngFor="let name of names">
-      <app-single [arr]="name"></app-single>
-    </li>
-  </ul>
+<div align="right">
+    Count: {{count}}
+</div>
   <form>
     <div>
       <div>
@@ -14,9 +11,16 @@
         <label for="Link">Enter Link:</label>
         <input name="Link" #newlink>
       </div>
+      <br/>
       <div>
-        <button (click)="onClick(newname, newlink)">Submit!</button>
+        <button (click)="onClick1(newname, newlink)">Submit!</button>
       </div>
     </div>
   </form>
+  <div>
+    <ul>
+      <li *ngFor="let name of names">
+        <app-single [arr]="name"></app-single>
+      </li>
+    </ul>
 </div>

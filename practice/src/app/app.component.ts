@@ -6,9 +6,9 @@ import { Component,Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @Input() c:number;
+  count:number;
 
   constructor() {
-    this.c = 1;
+    this.count=0;
   }
 }
