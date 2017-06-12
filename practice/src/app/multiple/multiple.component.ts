@@ -35,7 +35,7 @@ export class MultipleComponent implements OnInit {
   }
 
   constructor() {
-    this.names = []
+    this.names = [];
     this.ns.emit(this.names);
   }
 
