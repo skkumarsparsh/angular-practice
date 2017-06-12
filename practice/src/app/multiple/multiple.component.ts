@@ -11,7 +11,8 @@ export class MultipleComponent implements OnInit {
   @Output() countUp = new EventEmitter();
   @Output() ns = new EventEmitter<Arr[]>();
 
-  onClick1(n: HTMLInputElement, link: HTMLInputElement): boolean {
+  onClick1(n: HTMLInputElement, link: HTMLInputElement): boolean
+  {
     if(this.names.length!=0)
     {
       for(var i = this.names.length - 1; i >= 0; i--)
@@ -25,7 +26,6 @@ export class MultipleComponent implements OnInit {
         }
       }
     }
-
     this.names.push(new Arr(n.value,"http://"+link.value));
     this.countUp.emit();
     this.ns.emit(this.names);
