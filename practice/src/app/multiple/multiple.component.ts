@@ -12,7 +12,20 @@ export class MultipleComponent implements OnInit {
   @Input() count:number;
 
   onClick1(n: HTMLInputElement, link: HTMLInputElement): boolean {
-    console.log(`${n.value}, ${link.value}`);
+    if(this.names.length!=0)
+    {
+      for(var i = this.names.length - 1; i >= 0; i--)
+      {
+        if(this.names[i].name == n.value)
+        {
+          alert('This element is already present!');
+          n.value='';
+          link.value='';
+          return false;
+        }
+      }
+    }
+    //console.log(`${n.value}, ${link.value}`);
     this.names.push(new Arr(n.value,"http://"+link.value));
     this.count += 1;
     n.value='';
