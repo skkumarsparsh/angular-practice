@@ -1,5 +1,6 @@
   <form>
-    <div>
+    <div [ngClass]="{bordered: true}">
+      <br/>
       <div>
         <label for="Name">Enter Name:</label>
         <input name="Name" #newname>
@@ -12,5 +13,6 @@
       <div>
         <button (click)="onClick1(newname, newlink)">Submit!</button>
       </div>
+      <br/>
     </div>
   </form>
