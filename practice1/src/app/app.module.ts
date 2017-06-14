@@ -7,6 +7,7 @@ import {MdProgressSpinnerModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { ArticleService } from './article.service';
 import { HttpModule } from '@angular/http';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpModule } from '@angular/http';
     HttpModule,
     FormsModule,
     BrowserAnimationsModule,
-    MdProgressSpinnerModule
+    MdProgressSpinnerModule,
+    ChartsModule
   ],
   providers: [ArticleService],
   bootstrap: [AppComponent]

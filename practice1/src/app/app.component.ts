@@ -1,4 +1,4 @@
-import { Component,OnInit,Input } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/Rx';
@@ -14,11 +14,31 @@ import { ArticleService } from './article.service';
 export class AppComponent {
   articles: jsonModel[];
   errorMessage: string;
-  @Input() l: string;
+  l: string;
+  c:string;
+  public lineChartData:Array<any> = [
+    {data: [], label: 'Series A'}
+  ];
+  lineChartTime:number[];
+  public lineChartOptions:any = {
+    responsive: true,
+    scales: {
+            xAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+  };
+  public lineChartLegend:boolean = true;
+  public lineChartType:string = 'line';
 
   constructor(private _articleService: ArticleService) {
     this.articles = [];
     this.l = "loading";
+    this.lineChartData = [{data:[], label: 'acrBlocked'}];
+    this.lineChartTime = [];
+    this.c = "nc";
   }
 
   ngOnInit():void {
@@ -26,7 +46,31 @@ export class AppComponent {
     self._articleService.getArticles().subscribe(response => this.articles = response, error => this.errorMessage = < any > error, () => this.completed())
   }
 
+  onClick() {
+    this.c="c";
+    console.log(this.lineChartData);
+    for(var i=0;i<this.articles.length;i++)
+    {
+      this.lineChartTime[i] = -(this.articles[0]._endTime - this.articles[i]._endTime)/100;
+    }
+    console.log(this.lineChartTime);
+    return false;
+  }
+
   completed() {
     this.l="random";
+    for(var i=0;i<this.articles.length;i++)
+    {
+      this.lineChartData[0].data[i] = this.articles[i]._acrBlocked; 
+    }
   }
+
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+ 
+  public chartHovered(e:any):void {
+    console.log(e);
+  }
+
 }

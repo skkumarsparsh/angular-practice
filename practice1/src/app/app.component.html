@@ -33,3 +33,20 @@
     </tr>
   </table>
 </div>
+<br/>
+<div *ngIf= "l=='random'" align="center">
+  <button (click)="onClick()">Click for Chart</button>
+</div>
+<div *ngIf="c!='nc'">
+    <script src="./../../node_modules/chart.js/src/chart.js"></script>
+    <div style="display: block;">
+    <canvas baseChart  width="40" height="10"
+                [datasets]="lineChartData"
+                [labels]="lineChartTime"
+                [options]="lineChartOptions"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+</div>
