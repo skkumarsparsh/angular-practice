@@ -63,9 +63,9 @@ export class AppComponent {
     {
       this.lineChartData[0].data[i] = this.articles[i]._acrBlocked;
       this.lineChartData[0].label = 'acr Blocked';
-      this.lineChartData[1].data[i] = this.articles[i]._initBytes;
+      this.lineChartData[1].data[i] = this.articles[i]._initBytes/1000;
       this.lineChartData[1].label = 'init Bytes';
-      this.lineChartData[2].data[i] = this.articles[i]._respBytes;
+      this.lineChartData[2].data[i] = this.articles[i]._respBytes/10000;
       this.lineChartData[2].label = 'resp Bytes';
     }
   }
