@@ -5,6 +5,8 @@ import 'rxjs/Rx';
 import { jsonModel } from './json.model';
 import { ArticleService } from './article.service';
 
+//<md-spinner *ngIf= "l!='random'"></md-spinner>
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,11 +25,11 @@ export class AppComponent {
   public lineChartOptions:any = {
     responsive: true,
     scales: {
-            xAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
+      xAxes: [{
+        ticks: {
+        beginAtZero:true
+        }
+      }]
     }
   };
   public lineChartLegend:boolean = true;
