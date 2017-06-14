@@ -15,7 +15,7 @@ export class AppComponent {
   articles: jsonModel[];
   errorMessage: string;
   l: string;
-  c:string;
+  c: string;
   public lineChartData:Array<any> = [
     {data: [], label: 'Series A'}
   ];
@@ -28,7 +28,7 @@ export class AppComponent {
                     beginAtZero:true
                 }
             }]
-        }
+    }
   };
   public lineChartLegend:boolean = true;
   public lineChartType:string = 'line';
@@ -36,7 +36,7 @@ export class AppComponent {
   constructor(private _articleService: ArticleService) {
     this.articles = [];
     this.l = "loading";
-    this.lineChartData = [{data:[], label: 'acrBlocked'}];
+    this.lineChartData = [{data:[], label:"t"},{data:[], label:"t"},{data:[], label:"t"}];
     this.lineChartTime = [];
     this.c = "nc";
   }
@@ -61,7 +61,12 @@ export class AppComponent {
     this.l="random";
     for(var i=0;i<this.articles.length;i++)
     {
-      this.lineChartData[0].data[i] = this.articles[i]._acrBlocked; 
+      this.lineChartData[0].data[i] = this.articles[i]._acrBlocked;
+      this.lineChartData[0].label = 'acr Blocked';
+      this.lineChartData[1].data[i] = this.articles[i]._initBytes;
+      this.lineChartData[1].label = 'init Bytes';
+      this.lineChartData[2].data[i] = this.articles[i]._respBytes;
+      this.lineChartData[2].label = 'resp Bytes';
     }
   }
 
