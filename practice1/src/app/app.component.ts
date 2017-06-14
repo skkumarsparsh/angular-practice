@@ -45,7 +45,10 @@ export class AppComponent {
 
   ngOnInit():void {
     let self = this;
-    self._articleService.getArticles().subscribe(response => this.articles = response, error => this.errorMessage = < any > error, () => this.completed())
+    self._articleService.getArticles().subscribe(
+      response => this.articles = response, 
+      error => this.errorMessage = < any > error, 
+      () => setTimeout(() => this.completed(),3000))
   }
 
   onClick() {
