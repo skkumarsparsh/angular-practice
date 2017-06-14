@@ -48,7 +48,7 @@ export class AppComponent {
     self._articleService.getArticles().subscribe(
       response => this.articles = response, 
       error => this.errorMessage = < any > error, 
-      () => setTimeout(() => this.completed(),3000))
+      () => setTimeout(() => this.completed(),10000))
   }
 
   onClick() {

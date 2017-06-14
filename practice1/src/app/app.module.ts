@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { ArticleService } from './article.service';
 import { HttpModule } from '@angular/http';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
