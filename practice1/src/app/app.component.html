@@ -1,7 +1,8 @@
-<div align="center" *ngIf= "l!='random'">
-  <app-loading ></app-loading>
+<div>
+<div align="center">
+  <app-loading (tablevisible)="tb()" [visible]="!visible"></app-loading>
 </div>
-<div *ngIf= "l=='random'" style="text-align:center" align="center">
+<div *ngIf=true style="text-align:center" align="center">
   <table>
     <thead>
       <tr>
@@ -34,7 +35,7 @@
   </table>
 </div>
 <br/>
-<div *ngIf= "l=='random'" align="center">
+<div *ngIf="visible" align="center">
   <button (click)="onClick()">Click for Chart</button>
 </div>
 <div *ngIf="c!='nc'">

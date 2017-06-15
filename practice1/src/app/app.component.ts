@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,Output,EventEmitter,Input } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/Rx';
@@ -14,6 +14,8 @@ import { ArticleService } from './article.service';
 })
 
 export class AppComponent {
+  visible:boolean = false;
+//  @Output() visibility = new EventEmitter<boolean>();
   articles: jsonModel[];
   errorMessage: string;
   l: string;
@@ -48,11 +50,15 @@ export class AppComponent {
     self._articleService.getArticles().subscribe(
       response => this.articles = response, 
       error => this.errorMessage = < any > error, 
-      () => setTimeout(() => this.completed(),10000))
+      () => setTimeout(() => this.completed(),1))
+  }
+
+  tb() {
+    this.visible=true;
   }
 
   onClick() {
-    this.c="c";
+    this.c='c';
     console.log(this.lineChartData);
     for(var i=0;i<this.articles.length;i++)
     {
@@ -63,7 +69,8 @@ export class AppComponent {
   }
 
   completed() {
-    this.l="random";
+//    this.visibility.emit(this.visible);
+    this.visible=true;
     for(var i=0;i<this.articles.length;i++)
     {
       this.lineChartData[0].data[i] = this.articles[i]._acrBlocked;
