@@ -3,6 +3,7 @@
     <button (click)="onClick('1')">1st</button>
     <button (click)="onClick('2')">2nd</button>
     <button (click)="onClick('3')">3rd</button>
+    <button (click)="onClick('4')">4th</button>
     <button (click)="onClick2()">Stop</button>
   </div>
 
@@ -31,5 +32,9 @@
     <div class="sk-circle10 sk-child"></div>
     <div class="sk-circle11 sk-child"></div>
     <div class="sk-circle12 sk-child"></div>
+  </div>
+
+  <div *ngIf="l=='4'">
+    <img src="http://wpteknologi.com/wp-content/uploads/2015/02/sonicwall-1.png" style="width:580px;height:300px;">
   </div>
 </div>

@@ -70,7 +70,7 @@ export class AppComponent {
 
   completed() {
 //    this.visibility.emit(this.visible);
-    this.visible=true;
+//   this.visible=true;
     for(var i=0;i<this.articles.length;i++)
     {
       this.lineChartData[0].data[i] = this.articles[i]._acrBlocked;
