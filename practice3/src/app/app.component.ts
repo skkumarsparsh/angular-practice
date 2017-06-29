@@ -16,8 +16,10 @@ export class AppComponent {
     this.chart = this.AmCharts.makeChart("chartdiv", {
     "type": "serial",
     "theme": "light",
+    marginTop:5,
+    marginBottom:0,
+    autoMargins:false,
     "legend": {
-        // "useGraphSettings": true,
         "enabled": false
     },
     "dataProvider": [{
@@ -81,10 +83,10 @@ export class AppComponent {
         "maximum": 6,
         "minimum": 1,
         "axisAlpha": 0,
+        "fontSize": 10,
         "dashLength": 5,
         "gridCount": 10,
         "position": "left",
-        "title": "Place taken"
     }],
     "listener":[],
     "startDuration": 0.5,
@@ -94,19 +96,21 @@ export class AppComponent {
         "hidden": true,
         "title": "Italy",
         "valueField": "italy",
-		"fillAlphas": 0
+		    "fillAlphas": 0
     }, {
         "balloonText": "place taken by Germany in [[category]]: [[value]]",
         "bullet": "round",
         "title": "Germany",
+        "hidden": true,
         "valueField": "germany",
 		    "fillAlphas": 0
     }, {
         "balloonText": "place taken by UK in [[category]]: [[value]]",
         "bullet": "round",
+        "type":"column",
         "title": "United Kingdom",
         "valueField": "uk",
-		    "fillAlphas": 0
+		    "fillAlphas": 0.2
     }],
     "chartCursor": {
         "cursorAlpha": 0,
@@ -125,8 +129,12 @@ export class AppComponent {
   this.chart2 = this.AmCharts.makeChart("chartdiv2", {
     "type": "serial",
     "theme": "light",
+    autoMargins:false,
+    marginTop:-1,
+    marginBottom:4,
     "legend": {
-        "useGraphSettings": true
+        "useGraphSettings": true,
+        "enabled":false
     },
     "dataProvider": [{
         "year": 1930,
@@ -190,10 +198,11 @@ export class AppComponent {
         "minimum": 1,
         "reversed": true,
         "axisAlpha": 0,
+        "fontSize": 10,
+        // "showFirstLabel": false,
         "dashLength": 5,
         "gridCount": 10,
-        "position": "left",
-        "title": "Place taken"
+        "position": "left"
     }],
     "listener":[],
     "startDuration": 0.5,
@@ -203,28 +212,31 @@ export class AppComponent {
         "hidden": true,
         "title": "Italy",
         "valueField": "italy",
-		"fillAlphas": 0
+		    "fillAlphas": 0
     }, {
         "balloonText": "place taken by Germany in [[category]]: [[value]]",
         "bullet": "round",
         "title": "Germany",
+        "type": "column",
         "valueField": "germany",
-		    "fillAlphas": 0
+		    "fillAlphas": 0.2
     }, {
         "balloonText": "place taken by UK in [[category]]: [[value]]",
         "bullet": "round",
         "title": "United Kingdom",
+        "hidden": true,
         "valueField": "uk",
 		    "fillAlphas": 0
     }],
     "chartCursor": {
         "cursorAlpha": 0,
         "zoomable": false,
-        "categoryBalloonsEnabled":false
+        "categoryBalloonEnabled":false
     },
     "categoryField": "year",
     "categoryAxis": {
-      "labelsEnabled":false
+      "labelsEnabled":false,
+      "position":top
     },
     "export": {
     	"enabled": true,

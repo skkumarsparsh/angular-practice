@@ -1,0 +1,39 @@
+.parentDiv{
+    border: 1px solid;
+    padding: 1px;
+    position: relative;
+}
+
+/*.chart1 {
+    z-index: 1;
+    position: relative;
+}
+
+.chart2 {
+    z-index: 1;
+    position: relative;
+}*/
+
+.bar1 {
+    width: 30em;
+    border: 1px solid;
+    float: left;
+    top: 2.5%;
+    z-index: 10000;
+    background-color: white;
+    opacity: 0.75;
+    position: absolute;
+    left: 10%;
+}
+
+.bar2 {
+    width: 30em;
+    border: 1px solid;
+    float: left;
+    bottom: 2.5%;
+    z-index: 10000;
+    background-color: white;
+    opacity: 0.75;
+    position: absolute;
+    left: 10%;
+}
