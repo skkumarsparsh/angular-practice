@@ -162,7 +162,7 @@ export class AppComponent {
     })
 
     this.chartData2.marginTop = -1
-    this.chartData2.marginBottom=4
+    this.chartData2.marginBottom = 4
 
     this.chartData2.valueAxes.push({
         "integersOnly": true,
