@@ -111,7 +111,7 @@ export class AppComponent {
     }, {
         "balloonText": "place taken by UK in [[category]]: [[value]]",
         "bullet": "round",
-        "type":"column",
+        // "type":"column",
         "title": "United Kingdom",
         "valueField": "uk",
 		    "fillAlphas": 0.2
@@ -149,7 +149,7 @@ export class AppComponent {
         "balloonText": "place taken by Germany in [[category]]: [[value]]",
         "bullet": "round",
         "title": "Germany",
-        "type": "column",
+        // "type": "column",
         "valueField": "germany",
 		    "fillAlphas": 0.2
     }, {
