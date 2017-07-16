@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdSidenavModule} from '@angular/material';
-import 'hammerjs';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -12,6 +12,7 @@ import 'hammerjs';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     BrowserAnimationsModule,
     MdSidenavModule
   ],
