@@ -85,6 +85,7 @@ export class AppComponent {
   }
 
   setRowData(allOfTheData) {
+    debugger;
     var dataSource = {
         rowCount: null, // behave as infinite scroll
         getRows: function (params) {

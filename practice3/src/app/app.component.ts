@@ -118,6 +118,7 @@ export class AppComponent {
     })
     this.chartData1.marginTop=5;
     this.chartData1.marginBottom=0;
+    debugger;
 
     this.chartData1.valueAxes.push({
         "integersOnly": true,

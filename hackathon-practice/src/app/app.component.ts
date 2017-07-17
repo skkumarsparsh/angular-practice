@@ -7,5 +7,5 @@ import {MdSidenavModule} from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  
 }
