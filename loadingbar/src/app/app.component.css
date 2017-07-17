@@ -23,7 +23,7 @@
 }
 
 .testimage {
-   display: block; 
+  display: block; 
   position: absolute;
   max-width:300px;
   max-height:120px;

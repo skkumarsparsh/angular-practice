@@ -13,6 +13,7 @@ export class AppComponent {
   ngOnInit() {
     let x = 300;
     this.loopStuffDown(x);
+    console.log(x);
   }
 
   loopStuffDown(x){
@@ -23,7 +24,7 @@ export class AppComponent {
       setTimeout(function(){
         document.getElementById("child").style.width = i + "px";
         loop();
-      }, 10);
+      }, 5);
     })();
   }
 
