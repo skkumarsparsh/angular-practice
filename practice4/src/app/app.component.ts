@@ -95,12 +95,12 @@ export class AppComponent {
                 // take a slice of the total rows
                 var rowsThisPage = allOfTheData.slice(params.startRow, params.endRow);
                 // if on or after the last page, work out the last row.
-                var lastRow = -1;
-                if (allOfTheData.length <= params.endRow) {
-                    lastRow = allOfTheData.length;
-                }
+                // var lastRow = -1;
+                // if (allOfTheData.length <= params.endRow) {
+                //     lastRow = allOfTheData.length;
+                // }
                 // call the success callback
-                params.successCallback(rowsThisPage, lastRow);
+                params.successCallback(rowsThisPage);
             }, 500);
         }
     };
