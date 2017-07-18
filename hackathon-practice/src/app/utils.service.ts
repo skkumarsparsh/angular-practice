@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable()
 export class UtilsService {
 
@@ -12,6 +13,11 @@ export class UtilsService {
       "categoryField": "category",
       "startDuration": 1,
       "fontSize": 13,
+      "balloon": {
+        "disableMouseEvents": false,
+        "hideBalloonTime": 1000,
+        "fixedPosition": true
+      },
       "categoryAxis": {
         "gridPosition": "start"
       },
@@ -52,7 +58,6 @@ export class UtilsService {
         }
       ],
       "allLabels": [],
-      "balloon": {},
       "legend": {
         "enabled": true,
         "useGraphSettings": true

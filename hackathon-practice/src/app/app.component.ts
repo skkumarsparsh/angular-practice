@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import {MdSidenavModule} from '@angular/material';
 import { AmChartsService } from "@amcharts/amcharts3-angular";
 import { UtilsService } from './utils.service';
+import {MdTabsModule} from '@angular/material';
 
 
 @Component({
