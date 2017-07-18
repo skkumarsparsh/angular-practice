@@ -7,6 +7,7 @@ import {MdSidenavModule} from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { MainComponent } from './main/main.component';
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
+import { UtilsService } from './utils.service'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { AmChartsModule } from "@amcharts/amcharts3-angular";
     BrowserAnimationsModule,
     MdSidenavModule
   ],
-  providers: [],
+  providers: [
+    UtilsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
