@@ -1,13 +1,15 @@
 <button (click)="sidenav.toggle()">Sidebar</button>
 <md-sidenav-container>
   <md-sidenav mode="push" #sidenav>
-    <div class="navLinks">
-      <a [routerLink]="['/lead-agent']">Lead Agent</a>
-      <a [routerLink]="['/agent']">Agents</a>
+    <div>
+      <br style="padding: 10px">
+      <div style="padding-left: 27%;"><a [routerLink]="['/lead-agent']">Lead Agent</a></div>
+      <br style="padding: 10px">
+      <div style="padding-left: 34%;"><a [routerLink]="['/agent']">Agents</a></div>
     </div>
   </md-sidenav>
 
-  <div id="content">
+  <div>
       <router-outlet></router-outlet>
   </div>
 
