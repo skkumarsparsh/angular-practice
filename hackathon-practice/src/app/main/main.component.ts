@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { AmChartsService } from "@amcharts/amcharts3-angular";
-import { UtilsService } from '../utils.service';
 
 @Component({
   selector: 'app-main',
@@ -14,22 +13,81 @@ export class MainComponent {
   metaData;
   chart:any;
 
-  constructor(private http:Http, private AmCharts: AmChartsService, private utils: UtilsService) {
+  constructor(private http:Http, private AmCharts: AmChartsService) {
+    this.metaData = new Object({
+      "type": "serial",
+      "categoryField": "category",
+      "startDuration": 1,
+      "fontSize": 13,
+      "balloon": {
+        "disableMouseEvents": false,
+        "hideBalloonTime": 1000,
+        "fixedPosition": true
+      },
+      "categoryAxis": {
+        "gridPosition": "start"
+      },
+      "trendLines": [],
+      "graphs": [
+        {
+          "balloonText": "[[category]] in [[title]]:[[value]]",
+          "fillAlphas": 1,
+          "id": "AmGraph-1",
+          "title": "Jan 2017",
+          "type": "column",
+          "valueField": "column-1"
+        },
+        {
+          "balloonText": "[[category]] in [[title]]:[[value]]",
+          "fillAlphas": 1,
+          "id": "AmGraph-2",
+          "title": "Feb 2017",
+          "type": "column",
+          "valueField": "column-2"
+        },
+        {
+          "balloonText": "[[category]] in [[title]]:[[value]]",
+          "fillAlphas": 1,
+          "fillColors": "#00B0FF",
+          "id": "AmGraph-3",
+          "lineColor": "#00B0FF",
+          "title": "March 2017",
+          "type": "column",
+          "valueField": "column-3"
+        }
+      ],
+      "guides": [],
+      "valueAxes": [
+        {
+          "id": "ValueAxis-1",
+          "title": "Number"
+        }
+      ],
+      "allLabels": [],
+      "legend": {
+        "enabled": true,
+        "useGraphSettings": true
+      },
+      "titles": [
+        {
+          "id": "Title-1",
+          "size": 15,
+          "text": "Core Metrics"
+        }
+      ],
+      "dataProvider": []
+    });
   }
 
   ngOnInit() {
     this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
       this.data = res.json();
-      this.afterAssignData();
-      console.log(this.data);
+      this.chart = this.afterAssignDataForLeadAgent();
     });
-
-    this.metaData = this.utils.metaData;
   }
 
-  afterAssignData() {
-    if(this.data) {
-      this.metaData["dataProvider"].push({
+  afterAssignDataForLeadAgent() {
+    this.metaData["dataProvider"].push({
         "category": "Collections",
         "column-1": parseInt(this.data["Lead Agent"]["Real Misses No"]["Jan-17"]),
         "column-2": parseInt(this.data["Lead Agent"]["Real Misses No"]["Feb-17"]),
@@ -50,8 +108,7 @@ export class MainComponent {
         "column-3": parseInt(this.data["Lead Agent"]["Recent New Customers No 13 Weeks"]["Mar-17"]),
       })
 
-      this.chart = this.AmCharts.makeChart("chartdiv", this.metaData);
-    }
+      return this.AmCharts.makeChart("chartdiv", this.metaData);
   }
 
   ngOnDestroy() {
