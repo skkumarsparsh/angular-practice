@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { AmChartsService } from "@amcharts/amcharts3-angular";
+import { UtilsService } from '../utils.service'
 
 @Component({
   selector: 'app-main',
@@ -13,7 +14,7 @@ export class MainComponent {
   metaData;
   chart:any;
 
-  constructor(private http:Http, private AmCharts: AmChartsService) {
+  constructor(private http:Http, private AmCharts: AmChartsService, private utils: UtilsService) {
     this.metaData = new Object({
       "type": "serial",
       "categoryField": "category",
@@ -25,7 +26,7 @@ export class MainComponent {
         "fixedPosition": true
       },
       "categoryAxis": {
-        "gridPosition": "start"
+        
       },
       "trendLines": [],
       "graphs": [
@@ -83,6 +84,7 @@ export class MainComponent {
     this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
       this.data = res.json();
       this.chart = this.afterAssignDataForLeadAgent();
+      console.log(this.data);
     });
   }
 

@@ -18,7 +18,7 @@ import { AgentComponent } from './agent/agent.component';
 const routes: Routes = [
   { path: '', redirectTo: 'lead-agent', pathMatch: 'full' },
   { path: 'lead-agent', component: MainComponent },
-  { path: 'agent', component: AgentComponent}
+  { path: 'agent/:id', component: AgentComponent}
 ];
 
 
