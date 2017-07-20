@@ -18,7 +18,13 @@ export class AgentComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http:Http, private AmCharts: AmChartsService) { 
     route.params.subscribe(params => { 
       this.id = params['id'];
+      this.assignData();
     })
+    this.assignData();
+  }
+
+
+  assignData() {
     this.chartdiv = "chartdiv"+this.id;
 
     this.metaData = new Object(
@@ -158,12 +164,12 @@ export class AgentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.chart.validateData();
+    // this.chart.validateData();
   }
 
-  ngAfterViewInit() {
-    this.chart.validateData();
-  }
+  // ngAfterViewInit() {
+  //   this.chart.validateData();
+  // }
 
   afterAssignDataForLeadAgent() {
     let agent = "Agent " + this.id;
@@ -218,5 +224,10 @@ export class AgentComponent implements OnInit {
       
       return this.AmCharts.makeChart(this.chartdiv, this.metaData);
   }
+
+  ngOnDestroy() {
+    this.AmCharts.destroyChart(this.chart);
+  }
+
 
 }
