@@ -6,21 +6,14 @@
         <div id="{{chartdiv}}" [style.width.%]="100" [style.height.px]="500"></div>
       </div>
       </div> 
-      <!-- <p>
-        {{id}} works!
-      </p> -->
     </md-tab>
 
 
     <md-tab label="Table">
-      <h1 style="text-align: center">
+      <h3 style="text-align: center">
         {{agent}}
-      </h1>
-
+      </h3>
       <br>
-      <br>
-
-
       <div *ngIf="data" style="padding-left: 25%">
         <table style="width: 70%;">
           <thead>
@@ -29,10 +22,8 @@
             <th>Month</th>
             <th>value</th>
           </tr>
-
           </thead>
           <tbody>
-
           <tr>
             <td rowspan="3" colspan="2">Agencies No</td>
             <td>Jan-17</td>
@@ -46,8 +37,6 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["Agencies No"]["Mar-17"] }}</td>
           </tr>
-
-
           <tr>
             <td rowspan="3" colspan="2">Consecutive Misses 1</td>
             <td>Jan-17</td>
@@ -61,7 +50,6 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["Consecutive Misses 1"]["Mar-17"] }}</td>
           </tr>
-
           <tr>
             <td rowspan="3" colspan="2">Customer No</td>
             <td>Jan-17</td>
@@ -75,7 +63,6 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["Customer No"]["Mar-17"] }}</td>
           </tr>
-
           <tr>
             <td rowspan="3" colspan="2">New Customer No</td>
             <td>Jan-17</td>
@@ -89,7 +76,6 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["New Customer No"]["Mar-17"] }}</td>
           </tr>
-
           <tr>
             <td rowspan="3" colspan="2">Paid Up No</td>
             <td>Jan-17</td>
@@ -103,7 +89,6 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["Paid Up No"]["Mar-17"] }}</td>
           </tr>
-
           <tr>
             <td rowspan="3" colspan="2">Parallel No</td>
             <td>Jan-17</td>
@@ -117,7 +102,6 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["Parallel No"]["Mar-17"] }}</td>
           </tr>
-
           <tr>
             <td rowspan="3" colspan="2">Refinance No</td>
             <td>Jan-17</td>
@@ -144,7 +128,6 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["Sales Value"]["Mar-17"] }}</td>
           </tr>
-
           <tr>
             <td rowspan="3" colspan="2">Scheduled Visit No</td>
             <td>Jan-17</td>
@@ -158,7 +141,6 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["Scheduled Visit No"]["Mar-17"] }}</td>
           </tr>
-
           <tr>
             <td rowspan="3" colspan="2">Real Misses No</td>
             <td>Jan-17</td>
@@ -172,7 +154,6 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["Real Misses No"]["Mar-17"] }}</td>
           </tr>
-
           <tr>
             <td rowspan="3" colspan="2">Sales No</td>
             <td>Jan-17</td>
@@ -186,7 +167,6 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["Sales No"]["Mar-17"] }}</td>
           </tr>
-
           <tr>
             <td rowspan="3" colspan="2">Recent New Customers No 13 Weeks</td>
             <td>Jan-17</td>
@@ -200,11 +180,8 @@
             <td>Mar-17</td>
             <td>{{ data[agent]["Recent New Customers No 13 Weeks"]["Mar-17"] }}</td>
           </tr>
-
           </tbody>
         </table>
-
-
       </div>  
     </md-tab> 
   </md-tab-group>

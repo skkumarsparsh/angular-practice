@@ -6,7 +6,6 @@ import {
 } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdSidenavModule} from '@angular/material';
 import { HttpModule } from '@angular/http';
 import {MdTabsModule} from '@angular/material';
@@ -36,7 +35,6 @@ const routes: Routes = [
     MdTabsModule,
     MdButtonModule,
     AmChartsModule,
-    BrowserAnimationsModule,
     MdSidenavModule
   ],
   providers: [

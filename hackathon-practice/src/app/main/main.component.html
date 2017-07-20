@@ -1,4 +1,4 @@
-<md-tab-group>
+ <md-tab-group>
      <md-tab label="Graph">
       <div style="padding-top:10px">
       <div class="my-content graph1">
@@ -9,14 +9,197 @@
 
 
     <md-tab label="Table">
-      <h1 style="text-align: center">
+      <h3 style="text-align: center">
         Lead agent
-      </h1>
-
+      </h3>
       <br>
+      <div *ngIf="data" style="padding-left: 25%">
+        <table style="width: 70%;">
+          <thead>
+          <tr>
+            <th colspan="2">Metric</th>
+            <th>Month</th>
+            <th>value</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td rowspan="3" colspan="2">Agencies No</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Agencies No"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Agencies No"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Agencies No"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">Consecutive Misses 1</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Consecutive Misses 1"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Consecutive Misses 1"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Consecutive Misses 1"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">Customer No</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Customer No"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Customer No"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Customer No"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">New Customer No</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["New Customer No"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["New Customer No"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["New Customer No"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">Paid Up No</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Paid Up No"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Paid Up No"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Paid Up No"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">Parallel No</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Parallel No"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Parallel No"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Parallel No"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">Refinance No</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Refinance No"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Refinance No"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Refinance No"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">Sales Value</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Sales Value"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Sales Value"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Sales Value"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">Scheduled Visit No</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Scheduled Visit No"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Scheduled Visit No"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Scheduled Visit No"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">Real Misses No</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Real Misses No"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Real Misses No"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Real Misses No"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">Sales No</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Sales No"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Sales No"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Sales No"]["Mar-17"] }}</td>
+          </tr>
+          <tr>
+            <td rowspan="3" colspan="2">Recent New Customers No 13 Weeks</td>
+            <td>Jan-17</td>
+            <td>{{ data["Lead Agent"]["Recent New Customers No 13 Weeks"]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data["Lead Agent"]["Recent New Customers No 13 Weeks"]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data["Lead Agent"]["Recent New Customers No 13 Weeks"]["Mar-17"] }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </md-tab> 
+  </md-tab-group> 
+
+  <!-- <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  <div class="mdl-tabs__tab-bar">
+      <a href="#chart-panel" class="mdl-tabs__tab is-active">Chart</a>
+      <a href="#lannisters-panel" class="mdl-tabs__tab">Table</a>
+  </div>
+
+  <div class="mdl-tabs__panel is-active" id="chart-panel">
+    <br>
+    <div id="chartdiv" [style.width.%]="100" [style.height.px]="500"></div>
+  </div>
+  <div class="mdl-tabs__panel" id="lannisters-panel">
+    <h3 style="text-align: center">
+        Lead agent
+    </h3>
       <br>
-
-
       <div *ngIf="data" style="padding-left: 25%">
         <table style="width: 70%;">
           <thead>
@@ -199,9 +382,6 @@
 
           </tbody>
         </table>
-
-
       </div>
-
-    </md-tab> 
-  </md-tab-group>
+  </div>
+</div> -->
