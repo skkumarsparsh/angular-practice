@@ -9,22 +9,22 @@
 
 
     <md-tab label="Table">
-      <h3 style="text-align: center">
+      <h4 style="text-align: center">
         Lead agent
-      </h3>
+      </h4>
       <br>
-      <div *ngIf="data" style="padding-left: 25%">
-        <table style="width: 70%;">
+      <div *ngIf="data" style="padding-left: 30%">
+        <table style="width: 60%; background-color: rgb(245,245,245)" class="mdl-data-table mdl-js-data-table mdl-shadow--4dp">
           <thead>
           <tr>
-            <th colspan="2">Metric</th>
+            <th colspan="2" class="mdl-data-table__cell--non-numeric">Metric</th>
             <th>Month</th>
-            <th>value</th>
+            <th>Value</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td rowspan="3" colspan="2">Agencies No</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Agencies No</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Agencies No"]["Jan-17"] }}</td>
           </tr>
@@ -37,7 +37,7 @@
             <td>{{ data["Lead Agent"]["Agencies No"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">Consecutive Misses 1</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Consecutive Misses 1</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Consecutive Misses 1"]["Jan-17"] }}</td>
           </tr>
@@ -50,7 +50,7 @@
             <td>{{ data["Lead Agent"]["Consecutive Misses 1"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">Customer No</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Customer No</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Customer No"]["Jan-17"] }}</td>
           </tr>
@@ -63,7 +63,7 @@
             <td>{{ data["Lead Agent"]["Customer No"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">New Customer No</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">New Customer No</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["New Customer No"]["Jan-17"] }}</td>
           </tr>
@@ -76,7 +76,7 @@
             <td>{{ data["Lead Agent"]["New Customer No"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">Paid Up No</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Paid Up No</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Paid Up No"]["Jan-17"] }}</td>
           </tr>
@@ -89,7 +89,7 @@
             <td>{{ data["Lead Agent"]["Paid Up No"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">Parallel No</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Parallel No</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Parallel No"]["Jan-17"] }}</td>
           </tr>
@@ -102,7 +102,7 @@
             <td>{{ data["Lead Agent"]["Parallel No"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">Refinance No</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Refinance No</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Refinance No"]["Jan-17"] }}</td>
           </tr>
@@ -115,7 +115,7 @@
             <td>{{ data["Lead Agent"]["Refinance No"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">Sales Value</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Sales Value</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Sales Value"]["Jan-17"] }}</td>
           </tr>
@@ -128,7 +128,7 @@
             <td>{{ data["Lead Agent"]["Sales Value"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">Scheduled Visit No</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Scheduled Visit No</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Scheduled Visit No"]["Jan-17"] }}</td>
           </tr>
@@ -141,7 +141,7 @@
             <td>{{ data["Lead Agent"]["Scheduled Visit No"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">Real Misses No</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Real Misses No</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Real Misses No"]["Jan-17"] }}</td>
           </tr>
@@ -154,7 +154,7 @@
             <td>{{ data["Lead Agent"]["Real Misses No"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">Sales No</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Sales No</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Sales No"]["Jan-17"] }}</td>
           </tr>
@@ -167,7 +167,7 @@
             <td>{{ data["Lead Agent"]["Sales No"]["Mar-17"] }}</td>
           </tr>
           <tr>
-            <td rowspan="3" colspan="2">Recent New Customers No 13 Weeks</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Recent New Customers No 13 Weeks</td>
             <td>Jan-17</td>
             <td>{{ data["Lead Agent"]["Recent New Customers No 13 Weeks"]["Jan-17"] }}</td>
           </tr>
@@ -182,6 +182,8 @@
           </tbody>
         </table>
       </div>
+      <br>
+      <br> 
     </md-tab> 
   </md-tab-group> 
 

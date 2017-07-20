@@ -19,6 +19,7 @@ import {MdButtonModule} from '@angular/material';
 const routes: Routes = [
   { path: '', redirectTo: 'lead-agent', pathMatch: 'full' },
   { path: 'lead-agent', component: MainComponent },
+  { path: 'agent', redirectTo: 'agent/1', pathMatch: 'full'},
   { path: 'agent/:id', component: AgentComponent}
 ];
 
