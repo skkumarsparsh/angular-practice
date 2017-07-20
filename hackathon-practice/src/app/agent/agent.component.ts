@@ -26,7 +26,7 @@ export class AgentComponent implements OnInit {
     })
     this.utils.titleChanged.emit("Agent " + this.id + " Dashboard");
     this.agent = "Agent " + this.id;
-    this.assignData();
+    // this.assignData();
   }
 
 
@@ -36,107 +36,108 @@ export class AgentComponent implements OnInit {
     this.metaData = new Object(
       {
         "type": "serial",
-        "categoryField": "date",
-        "dataDateFormat": "YYYY-MM",
+        "categoryField": "category",
         "startDuration": 1,
         "categoryAxis": {
-          "minPeriod": "MM",
-          "parseDates": true
-        },
-        "balloon": {
-          "disableMouseEvents": false,
-          "hideBalloonTime": 1000,
-          "fixedPosition": true
-        },
-        "chartCursor": {
-          "enabled": true,
-          "categoryBalloonDateFormat": "MMM YYYY"
+          "gridPosition": "start"
         },
         "trendLines": [],
         "graphs": [
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-1",
             "title": "Agencies No",
-            "valueField": "column-1",
             "type": "column",
-            "fillAlphas": 1
+            "valueField": "column-1"
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-2",
             "title": "Consecutive Misses 1",
-            "valueField": "column-2",
             "type": "column",
-            "fillAlphas": 1
+            "valueField": "column-2"
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-3",
             "title": "Customer No",
             "valueField": "column-3",
             "type": "column",
-            "fillAlphas": 1
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-4",
             "title": "New Customer No",
             "valueField": "column-4",
             "type": "column",
-            "fillAlphas": 1
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-5",
             "title": "Paid Up No",
             "valueField": "column-5",
             "type": "column",
-            "fillAlphas": 1
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-6",
             "title": "Parallel No",
             "valueField": "column-6",
             "type": "column",
-            "fillAlphas": 1
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-7",
             "title": "Real Misses No",
             "valueField": "column-7",
             "type": "column",
-            "fillAlphas": 1
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-8",
             "title": "Recent New Customers No 13 Weeks",
             "valueField": "column-8",
             "type": "column",
-            "fillAlphas": 1
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-9",
             "title": "Refinance No",
             "valueField": "column-9",
             "type": "column",
-            "fillAlphas": 1
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-10",
             "title": "Sales No",
             "valueField": "column-10",
             "type": "column",
-            "fillAlphas": 1
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-11",
             "title": "Sales Value",
             "valueField": "column-11",
             "type": "column",
-            "fillAlphas": 1
           },
           {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 1,
             "id": "AmGraph-12",
             "title": "Scheduled Visit No",
             "valueField": "column-12",
             "type": "column",
-            "fillAlphas": 1
           }
         ],
         "guides": [],
@@ -147,6 +148,11 @@ export class AgentComponent implements OnInit {
           }
         ],
         "allLabels": [],
+        "balloon": {
+          "disableMouseEvents": false,
+          "hideBalloonTime": 1000,
+          "fixedPosition": true
+        },
         "legend": {
           "enabled": true,
           "useGraphSettings": true
@@ -155,7 +161,7 @@ export class AgentComponent implements OnInit {
           {
             "id": "Title-1",
             "size": 15,
-            "text": "Agent Metrics"
+            "text": "Agent Metric"
           }
         ],
         "dataProvider": []
@@ -183,9 +189,8 @@ export class AgentComponent implements OnInit {
   }
 
   afterAssignDataForLeadAgent() {
-    debugger;
     this.metaData["dataProvider"].push({
-        "date": "2017-01",
+        "category": "Jan 2017",
         "column-1": parseInt(this.data[this.agent]["Agencies No"]["Jan-17"]),
         "column-2": parseInt(this.data[this.agent]["Consecutive Misses 1"]["Jan-17"]),
         "column-3": parseInt(this.data[this.agent]["Customer No"]["Jan-17"]),
@@ -201,7 +206,7 @@ export class AgentComponent implements OnInit {
       })
 
       this.metaData["dataProvider"].push({
-        "date": "2017-02",
+        "category": "Feb 2017",
         "column-1": parseInt(this.data[this.agent]["Agencies No"]["Feb-17"]),
         "column-2": parseInt(this.data[this.agent]["Consecutive Misses 1"]["Feb-17"]),
         "column-3": parseInt(this.data[this.agent]["Customer No"]["Feb-17"]),
@@ -217,7 +222,7 @@ export class AgentComponent implements OnInit {
       })
 
       this.metaData["dataProvider"].push({
-        "date": "2017-03",
+        "category": "March 2017",
         "column-1": parseInt(this.data[this.agent]["Agencies No"]["Mar-17"]),
         "column-2": parseInt(this.data[this.agent]["Consecutive Misses 1"]["Mar-17"]),
         "column-3": parseInt(this.data[this.agent]["Customer No"]["Mar-17"]),
