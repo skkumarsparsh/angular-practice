@@ -8,6 +8,7 @@ import {
 import { AppComponent } from './app.component';
 import {MdSidenavModule} from '@angular/material';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MdTabsModule} from '@angular/material';
 import { MainComponent } from './main/main.component';
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
@@ -34,6 +35,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     MdTabsModule,
     MdButtonModule,
+    BrowserAnimationsModule,
     AmChartsModule,
     MdSidenavModule
   ],
