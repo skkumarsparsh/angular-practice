@@ -13,11 +13,11 @@ export class AgentComponent implements OnInit {
   metaData;
   data;
   chartdiv;
-  chart = [];
+  chart
 
   constructor(private route: ActivatedRoute, private http:Http, private AmCharts: AmChartsService) { 
     route.params.subscribe(params => { 
-      this.id = params['id']; 
+      this.id = params['id'];
     })
     this.chartdiv = "chartdiv"+this.id;
 
@@ -26,9 +26,15 @@ export class AgentComponent implements OnInit {
         "type": "serial",
         "categoryField": "date",
         "dataDateFormat": "YYYY-MM",
+        "startDuration": 1,
         "categoryAxis": {
           "minPeriod": "MM",
           "parseDates": true
+        },
+        "balloon": {
+          "disableMouseEvents": false,
+          "hideBalloonTime": 1000,
+          "fixedPosition": true
         },
         "chartCursor": {
           "enabled": true,
@@ -129,7 +135,6 @@ export class AgentComponent implements OnInit {
           }
         ],
         "allLabels": [],
-        "balloon": {},
         "legend": {
           "enabled": true,
           "useGraphSettings": true
@@ -147,13 +152,17 @@ export class AgentComponent implements OnInit {
 
     this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
       this.data = res.json();
-      this.chart[parseInt(this.id)] = this.afterAssignDataForLeadAgent();
+      this.chart = this.afterAssignDataForLeadAgent();
       console.log(this.data);
     });
   }
 
   ngOnInit() {
-    
+    this.chart.validateData();
+  }
+
+  ngAfterViewInit() {
+    this.chart.validateData();
   }
 
   afterAssignDataForLeadAgent() {

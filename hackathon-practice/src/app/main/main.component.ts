@@ -49,9 +49,7 @@ export class MainComponent {
         {
           "balloonText": "[[category]] in [[title]]:[[value]]",
           "fillAlphas": 1,
-          "fillColors": "#00B0FF",
           "id": "AmGraph-3",
-          "lineColor": "#00B0FF",
           "title": "March 2017",
           "type": "column",
           "valueField": "column-3"
