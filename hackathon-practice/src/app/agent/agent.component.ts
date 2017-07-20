@@ -168,11 +168,16 @@ export class AgentComponent implements OnInit {
 
   ngOnInit() {
     // this.chart.validateData();
+    // if(this.chart) {
+    //   this.chart.invalidateSize();
+    // }
   }
 
-  // ngAfterViewInit() {
-  //   this.chart.validateData();
-  // }
+  ngAfterViewInit() {
+    // if(this.chart) {
+    //   this.chart.invalidateSize();
+    // }
+  }
 
   afterAssignDataForLeadAgent() {
     debugger;

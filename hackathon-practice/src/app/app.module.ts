@@ -14,6 +14,7 @@ import { MainComponent } from './main/main.component';
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
 import { UtilsService } from './utils.service';
 import { AgentComponent } from './agent/agent.component';
+import {MdButtonModule} from '@angular/material';
 
 const routes: Routes = [
   { path: '', redirectTo: 'lead-agent', pathMatch: 'full' },
@@ -33,6 +34,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes),
     MdTabsModule,
+    MdButtonModule,
     AmChartsModule,
     BrowserAnimationsModule,
     MdSidenavModule
