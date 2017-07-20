@@ -12,6 +12,7 @@ export class AppComponent {
 
   constructor(private utils: UtilsService) {
     this.title = this.utils.title;
+    this.utils.titleChanged.subscribe(res => this.title = res)
   }
 
 }

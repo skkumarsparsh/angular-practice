@@ -15,6 +15,7 @@ export class MainComponent {
   chart:any;
 
   constructor(private http:Http, private AmCharts: AmChartsService, private utils: UtilsService) {
+    this.utils.titleChanged.emit("Lead Agent Dashboard");
     this.metaData = new Object({
       "type": "serial",
       "categoryField": "category",

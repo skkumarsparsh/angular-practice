@@ -34,7 +34,7 @@
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">Dashboard</span>
+      <span class="mdl-layout-title">{{title}}</span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
@@ -47,22 +47,22 @@
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Links</span>
+    <span class="mdl-layout-title" style="padding-left: 28%">Agent Links</span>
     <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/lead-agent']">Lead Agent</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/1']">Agent 1</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/2']">Agent 2</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/3']">Agent 3</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/4']">Agent 4</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/5']">Agent 5</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/6']">Agent 6</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/7']">Agent 7</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/8']">Agent 8</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/9']">Agent 9</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/10']">Agent 10</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/11']">Agent 11</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/12']">Agent 12</a>
-        <a class="mdl-navigation__link" style="width:100%; margin-left: -9px" md-button [routerLink]="['/agent/13']">Agent 13</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/lead-agent']">Lead Agent</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/1']">Agent 1</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/2']">Agent 2</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/3']">Agent 3</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/4']">Agent 4</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/5']">Agent 5</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/6']">Agent 6</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/7']">Agent 7</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/8']">Agent 8</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/9']">Agent 9</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/10']">Agent 10</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/11']">Agent 11</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/12']">Agent 12</a>
+        <a class="mdl-navigation__link" md-button [routerLink]="['/agent/13']">Agent 13</a>
     </nav>
   </div>
   <main class="mdl-layout__content">

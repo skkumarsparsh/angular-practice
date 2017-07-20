@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AmChartsService } from "@amcharts/amcharts3-angular";
 import { ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
+import { UtilsService } from '../utils.service'
 
 @Component({
   selector: 'app-agent',
@@ -16,12 +17,14 @@ export class AgentComponent implements OnInit {
   chart;
   agent;
 
-  constructor(private route: ActivatedRoute, private http:Http, private AmCharts: AmChartsService) { 
+  constructor(private route: ActivatedRoute, private http:Http, private AmCharts: AmChartsService, private utils: UtilsService) { 
     route.params.subscribe(params => { 
       this.id = params['id'];
       this.agent = "Agent " + this.id;
+      this.utils.titleChanged.emit(this.agent + " Dashboard");
       this.assignData();
     })
+    this.utils.titleChanged.emit("Agent " + this.id + " Dashboard");
     this.agent = "Agent " + this.id;
     this.assignData();
   }
@@ -140,7 +143,7 @@ export class AgentComponent implements OnInit {
         "valueAxes": [
           {
             "id": "ValueAxis-1",
-            "title": "Axis title"
+            "title": "Number"
           }
         ],
         "allLabels": [],
@@ -152,7 +155,7 @@ export class AgentComponent implements OnInit {
           {
             "id": "Title-1",
             "size": 15,
-            "text": ""
+            "text": "Agent Metrics"
           }
         ],
         "dataProvider": []
