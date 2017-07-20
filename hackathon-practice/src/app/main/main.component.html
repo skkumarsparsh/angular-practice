@@ -5,6 +5,36 @@
             <div id="chartdiv" [style.width.%]="100" [style.height.px]="500" style="background-color: rgb(245,245,245);"></div>
         </div>
       </div>
+
+      <div style="padding:10px">
+        <div class="mdl-shadow--6dp" style="min-height:30px" [collapse]="isCollapsed">
+        <div class="mdl-card mdl-shadow--6dp" style="width: 100%; background-color: rgb(245,245,245);height:300px">
+          <div style="text-align:center; padding-top: 2px">
+            <span>Individual Agent Metrics</span>
+            <span style="float: right">
+			        <div style="cursor:pointer" (click)="isCollapsed = !isCollapsed" title="Click to show all Agents">
+				      <span style="padding-top:6px; padding-right: 9px;" class="glyphicon" [ngClass]="{'glyphicon-chevron-down':!isCollapsed,'glyphicon-chevron-up':isCollapsed}" ></span>
+			        </div>
+		        </span>
+          </div>
+          <div>
+            <a style="padding:10px; cursor:pointer" (click)="test(1)" title="Click to show metrics of this agent">Agent 1</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(2)" title="Click to show metrics of this agent">Agent 2</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(3)" title="Click to show metrics of this agent">Agent 3</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(4)" title="Click to show metrics of this agent">Agent 4</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(5)" title="Click to show metrics of this agent">Agent 5</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(6)" title="Click to show metrics of this agent">Agent 6</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(7)" title="Click to show metrics of this agent">Agent 7</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(8)" title="Click to show metrics of this agent">Agent 8</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(9)" title="Click to show metrics of this agent">Agent 9</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(10)" title="Click to show metrics of this agent">Agent 10</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(11)" title="Click to show metrics of this agent">Agent 11</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(12)" title="Click to show metrics of this agent">Agent 12</a>
+            <a style="padding:10px; cursor:pointer" (click)="test(13)" title="Click to show metrics of this agent">Agent 13</a>
+          </div>
+        </div>
+        </div>
+      </div>
     </md-tab>
 
 

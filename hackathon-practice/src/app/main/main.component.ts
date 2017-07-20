@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { AmChartsService } from "@amcharts/amcharts3-angular";
-import { UtilsService } from '../utils.service'
+import { UtilsService } from '../utils.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-main',
@@ -13,8 +14,10 @@ export class MainComponent {
   data;
   metaData;
   chart:any;
+  isCollapsed=true;
 
-  constructor(private http:Http, private AmCharts: AmChartsService, private utils: UtilsService) {
+  constructor(private http:Http, private AmCharts: AmChartsService, private utils: UtilsService, private route:Router) {
+    this.isCollapsed = !this.isCollapsed;
     this.utils.titleChanged.emit("Lead Agent Dashboard");
     this.metaData = new Object({
       "type": "serial",
@@ -85,6 +88,10 @@ export class MainComponent {
       this.chart = this.afterAssignDataForLeadAgent();
       console.log(this.data);
     });
+  }
+
+  test(n) {
+    this.route.navigate(['/agent',n]);
   }
 
   afterAssignDataForLeadAgent() {

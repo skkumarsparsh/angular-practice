@@ -15,6 +15,7 @@ import { AmChartsModule } from "@amcharts/amcharts3-angular";
 import { UtilsService } from './utils.service';
 import { AgentComponent } from './agent/agent.component';
 import {MdButtonModule} from '@angular/material';
+import { Collapse } from './collapse';
 
 const routes: Routes = [
   { path: '', redirectTo: 'lead-agent', pathMatch: 'full' },
@@ -28,7 +29,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     MainComponent,
-    AgentComponent
+    AgentComponent,
+    Collapse
   ],
   imports: [
     BrowserModule,
