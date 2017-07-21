@@ -1,0 +1,872 @@
+{
+	[
+		"Agent 1": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "1"
+			},
+			"Customer No": {
+				"Jan-17": "139",
+				"Feb-17": "138",
+				"Mar-17": "129"
+			},
+			"New Customer No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "5"
+			},
+			"Paid Up No": {
+				"Jan-17": "1",
+				"Feb-17": "4",
+				"Mar-17": "6"
+			},
+			"Sales No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Sales Value": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "31",
+				"Feb-17": "35",
+				"Mar-17": "28"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "53",
+				"Feb-17": "55",
+				"Mar-17": "43"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "14",
+				"Feb-17": "11",
+				"Mar-17": "5"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "9",
+				"Feb-17": "6",
+				"Mar-17": "5"
+			}
+		},
+		"Agent 2": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "1"
+			},
+			"Customer No": {
+				"Jan-17": "290",
+				"Feb-17": "286",
+				"Mar-17": "261"
+			},
+			"New Customer No": {
+				"Jan-17": "5",
+				"Feb-17": "4",
+				"Mar-17": "4"
+			},
+			"Paid Up No": {
+				"Jan-17": "14",
+				"Feb-17": "9",
+				"Mar-17": "13"
+			},
+			"Sales No": {
+				"Jan-17": "4",
+				"Feb-17": "0",
+				"Mar-17": "2"
+			},
+			"Sales Value": {
+				"Jan-17": "28,992",
+				"Feb-17": "0",
+				"Mar-17": "13,771"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "111",
+				"Feb-17": "121",
+				"Mar-17": "129"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "71",
+				"Feb-17": "78",
+				"Mar-17": "67"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "29",
+				"Feb-17": "38",
+				"Mar-17": "40"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "25",
+				"Feb-17": "34",
+				"Mar-17": "16"
+			}
+		},
+		"Agent 3": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "1"
+			},
+			"Customer No": {
+				"Jan-17": "134",
+				"Feb-17": "131",
+				"Mar-17": "114"
+			},
+			"New Customer No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "4"
+			},
+			"Paid Up No": {
+				"Jan-17": "0",
+				"Feb-17": "3",
+				"Mar-17": "4"
+			},
+			"Sales No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "5"
+			},
+			"Sales Value": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "8,124"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "53",
+				"Feb-17": "46",
+				"Mar-17": "27"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "42",
+				"Feb-17": "24",
+				"Mar-17": "14"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "12",
+				"Feb-17": "22",
+				"Mar-17": "8"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "11",
+				"Feb-17": "12",
+				"Mar-17": "4"
+			}
+		},
+		"Agent 4": {
+			"Agencies No": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Customer No": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"New Customer No": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Paid Up No": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Sales No": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Sales Value": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Parallel No": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Refinance No": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Real Misses No": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "",
+				"Feb-17": "",
+				"Mar-17": ""
+			}
+		},
+		"Agent 5": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "1"
+			},
+			"Customer No": {
+				"Jan-17": "225",
+				"Feb-17": "222",
+				"Mar-17": "213"
+			},
+			"New Customer No": {
+				"Jan-17": "4",
+				"Feb-17": "1",
+				"Mar-17": "7"
+			},
+			"Paid Up No": {
+				"Jan-17": "4",
+				"Feb-17": "4",
+				"Mar-17": "9"
+			},
+			"Sales No": {
+				"Jan-17": "3",
+				"Feb-17": "0",
+				"Mar-17": "3"
+			},
+			"Sales Value": {
+				"Jan-17": "5,395",
+				"Feb-17": "0",
+				"Mar-17": "12,247"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "83",
+				"Feb-17": "77",
+				"Mar-17": "101"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "67",
+				"Feb-17": "73",
+				"Mar-17": "73"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "31",
+				"Feb-17": "34",
+				"Mar-17": "23"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "17",
+				"Feb-17": "26",
+				"Mar-17": "23"
+			}
+		},
+		"Agent 6": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "1"
+			},
+			"Customer No": {
+				"Jan-17": "310",
+				"Feb-17": "310",
+				"Mar-17": "289"
+			},
+			"New Customer No": {
+				"Jan-17": "5",
+				"Feb-17": "3",
+				"Mar-17": "3"
+			},
+			"Paid Up No": {
+				"Jan-17": "12",
+				"Feb-17": "7",
+				"Mar-17": "10"
+			},
+			"Sales No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "2"
+			},
+			"Sales Value": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "4,976"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "96",
+				"Feb-17": "83",
+				"Mar-17": "108"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "104",
+				"Feb-17": "98",
+				"Mar-17": "61"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "25",
+				"Feb-17": "35",
+				"Mar-17": "25"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "23",
+				"Feb-17": "28",
+				"Mar-17": "20"
+			}
+		},
+		"Agent 7": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "",
+				"Mar-17": ""
+			},
+			"Customer No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"New Customer No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Paid Up No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Sales No": {
+				"Jan-17": "-1",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Sales Value": {
+				"Jan-17": "-1,330",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "15",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "0",
+				"Feb-17": "",
+				"Mar-17": ""
+			}
+		},
+		"Agent 8": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "1"
+			},
+			"Customer No": {
+				"Jan-17": "365",
+				"Feb-17": "363",
+				"Mar-17": "326"
+			},
+			"New Customer No": {
+				"Jan-17": "2",
+				"Feb-17": "4",
+				"Mar-17": "4"
+			},
+			"Paid Up No": {
+				"Jan-17": "6",
+				"Feb-17": "6",
+				"Mar-17": "28"
+			},
+			"Sales No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "6"
+			},
+			"Sales Value": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "20,950"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "108",
+				"Feb-17": "115",
+				"Mar-17": "111"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "109",
+				"Feb-17": "111",
+				"Mar-17": "56"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "46",
+				"Feb-17": "33",
+				"Mar-17": "20"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "30",
+				"Feb-17": "30",
+				"Mar-17": "20"
+			}
+		},
+		"Agent 9": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "1"
+			},
+			"Customer No": {
+				"Jan-17": "219",
+				"Feb-17": "214",
+				"Mar-17": "203"
+			},
+			"New Customer No": {
+				"Jan-17": "3",
+				"Feb-17": "2",
+				"Mar-17": "8"
+			},
+			"Paid Up No": {
+				"Jan-17": "5",
+				"Feb-17": "10",
+				"Mar-17": "12"
+			},
+			"Sales No": {
+				"Jan-17": "2",
+				"Feb-17": "3",
+				"Mar-17": "3"
+			},
+			"Sales Value": {
+				"Jan-17": "9,153",
+				"Feb-17": "11,865",
+				"Mar-17": "21,188"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "76",
+				"Feb-17": "80",
+				"Mar-17": "64"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "24",
+				"Feb-17": "29",
+				"Mar-17": "59"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "22",
+				"Feb-17": "29",
+				"Mar-17": "19"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "14",
+				"Feb-17": "15",
+				"Mar-17": "12"
+			}
+		},
+		"Agent 10": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": ""
+			},
+			"Customer No": {
+				"Jan-17": "89",
+				"Feb-17": "89",
+				"Mar-17": "0"
+			},
+			"New Customer No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "0"
+			},
+			"Paid Up No": {
+				"Jan-17": "4",
+				"Feb-17": "1",
+				"Mar-17": "4"
+			},
+			"Sales No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "0"
+			},
+			"Sales Value": {
+				"Jan-17": "7,390",
+				"Feb-17": "1,182",
+				"Mar-17": "0"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "40",
+				"Feb-17": "47",
+				"Mar-17": "0"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "30",
+				"Feb-17": "28",
+				"Mar-17": "6"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "19",
+				"Feb-17": "16",
+				"Mar-17": "0"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "9",
+				"Feb-17": "6",
+				"Mar-17": "0"
+			}
+		},
+		"Agent 11": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "1"
+			},
+			"Customer No": {
+				"Jan-17": "250",
+				"Feb-17": "249",
+				"Mar-17": "142"
+			},
+			"New Customer No": {
+				"Jan-17": "2",
+				"Feb-17": "3",
+				"Mar-17": "0"
+			},
+			"Paid Up No": {
+				"Jan-17": "5",
+				"Feb-17": "2",
+				"Mar-17": "9"
+			},
+			"Sales No": {
+				"Jan-17": "2",
+				"Feb-17": "5",
+				"Mar-17": "6"
+			},
+			"Sales Value": {
+				"Jan-17": "2,033",
+				"Feb-17": "2,815",
+				"Mar-17": "5,787"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "175",
+				"Feb-17": "128",
+				"Mar-17": "59"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "69",
+				"Feb-17": "61",
+				"Mar-17": "31"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "66",
+				"Feb-17": "30",
+				"Mar-17": "14"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "17",
+				"Feb-17": "22",
+				"Mar-17": "17"
+			}
+		},
+		"Agent 12": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "1"
+			},
+			"Customer No": {
+				"Jan-17": "230",
+				"Feb-17": "234",
+				"Mar-17": "173"
+			},
+			"New Customer No": {
+				"Jan-17": "0",
+				"Feb-17": "3",
+				"Mar-17": "0"
+			},
+			"Paid Up No": {
+				"Jan-17": "5",
+				"Feb-17": "4",
+				"Mar-17": "10"
+			},
+			"Sales No": {
+				"Jan-17": "1",
+				"Feb-17": "8",
+				"Mar-17": "1"
+			},
+			"Sales Value": {
+				"Jan-17": "1,631",
+				"Feb-17": "11,687",
+				"Mar-17": "680"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "111",
+				"Feb-17": "96",
+				"Mar-17": "79"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "20",
+				"Feb-17": "23",
+				"Mar-17": "14"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "54",
+				"Feb-17": "39",
+				"Mar-17": "27"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "20",
+				"Feb-17": "22",
+				"Mar-17": "18"
+			}
+		},
+		"Agent 13": {
+			"Agencies No": {
+				"Jan-17": "1",
+				"Feb-17": "1",
+				"Mar-17": "1"
+			},
+			"Customer No": {
+				"Jan-17": "166",
+				"Feb-17": "168",
+				"Mar-17": "136"
+			},
+			"New Customer No": {
+				"Jan-17": "3",
+				"Feb-17": "3",
+				"Mar-17": "1"
+			},
+			"Paid Up No": {
+				"Jan-17": "2",
+				"Feb-17": "3",
+				"Mar-17": "5"
+			},
+			"Sales No": {
+				"Jan-17": "3",
+				"Feb-17": "8",
+				"Mar-17": "2"
+			},
+			"Sales Value": {
+				"Jan-17": "3,352",
+				"Feb-17": "14,103",
+				"Mar-17": "3,468"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "81",
+				"Feb-17": "83",
+				"Mar-17": "50"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "94",
+				"Feb-17": "67",
+				"Mar-17": "40"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "30",
+				"Feb-17": "40",
+				"Mar-17": "13"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "9",
+				"Feb-17": "25",
+				"Mar-17": "18"
+			}
+		},
+		"Lead Agent": {
+			"Agencies No": {
+				"Jan-17": "12",
+				"Feb-17": "11",
+				"Mar-17": "10"
+			},
+			"Customer No": {
+				"Jan-17": "2,417",
+				"Feb-17": "2,403",
+				"Mar-17": "1,986"
+			},
+			"New Customer No": {
+				"Jan-17": "28",
+				"Feb-17": "26",
+				"Mar-17": "37"
+			},
+			"Paid Up No": {
+				"Jan-17": "59",
+				"Feb-17": "53",
+				"Mar-17": "109"
+			},
+			"Sales No": {
+				"Jan-17": "15",
+				"Feb-17": "26",
+				"Mar-17": "31"
+			},
+			"Sales Value": {
+				"Jan-17": "56,615.80",
+				"Feb-17": "41,653.20",
+				"Mar-17": "91,190.50"
+			},
+			"Parallel No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Refinance No": {
+				"Jan-17": "0",
+				"Feb-17": "0",
+				"Mar-17": "0"
+			},
+			"Real Misses No": {
+				"Jan-17": "965",
+				"Feb-17": "913",
+				"Mar-17": "755"
+			},
+			"Recent New Customers No 13 Weeks": {
+				"Jan-17": "697",
+				"Feb-17": "648",
+				"Mar-17": "464"
+			},
+			"Consecutive Misses 1": {
+				"Jan-17": "348",
+				"Feb-17": "327",
+				"Mar-17": "194"
+			},
+			"Scheduled Visit No": {
+				"Jan-17": "185",
+				"Feb-17": "227",
+				"Mar-17": "154"
+			}
+		}
+	]
+}
