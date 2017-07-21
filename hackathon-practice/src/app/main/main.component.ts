@@ -15,6 +15,9 @@ export class MainComponent {
   metaData;
   chart:any;
   isCollapsed=true;
+  agents;
+  headers;
+
 
   constructor(private http:Http, private AmCharts: AmChartsService, private utils: UtilsService, private route:Router) {
     this.isCollapsed = !this.isCollapsed;
@@ -54,7 +57,7 @@ export class MainComponent {
           "balloonText": "[[category]] in [[title]]:[[value]]",
           "fillAlphas": 1,
           "id": "AmGraph-3",
-          "title": "March 2017",
+          "title": "Mar 2017",
           "type": "column",
           "valueField": "column-3"
         }
@@ -85,15 +88,10 @@ export class MainComponent {
   ngOnInit() {
     this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
       this.data = res.json();
-      this.chart = this.afterAssignDataForLeadAgent();
       console.log(this.data);
-      let agents = this.utils.getAgents(this.data); // this function gives you all the agent names that the data contains
-      console.log(agents); 
-      let headers = this.utils.getHeaderNames(this.data); // this function gives you all the metrics names that each agent contains
-      console.log(headers);
-      let value = this.utils.getValuesForMonthsOfEachData(this.data[agents[4]][headers[3]]); // this function gives you the month dates in an array for ONE metric in ONE agent that is given to it
-      // Keep in mind that the order changes - IMPORTANT
-      console.log(value);
+      this.agents = this.utils.getAgents(this.data); // this function gives you all the agent names that the data contains
+      this.headers = this.utils.getHeaderNames(this.data); // this function gives you all the metrics names that each agent contains
+      this.chart = this.afterAssignDataForLeadAgent();
     });
   }
 
@@ -102,28 +100,20 @@ export class MainComponent {
   }
 
   afterAssignDataForLeadAgent() {
-    this.metaData["dataProvider"].push({
-        "category": "Collections",
-        "column-1": parseInt(this.data["Lead Agent"]["Real Misses No"]["Jan-17"]),
-        "column-2": parseInt(this.data["Lead Agent"]["Real Misses No"]["Feb-17"]),
-        "column-3": parseInt(this.data["Lead Agent"]["Real Misses No"]["Mar-17"]),
-      })
-
+    let lead = this.agents[this.agents.length-1];
+    let core = this.utils.coreMetrics;
+    let months = this.utils.months;
+    let k;
+    for(var i=0;i<core.length;i++) {
+      k=0;
       this.metaData["dataProvider"].push({
-        "category": "Sales",
-        "column-1": parseInt(this.data["Lead Agent"]["Sales No"]["Jan-17"]),
-        "column-2": parseInt(this.data["Lead Agent"]["Sales No"]["Feb-17"]),
-        "column-3": parseInt(this.data["Lead Agent"]["Sales No"]["Mar-17"]),
+          "category": "Collections",
+          "column-1": parseInt(this.data[lead][core[i]][months[k++]]),
+          "column-2": parseInt(this.data[lead][core[i]][months[k++]]),
+          "column-3": parseInt(this.data[lead][core[i]][months[k++]]),
       })
-
-      this.metaData["dataProvider"].push({
-        "category": "New Customers",
-        "column-1": parseInt(this.data["Lead Agent"]["Recent New Customers No 13 Weeks"]["Jan-17"]),
-        "column-2": parseInt(this.data["Lead Agent"]["Recent New Customers No 13 Weeks"]["Feb-17"]),
-        "column-3": parseInt(this.data["Lead Agent"]["Recent New Customers No 13 Weeks"]["Mar-17"]),
-      })
-
-      return this.AmCharts.makeChart("chartdiv", this.metaData);
+    }
+    return this.AmCharts.makeChart("chartdiv", this.metaData);
   }
 
   ngOnDestroy() {

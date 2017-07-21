@@ -5,6 +5,8 @@ export class UtilsService {
 
   title: string;
   titleChanged = new EventEmitter<any>();
+  coreMetrics = ["Real Misses No", "Sales No", "Recent New Customers No 13 Weeks"];
+  months = ["Jan-17", "Feb-17", "Mar-17"];
 
   constructor() {
     this.title = "Dashboard";

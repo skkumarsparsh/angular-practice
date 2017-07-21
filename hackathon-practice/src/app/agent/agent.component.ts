@@ -189,55 +189,27 @@ export class AgentComponent implements OnInit {
   }
 
   afterAssignDataForLeadAgent() {
-    this.metaData["dataProvider"].push({
-        "category": "Jan 2017",
-        "column-1": parseInt(this.data[this.agent]["Agencies No"]["Jan-17"]),
-        "column-2": parseInt(this.data[this.agent]["Consecutive Misses 1"]["Jan-17"]),
-        "column-3": parseInt(this.data[this.agent]["Customer No"]["Jan-17"]),
-        "column-4": parseInt(this.data[this.agent]["New Customer No"]["Jan-17"]),
-        "column-5": parseInt(this.data[this.agent]["Paid Up No"]["Jan-17"]),
-        "column-6": parseInt(this.data[this.agent]["Parallel No"]["Jan-17"]),
-        "column-7": parseInt(this.data[this.agent]["Real Misses No"]["Jan-17"]),
-        "column-8": parseInt(this.data[this.agent]["Recent New Customers No 13 Weeks"]["Jan-17"]),
-        "column-9": parseInt(this.data[this.agent]["Refinance No"]["Jan-17"]),
-        "column-10": parseInt(this.data[this.agent]["Sales No"]["Jan-17"]),
-        "column-11": parseInt(this.data[this.agent]["Sales Value"]["Jan-17"]),
-        "column-12": parseInt(this.data[this.agent]["Scheduled Visit No"]["Jan-17"])
-      })
-
+    let headers = this.utils.getHeaderNames(this.data);
+    let months = this.utils.months;
+    for(var i=0;i<months.length;i++) {
+      let j=0;
       this.metaData["dataProvider"].push({
-        "category": "Feb 2017",
-        "column-1": parseInt(this.data[this.agent]["Agencies No"]["Feb-17"]),
-        "column-2": parseInt(this.data[this.agent]["Consecutive Misses 1"]["Feb-17"]),
-        "column-3": parseInt(this.data[this.agent]["Customer No"]["Feb-17"]),
-        "column-4": parseInt(this.data[this.agent]["New Customer No"]["Feb-17"]),
-        "column-5": parseInt(this.data[this.agent]["Paid Up No"]["Feb-17"]),
-        "column-6": parseInt(this.data[this.agent]["Parallel No"]["Feb-17"]),
-        "column-7": parseInt(this.data[this.agent]["Real Misses No"]["Feb-17"]),
-        "column-8": parseInt(this.data[this.agent]["Recent New Customers No 13 Weeks"]["Feb-17"]),
-        "column-9": parseInt(this.data[this.agent]["Refinance No"]["Feb-17"]),
-        "column-10": parseInt(this.data[this.agent]["Sales No"]["Feb-17"]),
-        "column-11": parseInt(this.data[this.agent]["Sales Value"]["Feb-17"]),
-        "column-12": parseInt(this.data[this.agent]["Scheduled Visit No"]["Feb-17"])
+          "category": months[i],
+          "column-1": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-2": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-3": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-4": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-5": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-6": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-7": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-8": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-9": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-10": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-11": parseInt(this.data[this.agent][headers[j++]][months[i]]),
+          "column-12": parseInt(this.data[this.agent][headers[j++]][months[i]])
       })
-
-      this.metaData["dataProvider"].push({
-        "category": "March 2017",
-        "column-1": parseInt(this.data[this.agent]["Agencies No"]["Mar-17"]),
-        "column-2": parseInt(this.data[this.agent]["Consecutive Misses 1"]["Mar-17"]),
-        "column-3": parseInt(this.data[this.agent]["Customer No"]["Mar-17"]),
-        "column-4": parseInt(this.data[this.agent]["New Customer No"]["Mar-17"]),
-        "column-5": parseInt(this.data[this.agent]["Paid Up No"]["Mar-17"]),
-        "column-6": parseInt(this.data[this.agent]["Parallel No"]["Mar-17"]),
-        "column-7": parseInt(this.data[this.agent]["Real Misses No"]["Mar-17"]),
-        "column-8": parseInt(this.data[this.agent]["Recent New Customers No 13 Weeks"]["Mar-17"]),
-        "column-9": parseInt(this.data[this.agent]["Refinance No"]["Mar-17"]),
-        "column-10": parseInt(this.data[this.agent]["Sales No"]["Mar-17"]),
-        "column-11": parseInt(this.data[this.agent]["Sales Value"]["Mar-17"]),
-        "column-12": parseInt(this.data[this.agent]["Scheduled Visit No"]["Mar-17"])
-      })
-      
-      return this.AmCharts.makeChart(this.chartdiv, this.metaData);
+    }      
+    return this.AmCharts.makeChart(this.chartdiv, this.metaData);
   }
 
   ngOnDestroy() {
