@@ -36,7 +36,7 @@ export class Collapse {
   hide(){
     this.height = this.h +'px'
     setTimeout(() => {
-        this.height = '60px';
+        this.height = '80px';
         this.isCollapsing = true;//apply 'collapsing' class
     },1); 
   }

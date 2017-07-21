@@ -44,7 +44,7 @@ export class AgentComponent implements OnInit {
         "trendLines": [],
         "graphs": [
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-1",
             "title": "Agencies No",
@@ -52,7 +52,7 @@ export class AgentComponent implements OnInit {
             "valueField": "column-1"
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-2",
             "title": "Consecutive Misses 1",
@@ -60,7 +60,7 @@ export class AgentComponent implements OnInit {
             "valueField": "column-2"
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-3",
             "title": "Customer No",
@@ -68,7 +68,7 @@ export class AgentComponent implements OnInit {
             "type": "column",
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-4",
             "title": "New Customer No",
@@ -76,7 +76,7 @@ export class AgentComponent implements OnInit {
             "type": "column",
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-5",
             "title": "Paid Up No",
@@ -84,7 +84,7 @@ export class AgentComponent implements OnInit {
             "type": "column",
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-6",
             "title": "Parallel No",
@@ -92,7 +92,7 @@ export class AgentComponent implements OnInit {
             "type": "column",
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-7",
             "title": "Real Misses No",
@@ -100,7 +100,7 @@ export class AgentComponent implements OnInit {
             "type": "column",
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-8",
             "title": "Recent New Customers No 13 Weeks",
@@ -108,7 +108,7 @@ export class AgentComponent implements OnInit {
             "type": "column",
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-9",
             "title": "Refinance No",
@@ -116,7 +116,7 @@ export class AgentComponent implements OnInit {
             "type": "column",
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-10",
             "title": "Sales No",
@@ -124,7 +124,7 @@ export class AgentComponent implements OnInit {
             "type": "column",
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-11",
             "title": "Sales Value",
@@ -132,7 +132,7 @@ export class AgentComponent implements OnInit {
             "type": "column",
           },
           {
-            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-12",
             "title": "Scheduled Visit No",

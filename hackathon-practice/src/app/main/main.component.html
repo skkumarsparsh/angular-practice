@@ -10,7 +10,7 @@
         <div class="mdl-shadow--6dp" style="min-height:30px" [collapse]="isCollapsed">
         <div class="mdl-card mdl-shadow--6dp" style="width: 100%; background-color: rgb(245,245,245);height:300px">
           <div style="text-align:center; padding-top: 2px">
-            <span>Individual Agent Metrics</span>
+            <span style="font-size:16; font-weight:600">Individual Agent Metrics</span>
             <span style="float: right">
 			        <div style="cursor:pointer" (click)="isCollapsed = !isCollapsed" title="Click to show all Agents">
 				      <span style="padding-top:6px; padding-right: 9px;" class="glyphicon" [ngClass]="{'glyphicon-chevron-down':!isCollapsed,'glyphicon-chevron-up':isCollapsed}" ></span>
@@ -43,7 +43,7 @@
         Lead agent
       </h4>
       <br>
-      <div *ngIf="data" style="padding-left: 30%">
+      <div *ngIf="data" style="margin-left: 30%; text-align: center">
         <table style="width: 60%; background-color: rgb(245,245,245)" class="mdl-data-table mdl-js-data-table mdl-shadow--4dp">
           <thead>
           <tr>
