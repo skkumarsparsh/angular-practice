@@ -92,6 +92,7 @@ export class MainComponent {
       let headers = this.utils.getHeaderNames(this.data); // this function gives you all the metrics names that each agent contains
       console.log(headers);
       let value = this.utils.getValuesForMonthsOfEachData(this.data[agents[4]][headers[3]]); // this function gives you the month dates in an array for ONE metric in ONE agent that is given to it
+      // Keep in mind that the order changes - IMPORTANT
       console.log(value);
     });
   }
