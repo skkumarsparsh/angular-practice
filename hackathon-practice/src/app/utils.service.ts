@@ -1,4 +1,5 @@
 import { Injectable,EventEmitter } from '@angular/core';
+import { NotificationsService } from 'angular2-notifications';
 
 @Injectable()
 export class UtilsService {
@@ -8,7 +9,7 @@ export class UtilsService {
   coreMetrics = ["Real Misses No", "Sales No", "Recent New Customers No 13 Weeks"];
   months = ["Jan-17", "Feb-17", "Mar-17"];
 
-  constructor() {
+  constructor(private _service: NotificationsService) {
     this.title = "Dashboard";
   }
 

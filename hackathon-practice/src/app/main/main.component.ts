@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { AmChartsService } from "@amcharts/amcharts3-angular";
 import { UtilsService } from '../utils.service';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-main',
@@ -18,8 +19,15 @@ export class MainComponent {
   agents;
   headers;
 
+  options={
+    timeOut: 5000,
+    showProgressBar: true,
+    pauseOnHover: true,
+    clickToClose: true
+  };
 
-  constructor(private http:Http, private AmCharts: AmChartsService, private utils: UtilsService, private route:Router) {
+
+  constructor(private http:Http, private AmCharts: AmChartsService, private utils: UtilsService, private route:Router, private _service: NotificationsService) {
     this.isCollapsed = !this.isCollapsed;
     this.utils.titleChanged.emit("Dashboard");
     this.metaData = new Object({
@@ -88,6 +96,7 @@ export class MainComponent {
   ngOnInit() {
     this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
       this.data = res.json();
+      this._service.success("ngOnInit Invoked", "Yay! Good job boy!")
       console.log(this.data);
       this.agents = this.utils.getAgents(this.data); // this function gives you all the agent names that the data contains
       this.headers = this.utils.getHeaderNames(this.data); // this function gives you all the metrics names that each agent contains
