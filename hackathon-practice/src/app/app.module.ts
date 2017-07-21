@@ -16,10 +16,12 @@ import { UtilsService } from './utils.service';
 import { AgentComponent } from './agent/agent.component';
 import {MdButtonModule} from '@angular/material';
 import { Collapse } from './collapse';
+import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'lead-agent', pathMatch: 'full' },
   { path: 'lead-agent', component: MainComponent },
+  { path: 'table', component: TableComponent },
   { path: 'agent', redirectTo: 'agent/1', pathMatch: 'full'},
   { path: 'agent/:id', component: AgentComponent}
 ];
@@ -30,7 +32,8 @@ const routes: Routes = [
     AppComponent,
     MainComponent,
     AgentComponent,
-    Collapse
+    Collapse,
+    TableComponent
   ],
   imports: [
     BrowserModule,
