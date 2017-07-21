@@ -19,6 +19,7 @@ import { Collapse } from './collapse';
 import { TableComponent } from './table/table.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SimpleNotificationsModule } from 'angular2-notifications';
+import { PopoverModule } from 'ngx-popover';
 
 
 const routes: Routes = [
@@ -45,6 +46,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes),
     MdTabsModule,
+    PopoverModule,
     MdButtonModule,
     BrowserAnimationsModule,
     AmChartsModule,

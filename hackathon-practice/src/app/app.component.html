@@ -10,8 +10,21 @@
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <!-- <a class="mdl-navigation__link" href="">Link</a>  -->
       </nav>
-      <span><a class="mdl-navigation__link" href=""><img style="height:18px; width: auto; display:block; margin-top:10%" src="/assets/notification-bell.png"></a></span>
-      <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+      <div>
+      <popover-content #myPopover [closeOnClickOutside]="true" placement="auto bottom" [animation]="true">
+        <span style="color:black; height:auto">
+        <b>Very</b> <span style="color: #C21F39">Dynamic</span> <span style="color: #00b3ee">Reusable</span>
+            <b><i><span style="color: #ffc520">Popover With</span></i></b> <small>Html support</small>.
+            Click outside of this popover and it will be dismissed automatically.<br>fbasdjkasdasdkasdandjadfjandjnadjnasdf<br>jansdfnqofwefobqw'epfnweofqwefoaweb
+        </span>
+      </popover-content>
+        <!-- <div class="mdl-navigation__link"> -->
+          <span [popover]="myPopover" class="mdl-badge mdl-badge--overlap" data-badge="4" style="margin-left: 4px; margin-right:70px; display:block; cursor:pointer">
+            <img style="height:18px; width: auto; display:block; margin-top:10%; margin-right:30%" src="/assets/notification-bell.png">
+          </span>
+        <!-- </div> -->
+      </div>
+      <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon" style="margin-right: 2%">
         <i class="material-icons">more_vert</i>
       </button>
 
