@@ -18,7 +18,7 @@ export class MainComponent {
 
   constructor(private http:Http, private AmCharts: AmChartsService, private utils: UtilsService, private route:Router) {
     this.isCollapsed = !this.isCollapsed;
-    this.utils.titleChanged.emit("Lead Agent Dashboard");
+    this.utils.titleChanged.emit("Dashboard");
     this.metaData = new Object({
       "type": "serial",
       "categoryField": "category",
@@ -87,6 +87,12 @@ export class MainComponent {
       this.data = res.json();
       this.chart = this.afterAssignDataForLeadAgent();
       console.log(this.data);
+      let agents = this.utils.getAgents(this.data); // this function gives you all the agent names that the data contains
+      console.log(agents); 
+      let headers = this.utils.getHeaderNames(this.data); // this function gives you all the metrics names that each agent contains
+      console.log(headers);
+      let value = this.utils.getValuesForMonthsOfEachData(this.data[agents[4]][headers[3]]); // this function gives you the month dates in an array for ONE metric in ONE agent that is given to it
+      console.log(value);
     });
   }
 
