@@ -3,6 +3,7 @@ import { AmChartsService } from "@amcharts/amcharts3-angular";
 import { ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
 import { UtilsService } from '../utils.service';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-agent',
@@ -37,7 +38,7 @@ warnthresholdagentmar=[][11];
 j=0; 
 i=0;
 
-  constructor(private route: ActivatedRoute, private http:Http, private AmCharts: AmChartsService, private utils: UtilsService) { 
+  constructor(private route: ActivatedRoute, private http:Http, private AmCharts: AmChartsService, private utils: UtilsService, private _service: NotificationsService) { 
     route.params.subscribe(params => { 
       this.id = params['id'];
       this.agent = "Agent " + this.id;
