@@ -75,6 +75,8 @@ export class MainComponent {
       "guides": [],
       "valueAxes": [
         {
+          "labelFrequency": 2,
+          "logarithmic": true,
           "id": "ValueAxis-1",
           "title": "Number"
         }
@@ -122,7 +124,7 @@ export class MainComponent {
     for(var i=0;i<core.length;i++) {
       k=0;
       this.metaData["dataProvider"].push({
-          "category": "Collections",
+          "category": core[i],
           "column-1": parseInt(this.data[lead][core[i]][months[k++]]),
           "column-2": parseInt(this.data[lead][core[i]][months[k++]]),
           "column-3": parseInt(this.data[lead][core[i]][months[k++]]),

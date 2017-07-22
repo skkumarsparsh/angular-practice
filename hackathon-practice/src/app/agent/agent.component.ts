@@ -161,7 +161,7 @@ export class AgentComponent implements OnInit {
           {
             "id": "Title-1",
             "size": 15,
-            "text": "Agent Metric"
+            "text": "Agent " + this.id + " Metric"
           }
         ],
         "dataProvider": []

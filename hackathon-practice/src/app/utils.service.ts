@@ -6,7 +6,7 @@ export class UtilsService {
 
   title: string;
   titleChanged = new EventEmitter<any>();
-  coreMetrics = ["Real Misses No", "Sales No", "Recent New Customers No 13 Weeks"];
+  coreMetrics = ["Sales No", "New Customer No", "Real Misses No"];
   months = ["Jan-17", "Feb-17", "Mar-17"];
 
   constructor(private _service: NotificationsService) {
