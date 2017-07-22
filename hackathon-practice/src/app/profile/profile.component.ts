@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UtilsService } from '../utils.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private utils:UtilsService) {
+    this.utils.titleChanged.emit("Profile");
+   }
 
   ngOnInit() {
   }

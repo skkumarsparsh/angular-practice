@@ -16,6 +16,7 @@ export class MainComponent {
   metaData;
   chart:any;
   isCollapsed=true;
+  isCollapsed2=true;
   agents;
   headers;
 
@@ -29,6 +30,7 @@ export class MainComponent {
 
   constructor(private http:Http, private AmCharts: AmChartsService, private utils: UtilsService, private route:Router, private _service: NotificationsService) {
     this.isCollapsed = !this.isCollapsed;
+    this.isCollapsed2 = !this.isCollapsed2;
     this.utils.titleChanged.emit("Dashboard");
     this.metaData = new Object({
       "type": "serial",
@@ -106,6 +108,10 @@ export class MainComponent {
 
   test(n) {
     this.route.navigate(['/agent',n]);
+  }
+
+  test2(n) {
+    this.route.navigate(['/metric',n]);
   }
 
   afterAssignDataForLeadAgent() {

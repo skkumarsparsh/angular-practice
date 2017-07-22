@@ -20,6 +20,7 @@ import { TableComponent } from './table/table.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { PopoverModule } from 'ngx-popover';
+import { MetricComponent } from './metric/metric.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,8 @@ const routes: Routes = [
   { path: 'lead-agent', component: MainComponent },
   { path: 'table', component: TableComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'metric', redirectTo: 'metric/1', pathMatch: 'full' },
+  { path: 'metric/:id', component: MetricComponent }, 
   { path: 'agent', redirectTo: 'agent/1', pathMatch: 'full'},
   { path: 'agent/:id', component: AgentComponent}
 ];
@@ -39,7 +42,8 @@ const routes: Routes = [
     AgentComponent,
     Collapse,
     TableComponent,
-    ProfileComponent
+    ProfileComponent,
+    MetricComponent
   ],
   imports: [
     BrowserModule,

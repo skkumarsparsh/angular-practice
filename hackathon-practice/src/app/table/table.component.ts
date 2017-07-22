@@ -14,6 +14,7 @@ export class TableComponent implements OnInit {
   headers;
 
   constructor(private http:Http, private utils: UtilsService) {
+    this.utils.titleChanged.emit("Table");
    }
 
   ngOnInit() {
