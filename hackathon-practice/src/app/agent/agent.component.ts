@@ -38,6 +38,13 @@ warnthresholdagentmar=[][11];
 j=0; 
 i=0;
 
+options={
+    timeOut: 5000,
+    showProgressBar: true,
+    pauseOnHover: true,
+    clickToClose: true
+  };
+
   constructor(private route: ActivatedRoute, private http:Http, private AmCharts: AmChartsService, private utils: UtilsService, private _service: NotificationsService) { 
     route.params.subscribe(params => { 
       this.id = params['id'];
@@ -233,8 +240,13 @@ this.metrics.forEach(element => {
 
           });
           
-        });console.log('happy');
-        
+        });
+        let that = this;
+        let testVar = 23;
+        setTimeout(()=>that._service.success("Happy", "I'm so happy : "+ testVar),2000)
+        //This is if you want to display notifications after a particular time interval. The 2000 denotes time in milliseconds.
+        //Also notice that I've given it to print a variable value inside the function. You can use that too.
+
 
         this.metrics.forEach(element => {
 
@@ -244,7 +256,8 @@ this.metrics.forEach(element => {
 
                   if(this.data["Lead Agent"][element][mon]<this.redthreshold){
 
-                    console.log('sad');
+                    this._service.warn("Sad", "I'm so sad");
+                    //This is how you print it in notification.
 
                     
                     //make the color of graph red or amber and send a warning saying its gone wayyy tooo down
@@ -254,7 +267,7 @@ this.metrics.forEach(element => {
                   else{
 
                    
-                   console.log('happy');
+                   this._service.success("Happy", "I'm so happy");
 
                     //send notification or warning and if necessary changing color...
 

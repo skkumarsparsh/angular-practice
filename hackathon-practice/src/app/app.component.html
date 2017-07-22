@@ -11,12 +11,40 @@
         <!-- <a class="mdl-navigation__link" href="">Link</a>  -->
       </nav>
       <div>
-      <popover-content #myPopover [closeOnClickOutside]="true" placement="auto bottom" [animation]="true">
+      <popover-content #myPopover [closeOnClickOutside]="true" placement="bottom" [animation]="true">
+        <div style="overflow-y:auto; max-height:80vh;">
         <span style="color:black; height:auto">
-        <b>Very</b> <span style="color: #C21F39">Dynamic</span> <span style="color: #00b3ee">Reusable</span>
-            <b><i><span style="color: #ffc520">Popover With</span></i></b> <small>Html support</small>.
-            Click outside of this popover and it will be dismissed automatically.<br>fbasdjkasdasdkasdandjadfjandjnadjnasdf<br>jansdfnqofwefobqw'epfnweofqwefoaweb
+          This is the place where we are going to display the notifications coming in.
+          <hr>
+           It can show
+          <span style="color: red">Red</span>, 
+          <span style="color: orange">Amber</span> and 
+          <span style="color: lightgreen">Green</span> metrics.
+          <hr>
+          It can also show stuff on many lines. Just like you see here.
+          <hr>
+          This simulates multiple notifications coming in.
+          <hr>
+          This work is in our TODO list.
+          <hr>
+          It'll be completed soon.
+          <hr>
+          I don't know if it'll allow scrolling.
+          <hr>
+          Maybe yes.
+          <hr>
+          Maybe not.
+          <hr>
+          <span *ngFor="let a of balloonStuff">
+            <div [innerHtml]="a"></div>
+            <hr>
+          </span>
+          <!-- <hr>
+          Maybe yes.
+          <hr>
+          Maybe not. -->
         </span>
+        </div>
       </popover-content>
         <!-- <div class="mdl-navigation__link"> -->
           <span [popover]="myPopover" class="mdl-badge mdl-badge--overlap" data-badge="4" style="margin-left: 4px; margin-right:70px; display:block; cursor:pointer">
