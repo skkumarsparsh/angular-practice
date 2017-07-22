@@ -55,7 +55,7 @@ export class AgentComponent implements OnInit {
             "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-2",
-            "title": "Consecutive Misses 1",
+            "title": "Customer No",
             "type": "column",
             "valueField": "column-2"
           },
@@ -63,7 +63,7 @@ export class AgentComponent implements OnInit {
             "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-3",
-            "title": "Customer No",
+            "title": "New Customer No",
             "valueField": "column-3",
             "type": "column",
           },
@@ -71,7 +71,7 @@ export class AgentComponent implements OnInit {
             "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-4",
-            "title": "New Customer No",
+            "title": "Paid Up No",
             "valueField": "column-4",
             "type": "column",
           },
@@ -79,7 +79,7 @@ export class AgentComponent implements OnInit {
             "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-5",
-            "title": "Paid Up No",
+            "title": "Sales No",
             "valueField": "column-5",
             "type": "column",
           },
@@ -87,7 +87,7 @@ export class AgentComponent implements OnInit {
             "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-6",
-            "title": "Parallel No",
+            "title": "Sales Value",
             "valueField": "column-6",
             "type": "column",
           },
@@ -95,7 +95,7 @@ export class AgentComponent implements OnInit {
             "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-7",
-            "title": "Real Misses No",
+            "title": "Parallel No",
             "valueField": "column-7",
             "type": "column",
           },
@@ -103,7 +103,7 @@ export class AgentComponent implements OnInit {
             "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-8",
-            "title": "Recent New Customers No 13 Weeks",
+            "title": "Refinance No",
             "valueField": "column-8",
             "type": "column",
           },
@@ -111,7 +111,7 @@ export class AgentComponent implements OnInit {
             "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-9",
-            "title": "Refinance No",
+            "title": "Real Misses No",
             "valueField": "column-9",
             "type": "column",
           },
@@ -119,7 +119,7 @@ export class AgentComponent implements OnInit {
             "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-10",
-            "title": "Sales No",
+            "title": "Recent New Customers No 13 Weeks",
             "valueField": "column-10",
             "type": "column",
           },
@@ -127,7 +127,7 @@ export class AgentComponent implements OnInit {
             "balloonText": "[[title]] in [[category]]:[[value]]",
             "fillAlphas": 1,
             "id": "AmGraph-11",
-            "title": "Sales Value",
+            "title": "Consecutive Misses 1",
             "valueField": "column-11",
             "type": "column",
           },
@@ -190,6 +190,7 @@ export class AgentComponent implements OnInit {
 
   afterAssignDataForLeadAgent() {
     let headers = this.utils.getHeaderNames(this.data);
+    console.log(headers)
     let months = this.utils.months;
     for(var i=0;i<months.length;i++) {
       let j=0;
