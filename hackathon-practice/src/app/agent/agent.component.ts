@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AmChartsService } from "@amcharts/amcharts3-angular";
 import { ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
-import { UtilsService } from '../utils.service'
+import { UtilsService } from '../utils.service';
 
 @Component({
   selector: 'app-agent',
@@ -15,7 +15,27 @@ export class AgentComponent implements OnInit {
   data;
   chartdiv;
   chart;
+  metrics;
   agent;
+  agents;
+  months;
+
+  max=[];
+redthreshold=[];
+warnthreshold=[];
+maxagentjan=[][11];
+maxagentfeb=[][11];
+maxagentmar=[][11];
+redthresholdagentjan=[][11];
+redthresholdagentfeb=[][11];
+redthresholdagentmar=[][11];
+warnthresholdagentjan=[][11];
+warnthresholdagentfeb=[][11];
+warnthresholdagentmar=[][11];
+
+
+j=0; 
+i=0;
 
   constructor(private route: ActivatedRoute, private http:Http, private AmCharts: AmChartsService, private utils: UtilsService) { 
     route.params.subscribe(params => { 
@@ -170,10 +190,216 @@ export class AgentComponent implements OnInit {
 
     this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
       this.data = res.json();
+      this.metrics = this.utils.getHeaderNames(this.data);
+      this.agents = this.utils.getAgents(this.data);
+      this.months = this.utils.months;
       this.chart = this.afterAssignDataForLeadAgent();
       console.log(this.data);
+      this.warnmet();
+      debugger;
     });
   }
+
+  warnmet () {
+     
+ //lead agent anlss
+       
+this.metrics.forEach(element => {
+         
+this.months.forEach(mon => {
+            
+if(this.max[this.i]<this.data["Lead Agent"][element][mon]){
+              
+this.max[this.i]=this.data["Lead Agent"][element][mon];
+    
+}
+});
+          
+this.i++;
+         
+});
+       
+         
+this.i = 0;
+         
+this.metrics.forEach(element => {
+
+          this.months.forEach(mon => {
+
+            this.redthreshold[this.i]=((this.max[this.i]*3)/10);
+
+            this.warnthreshold[this.i]=((this.max[this.i]*5)/10);
+
+          });
+          
+        });console.log('happy');
+        
+
+        this.metrics.forEach(element => {
+
+          this.months.forEach(mon => {
+
+                if(this.data["Lead Agent"][element][mon]<this.warnthreshold){
+
+                  if(this.data["Lead Agent"][element][mon]<this.redthreshold){
+
+                    console.log('sad');
+
+                    
+                    //make the color of graph red or amber and send a warning saying its gone wayyy tooo down
+
+                  }
+
+                  else{
+
+                   
+                   console.log('happy');
+
+                    //send notification or warning and if necessary changing color...
+
+                  }
+
+                }
+
+                  
+        });
+
+      });
+      //                                            |
+      //anlss for agents of each metric for jan-17  V
+      this.i=0;
+      this.j=0
+      this.agents.forEach(agent => {
+        this.metrics.forEach(metric => {
+          if(this.maxagentjan[this.i][this.j]<this.data[agent][metric]["Jan-17"]){
+              
+this.maxagentjan[this.i][this.j]=this.data[agent][metric]["Jan-17"];
+    
+          }
+        });
+            
+          });
+          this.i=0;
+          this.j=0;
+      this.agents.forEach(agent => {
+        this.metrics.forEach(metric => {
+          
+            this.redthresholdagentjan[this.i][this.j]=((this.data[agent][metric]["Jan-17"]*3)/10);  
+            this.warnthresholdagentjan[this.i][this.j]=((this.data[agent][metric]["Jan-17"]*5)/10);
+        });
+            
+      });
+
+      this.agents.forEach(element => {
+        this.metrics.forEach(metric => {
+          if(this.data[element][metric]["Jan-17"]<this.warnthresholdagentjan[this.i][this.j]){
+              if(this.data[element][metric]["Jan-17"]<this.redthresholdagentjan[this.i][this.j]){
+                //agent below 30% turn red and warn
+              }
+              else{
+                //agent below 50% send warn
+              }
+          }
+        });
+        
+      });
+ 
+      //                                            |
+      //anlss for agents of each metric for Feb-17  V
+      this.i=0;
+      this.j=0
+      this.agents.forEach(agent => {
+        this.metrics.forEach(metric => {
+          if(this.maxagentfeb[this.i][this.j]<this.data[agent][metric]["Feb-17"]){
+              
+this.maxagentfeb[this.i][this.j]=this.data[agent][metric]["Feb-17"];
+    
+          }
+        });
+            
+          });
+          this.i=0;
+          this.j=0;
+      this.agents.forEach(agent => {
+        this.metrics.forEach(metric => {
+          
+            this.redthresholdagentfeb[this.i][this.j]=((this.data[agent][metric]["Feb-17"]*3)/10);  
+            this.warnthresholdagentfeb[this.i][this.j]=((this.data[agent][metric]["Feb-17"]*5)/10);
+        });
+            
+      });
+          this.i=0;
+          this.j=0;
+      this.agents.forEach(element => {
+        this.metrics.forEach(metric => {
+          if(this.data[element][metric]["Feb-17"]<this.warnthresholdagentfeb[this.i][this.j]){
+              if(this.data[element][metric]["Feb-17"]<this.redthresholdagentfeb[this.i][this.j]){
+                //agent below 30% turn red and warn
+              }
+              else{
+                //agent below 50% send warn
+              }
+          }
+        });
+        
+      });
+ 
+      //                                            |
+      //anlss for agents of each metric for mar-17  V
+      this.i=0;
+      this.j=0
+      this.agents.forEach(agent => {
+        this.metrics.forEach(metric => {
+          if(this.maxagentmar[this.i][this.j]<this.data[agent][metric]["Feb-17"]){
+              
+            this.maxagentmar[this.i][this.j]=this.data[agent][metric]["Feb-17"];
+    
+          }
+        });
+            
+          });
+          this.i=0;
+          this.j=0;
+      this.agents.forEach(agent => {
+        this.metrics.forEach(metric => {
+          
+            this.redthresholdagentmar[this.i][this.j]=((this.data[agent][metric]["Mar-17"]*3)/10);  
+            this.warnthresholdagentmar[this.i][this.j]=((this.data[agent][metric]["Mar-17"]*5)/10);
+        });
+            
+      });
+        this.i=0;
+        this.j=0;
+      this.agents.forEach(element => {
+        this.metrics.forEach(metric => {
+          if(this.data[element][metric]["Mar-17"]<this.warnthresholdagentmar[this.i][this.j]){
+              if(this.data[element][metric]["Mar-17"]<this.redthresholdagentmar[this.i][this.j]){
+                //agent below 30% turn red and warn
+              }
+              else{
+                //agent below 50% send warn
+              }
+          }
+        });
+        
+      });
+          this.i=0;
+          this.j=0;
+           for (var index = 0; index < this.months.length; index++) {
+            this.metrics.forEach(metric =>{
+              if(this.data["Lead Agent"][metric][this.months[index]]>this.data["Lead Agent"][metric][this.months[index+1]]){
+                //special case where data is compared with previous months data to check decreasing trend
+/*calci 30%*/          this.i=((this.data["Lead Agent"][metric][this.months[index]]*3)/10);
+                  if((this.data["Lead Agent"][metric][this.months[index]]-this.i)>this.data["Lead Agent"][metric][this.months[index+1]]){
+                //send warning sayin values are less than 30% than prev months
+                  }
+              }             
+          });
+             
+           }
+              
+    } 
+          //my code has ended bro... :P XD
 
   ngOnInit() {
     // this.chart.validateData();
