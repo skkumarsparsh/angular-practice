@@ -8,6 +8,8 @@ export class UtilsService {
   titleChanged = new EventEmitter<any>();
   coreMetrics = ["Sales No", "New Customer No", "Real Misses No"];
   months = ["Jan-17", "Feb-17", "Mar-17"];
+  firstLoad = true;
+  firstLoad2 = true;
 
   constructor(private _service: NotificationsService) {
     this.title = "Dashboard";

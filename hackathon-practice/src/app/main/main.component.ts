@@ -39,7 +39,7 @@ export class MainComponent {
   i=0;
 
   options={
-    timeOut: 5000,
+    timeOut: 3000,
     showProgressBar: true,
     pauseOnHover: true,
     clickToClose: true
@@ -123,6 +123,14 @@ export class MainComponent {
       this.months = this.utils.months;
       this.chart = this.afterAssignDataForLeadAgent();
     });
+
+    if(this.utils.firstLoad) {
+      let that = this;
+      setTimeout(function() {
+        that._service.success("Hi, Lead Agent! Welcome back!");
+      }, 3000);
+    }
+    
   }
 
   test(n) {
@@ -147,7 +155,10 @@ export class MainComponent {
           "column-3": parseInt(this.data[lead][core[i]][months[k++]]),
       })
     }
-    this.warnmet(); 
+    if(this.utils.firstLoad) {
+      this.warnmet();
+      this.utils.firstLoad = false;
+    }
     return this.AmCharts.makeChart("chartdiv", this.metaData);
   }
 

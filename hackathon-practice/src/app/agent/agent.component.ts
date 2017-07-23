@@ -37,7 +37,7 @@ j=0;
 i=0;
 
 options={
-    timeOut: 4000,
+    timeOut: 3000,
     showProgressBar: true,
     pauseOnHover: true,
     clickToClose: true
@@ -275,7 +275,10 @@ options={
           "column-12": parseInt(this.data[this.agent][headers[j++]][months[i]])
       })
     }
-    this.warnmet();   
+    if(this.utils.firstLoad2) {
+      this.warnmet();
+      this.utils.firstLoad2 = false;
+    } 
     return this.AmCharts.makeChart(this.chartdiv, this.metaData);
   }
 
