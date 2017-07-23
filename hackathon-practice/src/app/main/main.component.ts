@@ -75,8 +75,6 @@ export class MainComponent {
       "guides": [],
       "valueAxes": [
         {
-          "labelFrequency": 2,
-          "logarithmic": true,
           "id": "ValueAxis-1",
           "title": "Number"
         }
