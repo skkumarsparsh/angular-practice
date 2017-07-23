@@ -128,7 +128,7 @@ export class MainComponent {
       let that = this;
       setTimeout(function() {
         that._service.success("Hi, Lead Agent! Welcome back!");
-      }, 3000);
+      }, 2000);
     }
     
   }
