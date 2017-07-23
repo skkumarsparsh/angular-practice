@@ -21,18 +21,18 @@ export class AgentComponent implements OnInit {
   agents;
   months;
 
-max=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-redthreshold=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-warnthreshold=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-maxagentjan=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-maxagentfeb=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-maxagentmar=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-redthresholdagentjan=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-redthresholdagentfeb=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-redthresholdagentmar=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-warnthresholdagentjan=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-warnthresholdagentfeb=new Array(100).fill(null).map(()=>new Array(100).fill(null));
-warnthresholdagentmar=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+max=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+redthreshold=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+warnthreshold=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+maxagentjan=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+maxagentfeb=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+maxagentmar=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+redthresholdagentjan=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+redthresholdagentfeb=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+redthresholdagentmar=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+warnthresholdagentjan=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+warnthresholdagentfeb=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+warnthresholdagentmar=new Array(100).fill(0).map(()=>new Array(100).fill(0));
 j=0; 
 i=0;
 
@@ -270,7 +270,7 @@ for ( that.j = 0; that.j < that.months.length; that.j++) {
                   else{
 
                    
-                   that._service.success("Happy", "I'm so happy");debugger
+                   that._service.success("Happy", "I'm so happy");
 
                     //send notification or warning and if necessary changing color...
 
@@ -282,6 +282,7 @@ for ( that.j = 0; that.j < that.months.length; that.j++) {
       };
       //                                            |
       //anlss for agents of each metric for jan-17  V
+      console.log("anlss for agents of each metric for jan-17")
       that.i=0;
       that.j=0
       that.agents.forEach(agent => {
@@ -313,9 +314,11 @@ that.maxagentjan[that.i][that.j]=parseInt(that.data[agent][metric]["Jan-17"]);
           if(parseInt(that.data[element][metric]["Jan-17"])<that.warnthresholdagentjan[that.i][that.j]){
               if(parseInt(that.data[element][metric]["Jan-17"])<that.redthresholdagentjan[that.i][that.j]){
                 //agent below 30% turn red and warn
+                console.log("agent below 30% turn red and warn")
               }
               else{
                 //agent below 50% send warn
+                console.log("agent below 50% send warn")
               }
           }that.j++;
         });
@@ -324,6 +327,7 @@ that.maxagentjan[that.i][that.j]=parseInt(that.data[agent][metric]["Jan-17"]);
  
       //                                            |
       //anlss for agents of each metric for Feb-17  V
+      console.log("anlss for agents of each metric for Feb-17")
       that.i=0;
       that.j=0
       that.agents.forEach(agent => {
@@ -354,9 +358,11 @@ that.maxagentfeb[that.i][that.j]=parseInt(that.data[agent][metric]["Feb-17"]);
           if(parseInt(that.data[element][metric]["Feb-17"])<that.warnthresholdagentfeb[that.i][that.j]){
               if(parseInt(that.data[element][metric]["Feb-17"])<that.redthresholdagentfeb[that.i][that.j]){
                 //agent below 30% turn red and warn
+                console.log("agent below 30% turn red and warn")
               }
               else{
                 //agent below 50% send warn
+                console.log("agent below 50% send warn")
               }
           }that.j++;
         });
@@ -365,6 +371,7 @@ that.maxagentfeb[that.i][that.j]=parseInt(that.data[agent][metric]["Feb-17"]);
  
       //                                            |
       //anlss for agents of each metric for mar-17  V
+      console.log("anlss for agents of each metric for mar-17")
       that.i=0;
       that.j=0
       that.agents.forEach(agent => {
@@ -395,9 +402,11 @@ that.maxagentfeb[that.i][that.j]=parseInt(that.data[agent][metric]["Feb-17"]);
           if(parseInt(that.data[element][metric]["Mar-17"])<that.warnthresholdagentmar[that.i][that.j]){
               if(parseInt(that.data[element][metric]["Mar-17"])<that.redthresholdagentmar[that.i][that.j]){
                 //agent below 30% turn red and warn
+                console.log("agent below 30% turn red and warn")
               }
               else{
                 //agent below 50% send warn
+                console.log("agent below 50% send warn")
               }
           }that.j++;
         });that.i++;
@@ -409,14 +418,17 @@ that.maxagentfeb[that.i][that.j]=parseInt(that.data[agent][metric]["Feb-17"]);
             that.metrics.forEach(metric =>{
               if(parseInt(that.data["Lead Agent"][metric][that.months[that.i]])>parseInt(that.data["Lead Agent"][metric][that.months[that.i+1]])){
                 //special case where data is compared with previous months data to check decreasing trend
+                console.log("special case where data is compared with previous months data to check decreasing trend")
 /*calci 30%*/          that.i=((parseInt(that.data["Lead Agent"][metric][that.months[that.i]])*3)/10);
                   if((parseInt(that.data["Lead Agent"][metric][that.months[that.i]])-that.i)>parseInt(that.data["Lead Agent"][metric][that.months[that.i+1]])){
                 //send warning sayin values are less than 30% than prev months
+                console.log("send warning sayin values are less than 30% than prev months")
                   }
               }     that.j++;        
           });
              
            }
+        console.log("my code has ended bro... :P XD")
     } 
           //my code has ended bro... :P XD
 
