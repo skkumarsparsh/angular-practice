@@ -37,7 +37,7 @@ j=0;
 i=0;
 
 options={
-    timeOut: 3000,
+    timeOut: 2000,
     showProgressBar: true,
     pauseOnHover: true,
     clickToClose: true
