@@ -18,7 +18,24 @@ export class MainComponent {
   isCollapsed=true;
   isCollapsed2=true;
   agents;
+  months;
+  metrics;
   headers;
+
+  max=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  redthreshold=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  warnthreshold=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  maxagentjan=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  maxagentfeb=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  maxagentmar=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  redthresholdagentjan=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  redthresholdagentfeb=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  redthresholdagentmar=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  warnthresholdagentjan=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  warnthresholdagentfeb=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  warnthresholdagentmar=new Array(100).fill(0).map(()=>new Array(100).fill(0));
+  j=0; 
+  i=0;
 
   options={
     timeOut: 5000,
@@ -98,10 +115,11 @@ export class MainComponent {
   ngOnInit() {
     this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
       this.data = res.json();
-      this._service.success("ngOnInit Invoked", "Yay! Good job boy!")
       console.log(this.data);
-      this.agents = this.utils.getAgents(this.data); // this function gives you all the agent names that the data contains
-      this.headers = this.utils.getHeaderNames(this.data); // this function gives you all the metrics names that each agent contains
+       this.metrics = this.utils.getHeaderNames(this.data);
+      this.agents = this.utils.getAgents(this.data);
+      this.agents = this.agents.slice(0, this.agents.length-1);
+      this.months = this.utils.months;
       this.chart = this.afterAssignDataForLeadAgent();
     });
   }
@@ -115,7 +133,7 @@ export class MainComponent {
   }
 
   afterAssignDataForLeadAgent() {
-    let lead = this.agents[this.agents.length-1];
+    let lead = "Lead Agent"
     let core = this.utils.coreMetrics;
     let months = this.utils.months;
     let k;
@@ -128,7 +146,61 @@ export class MainComponent {
           "column-3": parseInt(this.data[lead][core[i]][months[k++]]),
       })
     }
+    this.warnmet(); 
     return this.AmCharts.makeChart("chartdiv", this.metaData);
+  }
+
+  warnmet () {
+    let that = this;
+    for (var i = 0; i < 12; i++) {
+      for (var j = 0; j < 3; j++) {
+        that.max[i][j] = 0;
+      }
+    }
+    for (that.i = 0; that.i < that.metrics.length; that.i++) {
+      for (that.j = 0; that.j < that.months.length; that.j++) {
+        if (that.max[that.i][that.j] < parseInt(that.data["Lead Agent"][that.metrics[that.i]][that.months[that.j]])) {
+          that.max[that.i][that.j] = parseInt(that.data["Lead Agent"][that.metrics[that.i]][that.months[that.j]]);
+        }
+      };
+    };
+    for (that.i = 0; that.i < that.metrics.length; that.i++) {
+      for (that.j = 0; that.j < that.months.length; that.j++) {
+        that.redthreshold[that.i][that.j] = (((that.max[that.i][that.j]) * 3) / 10);
+        that.warnthreshold[that.i][that.j] = (((that.max[that.i][that.j]) * 5) / 10);
+      };
+    }; 
+    let testVar = 23;
+    for (that.i = 0; that.i < that.metrics.length; that.i++) {
+      for (that.j = 0; that.j < that.months.length; that.j++) {
+        if (parseInt(that.data["Lead Agent"][that.metrics[that.i]][that.months[that.j]]) <= that.warnthreshold[that.i][that.j]) {
+          if (parseInt(that.data["Lead Agent"][that.metrics[that.i]][that.months[that.j]]) <= that.redthreshold[that.i][that.j]) {
+            that._service.error("Warning", "Your values " + that.metrics[that.i] + " for " + that.months[that.j] + " are facing a downfall, please check them.");
+            //that is how you print it in notification.
+            //make the color of graph red or amber and send a warning saying its gone wayyy tooo down
+          } else {
+            that._service.success("Happy", "I'm so happy");
+            //send notification or warning and if necessary changing color...
+          }
+        }
+      };
+    };
+    let k = 0;
+    for (that.i = 0; that.i < that.months.length; that.i++) {
+      that.j = 0;
+      that.metrics.forEach(metric => {
+        if (parseInt(that.data["Lead Agent"][metric][that.months[that.i]]) > parseInt(that.data["Lead Agent"][metric][that.months[that.i + 1]])) {
+          //special case where data is compared with previous months data to check decreasing trend
+          /*calci 30%*/
+          k = ((parseInt(that.data["Lead Agent"][metric][that.months[that.i]]) * 3) / 10);
+          if ((parseInt(that.data["Lead Agent"][metric][that.months[that.i]]) - k) > parseInt(that.data["Lead Agent"][metric][that.months[that.i + 1]])) {
+            //send warning sayin values are less than 30% than prev months
+            this._service.warn("Warning", "The values of " + metric + " has faced a set-back in " + that.months[that.i] + " when compared to the previous month");
+          }
+        }
+        that.j++;
+      });
+    }
   }
 
   ngOnDestroy() {
