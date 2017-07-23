@@ -12,42 +12,15 @@
       </nav>
       <div>
       <popover-content #myPopover [closeOnClickOutside]="true" placement="bottom" [animation]="true">
-        <div style="overflow-y:auto; max-height:80vh;">
-        <span style="color:black; height:auto">
-          This is the place where we are going to display the notifications coming in.
+        <div id="testify" style="overflow-y:auto; max-height:80vh;">
+        <span style="color:black">
+          <h3>Notifications</h3>
           <hr>
-           It can show
-          <span style="color: red">Red</span>, 
-          <span style="color: orange">Amber</span> and 
-          <span style="color: lightgreen">Green</span> metrics.
-          <hr>
-          It can also show stuff on many lines. Just like you see here.
-          <hr>
-          This simulates multiple notifications coming in.
-          <hr>
-          This work is in our TODO list.
-          <hr>
-          It'll be completed soon.
-          <hr>
-          I don't know if it'll allow scrolling.
-          <hr>
-          Maybe yes.
-          <hr>
-          Maybe not.
-          <hr>
-          <span *ngFor="let a of balloonStuff">
-            <div [innerHtml]="a"></div>
-            <hr>
-          </span>
-          <!-- <hr>
-          Maybe yes.
-          <hr>
-          Maybe not. -->
         </span>
         </div>
       </popover-content>
         <!-- <div class="mdl-navigation__link"> -->
-          <span [popover]="myPopover" class="mdl-badge mdl-badge--overlap" data-badge="4" style="margin-left: 4px; margin-right:70px; display:block; cursor:pointer">
+          <span [popover]="myPopover" class="mdl-badge mdl-badge--overlap" count="$dataBadge" style="margin-left: 4px; margin-right:70px; display:block; cursor:pointer">
             <img style="height:18px; width: auto; display:block; margin-top:10%; margin-right:30%" src="/assets/notification-bell.png">
           </span>
         <!-- </div> -->

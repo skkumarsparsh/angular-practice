@@ -188,10 +188,11 @@ export class MainComponent {
         if (parseInt(that.data["Lead Agent"][that.metrics[that.i]][that.months[that.j]]) <= that.warnthreshold[that.i][that.j]) {
           if (parseInt(that.data["Lead Agent"][that.metrics[that.i]][that.months[that.j]]) <= that.redthreshold[that.i][that.j]) {
             that._service.error("Warning", "Your values " + that.metrics[that.i] + " for " + that.months[that.j] + " are facing a downfall, please check them.");
+            this.utils.notificationAdded.emit("Your values " + that.metrics[that.i] + " for " + that.months[that.j] + " are facing a downfall, please check them.");
             //that is how you print it in notification.
             //make the color of graph red or amber and send a warning saying its gone wayyy tooo down
           } else {
-            that._service.success("Happy", "I'm so happy");
+            // that._service.success("Happy", "I'm so happy");
             //send notification or warning and if necessary changing color...
           }
         }
@@ -208,6 +209,7 @@ export class MainComponent {
           if ((parseInt(that.data["Lead Agent"][metric][that.months[that.i]]) - k) > parseInt(that.data["Lead Agent"][metric][that.months[that.i + 1]])) {
             //send warning sayin values are less than 30% than prev months
             this._service.warn("Warning", "The values of " + metric + " has faced a set-back in " + that.months[that.i] + " when compared to the previous month");
+            this.utils.notificationAdded.emit("The values of " + metric + " has faced a set-back in " + that.months[that.i] + " when compared to the previous month")
           }
         }
         that.j++;

@@ -238,6 +238,7 @@ options={
             if (parseInt(that.data[element][metric][that.months[i]]) <= that.redthresholdagentjan[that.i][that.j]) {
               //agent below 30% turn red and warn
               this._service.error("Warning", element + " has a downtrend in " + metric + " for " + that.months[i]);
+              this.utils.notificationAdded.emit(element + " has a downtrend in " + metric + " for " + that.months[i])
               console.log(that.months[i])
             } else {
               //agent below 50% send warn

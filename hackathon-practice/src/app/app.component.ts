@@ -9,19 +9,16 @@ import { UtilsService } from './utils.service';
 export class AppComponent {
 
   title: string;
-  balloonStuff = [];
 
   constructor(private utils: UtilsService) {
     this.title = this.utils.title;
     this.utils.titleChanged.subscribe(res => this.title = res)
 
-    let test = ["Stuff to display", "More stuff to display"];
-    for(var i=0;i<2;i++)
-      {
-        let lol = '<span><i class="material-icons">warning</i> ' + test[i] + '</span>';
-        this.balloonStuff.push(lol);
-      }
-
+      this.utils.notificationAdded.subscribe(res => {
+        var divNode = document.createElement("span");
+        divNode.innerHTML = '<span style="color:red"><i class="material-icons">warning</i>'+ res +'</span><hr>';
+        document.getElementById("testify").appendChild(divNode);
+      });
   }
 
 }
