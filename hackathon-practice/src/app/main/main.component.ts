@@ -21,6 +21,7 @@ export class MainComponent {
   months;
   metrics;
   headers;
+  agent="Lead Agent";
 
   max=new Array(100).fill(0).map(()=>new Array(100).fill(0));
   redthreshold=new Array(100).fill(0).map(()=>new Array(100).fill(0));

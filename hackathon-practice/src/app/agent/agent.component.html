@@ -16,170 +16,27 @@
       <div *ngIf="data" align="center">
         <table style="width: 60%;" class="mdl-data-table mdl-js-data-table mdl-shadow--4dp">
           <thead>
-          <tr>
-            <th colspan="2" class="mdl-data-table__cell--non-numeric">Metric</th>
-            <th>Month</th>
-            <th>Value</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Agencies No</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Agencies No"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Agencies No"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Agencies No"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Consecutive Misses 1</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Consecutive Misses 1"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Consecutive Misses 1"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Consecutive Misses 1"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Customer No</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Customer No"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Customer No"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Customer No"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">New Customer No</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["New Customer No"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["New Customer No"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["New Customer No"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Paid Up No</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Paid Up No"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Paid Up No"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Paid Up No"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Parallel No</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Parallel No"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Parallel No"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Parallel No"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Refinance No</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Refinance No"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Refinance No"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Refinance No"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Sales Value</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Sales Value"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Sales Value"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Sales Value"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Scheduled Visit No</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Scheduled Visit No"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Scheduled Visit No"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Scheduled Visit No"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Real Misses No</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Real Misses No"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Real Misses No"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Real Misses No"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Sales No</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Sales No"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Sales No"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Sales No"]["Mar-17"] }}</td>
-          </tr>
-          <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">Recent New Customers No 13 Weeks</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent]["Recent New Customers No 13 Weeks"]["Jan-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent]["Recent New Customers No 13 Weeks"]["Feb-17"] }}</td>
-          </tr>
-          <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent]["Recent New Customers No 13 Weeks"]["Mar-17"] }}</td>
-          </tr>
-          </tbody>
+        <tr>
+          <th colspan="2" class="mdl-data-table__cell--non-numeric">Metric</th>
+          <th>Month</th>
+          <th>Value</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let metric of metrics">
+        <tr>
+          <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">{{ metric}}</td>
+          <td>Jan-17</td>
+          <td>{{ data[agent][metric]["Jan-17"] }}</td>
+        </tr>
+        <tr>
+          <td>Feb-17</td>
+          <td>{{ data[agent][metric]["Feb-17"] }}</td>
+        </tr>
+        <tr>
+          <td>Mar-17</td>
+          <td>{{ data[agent][metric]["Mar-17"] }}</td>
+        </tr>
+        </tbody>
         </table>
       </div>
       <br>
