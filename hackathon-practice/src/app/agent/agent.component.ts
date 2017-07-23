@@ -21,20 +21,18 @@ export class AgentComponent implements OnInit {
   agents;
   months;
 
-  max=[];
-redthreshold=[];
-warnthreshold=[];
-maxagentjan=[][11];
-maxagentfeb=[][11];
-maxagentmar=[][11];
-redthresholdagentjan=[][11];
-redthresholdagentfeb=[][11];
-redthresholdagentmar=[][11];
-warnthresholdagentjan=[][11];
-warnthresholdagentfeb=[][11];
-warnthresholdagentmar=[][11];
-
-
+max=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+redthreshold=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+warnthreshold=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+maxagentjan=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+maxagentfeb=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+maxagentmar=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+redthresholdagentjan=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+redthresholdagentfeb=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+redthresholdagentmar=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+warnthresholdagentjan=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+warnthresholdagentfeb=new Array(100).fill(null).map(()=>new Array(100).fill(null));
+warnthresholdagentmar=new Array(100).fill(null).map(()=>new Array(100).fill(null));
 j=0; 
 i=0;
 
@@ -203,61 +201,66 @@ options={
       this.months = this.utils.months;
       this.chart = this.afterAssignDataForLeadAgent();
       console.log(this.data);
-      this.warnmet();
-      debugger;
     });
   }
 
   warnmet () {
-     
+ 
+  let that = this;    
  //lead agent anlss
        
-this.metrics.forEach(element => {
-         
-this.months.forEach(mon => {
-            
-if(this.max[this.i]<this.data["Lead Agent"][element][mon]){
+       for (var i = 0; i < 12; i++) {
+        for (var j = 0; j < 3; j++) {
+          that.max[i][j]=0;
+          
+        }
+
+       }
+       for (that.i = 0; that.i < that.metrics.length; that.i++) {
+               
+for (that.j = 0; that.j < that.months.length; that.j++) {
+
+if(that.max[that.i][that.j]<parseInt(that.data["Lead Agent"][that.metrics[that.i]][that.months[that.j]])){
               
-this.max[this.i]=this.data["Lead Agent"][element][mon];
+that.max[that.i][that.j]=parseInt(that.data["Lead Agent"][that.metrics[that.i]][that.months[that.j]]);
     
 }
-});
-          
-this.i++;
+
+};
+      
+};
+            
+for (that.i =0;that.i <that.metrics.length;that.i++) {
+
+for ( that.j = 0; that.j < that.months.length; that.j++) {
+
+            that.redthreshold[that.i][that.j]=(((that.max[that.i][that.j])*3)/10);
+
+            that.warnthreshold[that.i][that.j]=(((that.max[that.i][that.j])*5)/10);
+            console.log('pls come...'+that.redthreshold[that.i][that.j]);
+            console.log('pls come...'+that.warnthreshold[that.i][that.j]);
+             
+          };
          
-});
+        };
        
-         
-this.i = 0;
-         
-this.metrics.forEach(element => {
-
-          this.months.forEach(mon => {
-
-            this.redthreshold[this.i]=((this.max[this.i]*3)/10);
-
-            this.warnthreshold[this.i]=((this.max[this.i]*5)/10);
-
-          });
-          
-        });
-        let that = this;
+      
         let testVar = 23;
-        setTimeout(()=>that._service.success("Happy", "I'm so happy : "+ testVar),2000)
-        //This is if you want to display notifications after a particular time interval. The 2000 denotes time in milliseconds.
+       setTimeout(()=>that._service.success("Happy", "I'm so happy : "+ testVar),1000)
+        //that is if you want to display notifications after a particular time interval. The 1000 denotes time in milliseconds.
         //Also notice that I've given it to print a variable value inside the function. You can use that too.
+      that.i=0;
+      that.j=0;
+        for (that.i = 0; that.i < that.metrics.length; that.i++) {
 
+          for (that.j = 0; that.j < that.months.length; that.j++) {
 
-        this.metrics.forEach(element => {
+               if(parseInt(that.data["Lead Agent"][that.metrics[that.i]][that.months[that.j]])<that.warnthreshold[that.i][that.j]){
 
-          this.months.forEach(mon => {
+                  if(parseInt(that.data["Lead Agent"][that.metrics[that.i]][that.months[that.j]])<that.redthreshold[that.i][that.j]){
 
-                if(this.data["Lead Agent"][element][mon]<this.warnthreshold){
-
-                  if(this.data["Lead Agent"][element][mon]<this.redthreshold){
-
-                    this._service.warn("Sad", "I'm so sad");
-                    //This is how you print it in notification.
+                    that._service.warn("Sad", "I'm so sad");
+                    //that is how you print it in notification.
 
                     
                     //make the color of graph red or amber and send a warning saying its gone wayyy tooo down
@@ -267,151 +270,153 @@ this.metrics.forEach(element => {
                   else{
 
                    
-                   this._service.success("Happy", "I'm so happy");
+                   that._service.success("Happy", "I'm so happy");debugger
 
                     //send notification or warning and if necessary changing color...
 
                   }
-
-                }
-
                   
-        });
-
-      });
+               }    
+        };
+         
+      };
       //                                            |
       //anlss for agents of each metric for jan-17  V
-      this.i=0;
-      this.j=0
-      this.agents.forEach(agent => {
-        this.metrics.forEach(metric => {
-          if(this.maxagentjan[this.i][this.j]<this.data[agent][metric]["Jan-17"]){
+      that.i=0;
+      that.j=0
+      that.agents.forEach(agent => {
+        that.metrics.forEach(metric => {
+          if(that.maxagentjan[that.i][that.j]<parseInt(that.data[agent][metric]["Jan-17"])){
               
-this.maxagentjan[this.i][this.j]=this.data[agent][metric]["Jan-17"];
+that.maxagentjan[that.i][that.j]=parseInt(that.data[agent][metric]["Jan-17"]);
     
-          }
+          }that.j++;
         });
-            
+            that.i++;
           });
-          this.i=0;
-          this.j=0;
-      this.agents.forEach(agent => {
-        this.metrics.forEach(metric => {
+          that.i=0;
+          that.j=0;
+      that.agents.forEach(agent => {
+        that.metrics.forEach(metric => {
           
-            this.redthresholdagentjan[this.i][this.j]=((this.data[agent][metric]["Jan-17"]*3)/10);  
-            this.warnthresholdagentjan[this.i][this.j]=((this.data[agent][metric]["Jan-17"]*5)/10);
-        });
-            
-      });
+            that.redthresholdagentjan[that.i][that.j]=((parseInt(that.data[agent][metric]["Jan-17"])*3)/10);  
+            that.warnthresholdagentjan[that.i][that.j]=((parseInt(that.data[agent][metric]["Jan-17"])*5)/10);
+       that.j++;
 
-      this.agents.forEach(element => {
-        this.metrics.forEach(metric => {
-          if(this.data[element][metric]["Jan-17"]<this.warnthresholdagentjan[this.i][this.j]){
-              if(this.data[element][metric]["Jan-17"]<this.redthresholdagentjan[this.i][this.j]){
+          });            
+      that.i++;
+
+        });
+
+      that.agents.forEach(element => {
+        that.metrics.forEach(metric => {
+          if(parseInt(that.data[element][metric]["Jan-17"])<that.warnthresholdagentjan[that.i][that.j]){
+              if(parseInt(that.data[element][metric]["Jan-17"])<that.redthresholdagentjan[that.i][that.j]){
                 //agent below 30% turn red and warn
               }
               else{
                 //agent below 50% send warn
               }
-          }
+          }that.j++;
         });
-        
+        that.i++;
       });
  
       //                                            |
       //anlss for agents of each metric for Feb-17  V
-      this.i=0;
-      this.j=0
-      this.agents.forEach(agent => {
-        this.metrics.forEach(metric => {
-          if(this.maxagentfeb[this.i][this.j]<this.data[agent][metric]["Feb-17"]){
+      that.i=0;
+      that.j=0
+      that.agents.forEach(agent => {
+        that.metrics.forEach(metric => {
+          if(that.maxagentfeb[that.i][that.j]<parseInt(that.data[agent][metric]["Feb-17"])){
               
-this.maxagentfeb[this.i][this.j]=this.data[agent][metric]["Feb-17"];
+that.maxagentfeb[that.i][that.j]=parseInt(that.data[agent][metric]["Feb-17"]);
     
-          }
-        });
+          }that.j++;
+        });that.i++;
             
           });
-          this.i=0;
-          this.j=0;
-      this.agents.forEach(agent => {
-        this.metrics.forEach(metric => {
+          that.i=0;
+          that.j=0;
+      that.agents.forEach(agent => {
+        that.metrics.forEach(metric => {
           
-            this.redthresholdagentfeb[this.i][this.j]=((this.data[agent][metric]["Feb-17"]*3)/10);  
-            this.warnthresholdagentfeb[this.i][this.j]=((this.data[agent][metric]["Feb-17"]*5)/10);
-        });
-            
+            that.redthresholdagentfeb[that.i][that.j]=((parseInt(that.data[agent][metric]["Feb-17"])*3)/10);  
+            that.warnthresholdagentfeb[that.i][that.j]=((parseInt(that.data[agent][metric]["Feb-17"])*5)/10);
+            that.j++;
+          });
+            that.i++;
       });
-          this.i=0;
-          this.j=0;
-      this.agents.forEach(element => {
-        this.metrics.forEach(metric => {
-          if(this.data[element][metric]["Feb-17"]<this.warnthresholdagentfeb[this.i][this.j]){
-              if(this.data[element][metric]["Feb-17"]<this.redthresholdagentfeb[this.i][this.j]){
+          that.i=0;
+          that.j=0;
+      that.agents.forEach(element => {
+        that.metrics.forEach(metric => {
+          if(parseInt(that.data[element][metric]["Feb-17"])<that.warnthresholdagentfeb[that.i][that.j]){
+              if(parseInt(that.data[element][metric]["Feb-17"])<that.redthresholdagentfeb[that.i][that.j]){
                 //agent below 30% turn red and warn
               }
               else{
                 //agent below 50% send warn
               }
-          }
+          }that.j++;
         });
-        
+        that.i++;
       });
  
       //                                            |
       //anlss for agents of each metric for mar-17  V
-      this.i=0;
-      this.j=0
-      this.agents.forEach(agent => {
-        this.metrics.forEach(metric => {
-          if(this.maxagentmar[this.i][this.j]<this.data[agent][metric]["Feb-17"]){
+      that.i=0;
+      that.j=0
+      that.agents.forEach(agent => {
+        that.metrics.forEach(metric => {
+          if(that.maxagentmar[that.i][that.j]<parseInt(that.data[agent][metric]["Feb-17"])){
               
-            this.maxagentmar[this.i][this.j]=this.data[agent][metric]["Feb-17"];
+            that.maxagentmar[that.i][that.j]=parseInt(that.data[agent][metric]["Feb-17"]);
     
-          }
+          }that.j++;
         });
-            
+            that.i++;
           });
-          this.i=0;
-          this.j=0;
-      this.agents.forEach(agent => {
-        this.metrics.forEach(metric => {
+          that.i=0;
+          that.j=0;
+      that.agents.forEach(agent => {
+        that.metrics.forEach(metric => {
           
-            this.redthresholdagentmar[this.i][this.j]=((this.data[agent][metric]["Mar-17"]*3)/10);  
-            this.warnthresholdagentmar[this.i][this.j]=((this.data[agent][metric]["Mar-17"]*5)/10);
-        });
+            that.redthresholdagentmar[that.i][that.j]=((parseInt(that.data[agent][metric]["Mar-17"])*3)/10);  
+            that.warnthresholdagentmar[that.i][that.j]=((parseInt(that.data[agent][metric]["Mar-17"])*5)/10);
+            that.j++;
+          });that.i++;
             
       });
-        this.i=0;
-        this.j=0;
-      this.agents.forEach(element => {
-        this.metrics.forEach(metric => {
-          if(this.data[element][metric]["Mar-17"]<this.warnthresholdagentmar[this.i][this.j]){
-              if(this.data[element][metric]["Mar-17"]<this.redthresholdagentmar[this.i][this.j]){
+        that.i=0;
+        that.j=0;
+      that.agents.forEach(element => {
+        that.metrics.forEach(metric => {
+          if(parseInt(that.data[element][metric]["Mar-17"])<that.warnthresholdagentmar[that.i][that.j]){
+              if(parseInt(that.data[element][metric]["Mar-17"])<that.redthresholdagentmar[that.i][that.j]){
                 //agent below 30% turn red and warn
               }
               else{
                 //agent below 50% send warn
               }
-          }
-        });
+          }that.j++;
+        });that.i++;
         
       });
-          this.i=0;
-          this.j=0;
-           for (var index = 0; index < this.months.length; index++) {
-            this.metrics.forEach(metric =>{
-              if(this.data["Lead Agent"][metric][this.months[index]]>this.data["Lead Agent"][metric][this.months[index+1]]){
+          
+          that.j=0;
+           for (that.i = 0; that.i < that.months.length; that.i++) {
+            that.metrics.forEach(metric =>{
+              if(parseInt(that.data["Lead Agent"][metric][that.months[that.i]])>parseInt(that.data["Lead Agent"][metric][that.months[that.i+1]])){
                 //special case where data is compared with previous months data to check decreasing trend
-/*calci 30%*/          this.i=((this.data["Lead Agent"][metric][this.months[index]]*3)/10);
-                  if((this.data["Lead Agent"][metric][this.months[index]]-this.i)>this.data["Lead Agent"][metric][this.months[index+1]]){
+/*calci 30%*/          that.i=((parseInt(that.data["Lead Agent"][metric][that.months[that.i]])*3)/10);
+                  if((parseInt(that.data["Lead Agent"][metric][that.months[that.i]])-that.i)>parseInt(that.data["Lead Agent"][metric][that.months[that.i+1]])){
                 //send warning sayin values are less than 30% than prev months
                   }
-              }             
+              }     that.j++;        
           });
              
            }
-              
     } 
           //my code has ended bro... :P XD
 
@@ -449,7 +454,8 @@ this.maxagentfeb[this.i][this.j]=this.data[agent][metric]["Feb-17"];
           "column-11": parseInt(this.data[this.agent][headers[j++]][months[i]]),
           "column-12": parseInt(this.data[this.agent][headers[j++]][months[i]])
       })
-    }      
+    }
+    this.warnmet();   
     return this.AmCharts.makeChart(this.chartdiv, this.metaData);
   }
 
