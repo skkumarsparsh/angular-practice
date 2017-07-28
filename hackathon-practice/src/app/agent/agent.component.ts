@@ -209,6 +209,7 @@ options={
     let that = this;
     for (var i = 0; i < that.months.length; i++) {
       this._service.success("Check being performed", "Checking values of each agent in " + that.months[i])
+      this.utils.notificationAdded.emit(["Checking values of each agent in " + that.months[i],"green","check_circle"])
       that.i = 0;
       that.agents.forEach(agent => {
         that.j = 0
@@ -238,7 +239,7 @@ options={
             if (parseInt(that.data[element][metric][that.months[i]]) <= that.redthresholdagentjan[that.i][that.j]) {
               //agent below 30% turn red and warn
               this._service.error("Warning", element + " has a downtrend in " + metric + " for " + that.months[i]);
-              this.utils.notificationAdded.emit(element + " has a downtrend in " + metric + " for " + that.months[i])
+              this.utils.notificationAdded.emit([element + " has a downtrend in " + metric + " for " + that.months[i],"red","error"])
               console.log(that.months[i])
             } else {
               //agent below 50% send warn
