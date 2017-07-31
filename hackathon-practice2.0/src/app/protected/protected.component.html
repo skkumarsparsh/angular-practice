@@ -1,7 +1,52 @@
-<h2>Protected</h2>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row" style="padding-right: 10px !important">
+      <!-- Title -->
+      <span class="mdl-layout-title">{{title}}</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <!-- <a class="mdl-navigation__link" href="">Link</a>  -->
+      </nav>
+      <div>
+        <popover-content #myPopover [closeOnClickOutside]="true" placement="bottom" [animation]="true">
+          <div id="testify" style="overflow-y:auto; max-height:80vh;">
+            <span style="color:black">
+          <h3>Notifications</h3>
+          <hr>
+        </span>
+          </div>
+        </popover-content>
+        <!-- <div class="mdl-navigation__link"> -->
+        <span [popover]="myPopover" class="mdl-badge mdl-badge--overlap" count="$dataBadge" style="margin-left: 4px; margin-right:70px; display:block; cursor:pointer">
+            <img style="height:18px; width: auto; display:block; margin-top:10%; margin-right:30%" src="/assets/notification-bell.png">
+          </span>
+        <!-- </div> -->
+      </div>
+      <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon" style="margin-right: 2%">
+        <i class="material-icons" style="font-size: 28px;">account_box</i>
+      </button>
 
-<div class="navLinks">
-  <a [routerLink]="['./main']">Main</a> |
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+        <li class="mdl-menu__item">Personal Settings</li>
+        <li class="mdl-menu__item">Logout</li>
+      </ul>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer" style="background: rgb(63,81,181)">
+    <span class="mdl-layout-title" style="padding-left: 40%"><span style="color:white">IPF</span></span>
+    <div style="height:10%"></div>
+    <nav class="mdl-navigation">
+      <button class="mdl-navigation__link" md-button [routerLink]="['./lead-agent']"><img style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/line-chart.png"><span style="color:white">Dashboard</span></button>
+      <button class="mdl-navigation__link" md-button [routerLink]="['./table']"><img style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/table-grid.png"><span style="color:white">Table</span></button>
+      <button class="mdl-navigation__link" md-button [routerLink]="['./profile']"><img style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/profile.png"><span style="color:white">Profile</span></button>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </main>
 </div>
-
-<router-outlet></router-outlet>

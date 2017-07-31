@@ -1,0 +1,29 @@
+<div *ngIf="data">
+  <div *ngFor="let agent of agents" align="center" style="margin-bottom: 40px">
+    <h3>{{agent}}</h3>
+    <table style="width: 60%;" class="mdl-data-table mdl-js-data-table mdl-shadow--4dp">
+      <thead>
+        <tr>
+          <th colspan="2" class="mdl-data-table__cell--non-numeric">Metric</th>
+          <th>Month</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let metric of headers">
+        <tr>
+          <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">{{ metric}}</td>
+          <td>Jan-17</td>
+          <td>{{ data[agent][metric]["Jan-17"] }}</td>
+        </tr>
+        <tr>
+          <td>Feb-17</td>
+          <td>{{ data[agent][metric]["Feb-17"] }}</td>
+        </tr>
+        <tr>
+          <td>Mar-17</td>
+          <td>{{ data[agent][metric]["Mar-17"] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

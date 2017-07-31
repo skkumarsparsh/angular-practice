@@ -1,5 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AmChartsModule } from "@amcharts/amcharts3-angular";
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { MdSidenavModule } from '@angular/material';
+import { HttpModule } from '@angular/http';
+import { MdButtonModule } from '@angular/material';
+import { PopoverModule } from 'ngx-popover';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule, Routes } from '@angular/router';
 import { routes as childRoutes, ProtectedModule } from './protected/protected.module';
 import { AppComponent } from './app.component';
@@ -7,6 +14,7 @@ import { AUTH_PROVIDERS } from './auth.service';
 import { LoggedInGuard } from './logged-in.guard';
 import { LoginComponent } from './login/login.component';
 import { ProtectedComponent } from './protected/protected.component';
+import { UtilsService } from './protected/utils.service';
 
 const routes: Routes = [
   // basic routes
@@ -19,16 +27,24 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    ProtectedComponent
+    ProtectedComponent,
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(routes),
-    ProtectedModule
+    ProtectedModule,
+    PopoverModule,
+    MdButtonModule,
+    BrowserAnimationsModule,
+    AmChartsModule,
+    MdSidenavModule,
+    SimpleNotificationsModule.forRoot(),
   ],
   providers: [
     AUTH_PROVIDERS,
-    LoggedInGuard
+    LoggedInGuard,
+    UtilsService
   ],
   bootstrap: [AppComponent]
 })

@@ -6,24 +6,56 @@ import {
     Router,
     Routes
 } from '@angular/router';
+import { MdTabsModule } from '@angular/material';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { MdSidenavModule } from '@angular/material';
+import { HttpModule } from '@angular/http';
+import { MdButtonModule } from '@angular/material';
+import { PopoverModule } from 'ngx-popover';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AmChartsModule } from "@amcharts/amcharts3-angular";
+import { Collapse } from '../collapse';
 
 import { MainComponent } from './main/main.component';
+import { MetricComponent } from './metric/metric.component';
+import { ProfileComponent } from './profile/profile.component';
+import { TableComponent } from './table/table.component';
+import { AgentComponent } from './agent/agent.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'main', pathMatch: 'full' },
-    { path: 'main', component: MainComponent }
+    { path: '', redirectTo: 'lead-agent', pathMatch: 'full' },
+    { path: 'lead-agent', component: MainComponent },
+    { path: 'table', component: TableComponent },
+    { path: 'profile', component: ProfileComponent },
+    { path: 'metric', redirectTo: 'metric/1', pathMatch: 'full' },
+    { path: 'metric/:id', component: MetricComponent },
+    { path: 'agent', redirectTo: 'agent/1', pathMatch: 'full' },
+    { path: 'agent/:id', component: AgentComponent }
 ];
 
 @NgModule({
     declarations: [
         MainComponent,
+        MetricComponent,
+        ProfileComponent,
+        TableComponent,
+        AgentComponent,
+        Collapse,
     ],
     exports: [
         MainComponent,
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        MdTabsModule,
+        HttpModule,
+        PopoverModule,
+        MdButtonModule,
+        BrowserAnimationsModule,
+        AmChartsModule,
+        MdSidenavModule,
+        SimpleNotificationsModule.forRoot(),
     ]
 })
 export class ProtectedModule { }

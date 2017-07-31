@@ -1,0 +1,47 @@
+<md-tab-group [dynamicHeight]=true [disableRipple]=true>
+  <md-tab label="Graph">
+    <div style="padding:10px">
+      <div class="mdl-card mdl-shadow--4dp" style="width: 100%;">
+        <div id="{{chartdiv}}" [style.width.%]="100" [style.height.px]="500"></div>
+      </div>
+    </div>
+  </md-tab>
+
+
+  <md-tab label="Table">
+    <h4 style="text-align: center">
+      {{agent}} Table
+    </h4>
+    <br>
+    <div *ngIf="data" align="center">
+      <table style="width: 60%;" class="mdl-data-table mdl-js-data-table mdl-shadow--4dp">
+        <thead>
+          <tr>
+            <th colspan="2" class="mdl-data-table__cell--non-numeric">Metric</th>
+            <th>Month</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let metric of metrics">
+          <tr>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">{{ metric}}</td>
+            <td>Jan-17</td>
+            <td>{{ data[agent][metric]["Jan-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Feb-17</td>
+            <td>{{ data[agent][metric]["Feb-17"] }}</td>
+          </tr>
+          <tr>
+            <td>Mar-17</td>
+            <td>{{ data[agent][metric]["Mar-17"] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <br>
+  </md-tab>
+</md-tab-group>
+
+<simple-notifications [options]="options"></simple-notifications>

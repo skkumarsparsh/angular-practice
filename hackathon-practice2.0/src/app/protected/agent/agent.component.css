@@ -11,7 +11,3 @@ md-sidenav {
   height: 500px;
   border: 1px solid black;
 }
-
-.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
-    background-color: #6495ed;
-}
