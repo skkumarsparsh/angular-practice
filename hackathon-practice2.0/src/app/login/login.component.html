@@ -1,4 +1,4 @@
-<h1>Login</h1>
+ <h1>Login</h1>
 
 <div class="alert alert-danger" role="alert" *ngIf="message">
   {{ message }}
@@ -23,4 +23,73 @@
 <div class="well" *ngIf="authService.getUser()">
   Logged in as <b>{{ authService.getUser() }}</b>
   <a href (click)="logout()">Log out</a>
-</div>
+</div> 
+
+<!-- <!DOCTYPE html>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<html>
+
+<head>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">LOGIN PAGE</span>
+        </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+
+        <meta charset="UTF-8">
+        <title>Login</title>
+
+
+
+
+        <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' ,>
+
+
+</head>
+<style>
+  body {
+    background-color: #fdeef4;
+    background: url("/assets/backy2.jpg");
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="form-container flip">
+      <form class="login-form">
+        <h3 class="title">User Login</h3>
+        <div class="form-group" id="username">
+          <input class="form-input" tooltip-class="username-tooltip" placeholder="Username" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            required="true"></input>
+          <span id="username-tool" class="tooltip username-tooltip"></span>
+        </div>
+        <div class="form-group" id="password">
+          <input type="password" class="form-input" tooltip-class="password-tooltip" placeholder="Password"></input>
+          <span class="tooltip password-tooltip"></span>
+        </div>
+        <div class="form-group">
+          <button onclick="clickListener();" class="login-button">Login</button>
+          <input class="remember-checkbox" type="checkbox"></input>
+          <p class="remember-p">Remember me</p>
+        </div>
+      </form>
+      <div class="loading">
+        <div class="loading-spinner-large" style="display: none;"></div>
+        <div class="loading-spinner-small" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+  </div>
+
+  </main>
+  </div>
+</body>
+
+</html> -->
