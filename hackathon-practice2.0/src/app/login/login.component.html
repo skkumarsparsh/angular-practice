@@ -23,6 +23,7 @@
 <div class="well" *ngIf="authService.getUser()">
   Logged in as <b>{{ authService.getUser() }}</b>
   <a href (click)="logout()">Log out</a>
+  <a href (click)="dashboard()">Dashboard</a>
 </div> 
 
 <!-- <!DOCTYPE html>

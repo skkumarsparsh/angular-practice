@@ -19,6 +19,7 @@ import { UtilsService } from './protected/utils.service';
 const routes: Routes = [
   // basic routes
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'logged-in', component: ProtectedComponent, children: childRoutes, canActivate: [LoggedInGuard] }
 ]

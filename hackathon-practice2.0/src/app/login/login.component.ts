@@ -32,4 +32,9 @@ export class LoginComponent {
     this.authService.logout();
     return false;
   }
+
+  dashboard() {
+    this.route.navigate(['/logged-in']);
+    return false;
+  }
 }
