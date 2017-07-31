@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { UtilsService } from './utils.service';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-protected',
@@ -10,7 +12,7 @@ export class ProtectedComponent {
 
   title: string;
   k = 0;
-  constructor(private utils: UtilsService) {
+  constructor(private utils: UtilsService, private authService: AuthService, private route: Router) {
     this.title = this.utils.title;
     this.utils.titleChanged.subscribe(res => this.title = res)
     let color = "red";
@@ -39,4 +41,10 @@ export class ProtectedComponent {
   }
 
   // <button id="button" class="mdl-button mdl-js-button mdl-button--icon pull-right"><span class="material-icons">close</span></button>
+
+  logout() {
+    this.authService.logout();
+    this.route.navigate(['/login']);
+    console.log("Logged Out")
+  }
 }

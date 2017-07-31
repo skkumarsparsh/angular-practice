@@ -15,7 +15,7 @@ export class LoginComponent {
     this.message = '';
   }
 
-  login(username: string, password: string): boolean {
+  login(username: string, password: string) {
     this.message = '';
     if (!this.authService.login(username, password)) {
       this.message = 'Incorrect credentials.';
@@ -24,6 +24,7 @@ export class LoginComponent {
       }.bind(this), 2500);
     } else {
       this.route.navigate(['/logged-in']);
+      window.location.reload();
     }
     return false;
   }
@@ -35,6 +36,7 @@ export class LoginComponent {
 
   dashboard() {
     this.route.navigate(['/logged-in']);
+    window.location.reload();
     return false;
   }
 }
