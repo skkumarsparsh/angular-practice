@@ -1,0 +1,169 @@
+,,Jan-17,Feb-17,Mar-17
+Agent 1,Agencies No,1,1,1
+,Customer No,139,138,129
+,New Customer No,1,1,5
+,Paid Up No,1,4,6
+,Sales No,0,0,0
+,Sales Value,0,0,0
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,31,35,28
+,Recent New Customers No 13 Weeks,53,55,43
+,Consecutive Misses 1,14,11,5
+,Scheduled Visit No,9,6,5
+Agent 2,Agencies No,1,1,1
+,Customer No,290,286,261
+,New Customer No,5,4,4
+,Paid Up No,14,9,13
+,Sales No,4,0,2
+,Sales Value,"28,992",0,"13,771"
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,111,121,129
+,Recent New Customers No 13 Weeks,71,78,67
+,Consecutive Misses 1,29,38,40
+,Scheduled Visit No,25,34,16
+Agent 3,Agencies No,1,1,1
+,Customer No,134,131,114
+,New Customer No,0,0,4
+,Paid Up No,0,3,4
+,Sales No,0,0,5
+,Sales Value,0,0,"8,124"
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,53,46,27
+,Recent New Customers No 13 Weeks,42,24,14
+,Consecutive Misses 1,12,22,8
+,Scheduled Visit No,11,12,4
+Agent 4,Agencies No,,,
+,Customer No,,,
+,New Customer No,,,
+,Paid Up No,,,
+,Sales No,,,
+,Sales Value,,,
+,Parallel No,,,
+,Refinance No,,,
+,Real Misses No,,,
+,Recent New Customers No 13 Weeks,,,
+,Consecutive Misses 1,,,
+,Scheduled Visit No,,,
+Agent 5,Agencies No,1,1,1
+,Customer No,225,222,213
+,New Customer No,4,1,7
+,Paid Up No,4,4,9
+,Sales No,3,0,3
+,Sales Value,"5,395",0,"12,247"
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,83,77,101
+,Recent New Customers No 13 Weeks,67,73,73
+,Consecutive Misses 1,31,34,23
+,Scheduled Visit No,17,26,23
+Agent 6,Agencies No,1,1,1
+,Customer No,310,310,289
+,New Customer No,5,3,3
+,Paid Up No,12,7,10
+,Sales No,0,0,2
+,Sales Value,0,0,"4,976"
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,96,83,108
+,Recent New Customers No 13 Weeks,104,98,61
+,Consecutive Misses 1,25,35,25
+,Scheduled Visit No,23,28,20
+Agent 7,Agencies No,1,,
+,Customer No,0,0,0
+,New Customer No,0,0,0
+,Paid Up No,0,0,0
+,Sales No,-1,0,0
+,Sales Value,"-1,330",0,0
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,0,0,0
+,Recent New Customers No 13 Weeks,15,0,0
+,Consecutive Misses 1,0,0,0
+,Scheduled Visit No,0,,
+Agent 8,Agencies No,1,1,1
+,Customer No,365,363,326
+,New Customer No,2,4,4
+,Paid Up No,6,6,28
+,Sales No,0,0,6
+,Sales Value,0,0,"20,950"
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,108,115,111
+,Recent New Customers No 13 Weeks,109,111,56
+,Consecutive Misses 1,46,33,20
+,Scheduled Visit No,30,30,20
+Agent 9,Agencies No,1,1,1
+,Customer No,219,214,203
+,New Customer No,3,2,8
+,Paid Up No,5,10,12
+,Sales No,2,3,3
+,Sales Value,"9,153","11,865","21,188"
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,76,80,64
+,Recent New Customers No 13 Weeks,24,29,59
+,Consecutive Misses 1,22,29,19
+,Scheduled Visit No,14,15,12
+Agent 10,Agencies No,1,1,
+,Customer No,89,89,0
+,New Customer No,1,1,0
+,Paid Up No,4,1,4
+,Sales No,1,1,0
+,Sales Value,"7,390","1,182",0
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,40,47,0
+,Recent New Customers No 13 Weeks,30,28,6
+,Consecutive Misses 1,19,16,0
+,Scheduled Visit No,9,6,0
+Agent 11,Agencies No,1,1,1
+,Customer No,250,249,142
+,New Customer No,2,3,0
+,Paid Up No,5,2,9
+,Sales No,2,5,6
+,Sales Value,"2,033","2,815","5,787"
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,175,128,59
+,Recent New Customers No 13 Weeks,69,61,31
+,Consecutive Misses 1,66,30,14
+,Scheduled Visit No,17,22,17
+Agent 12,Agencies No,1,1,1
+,Customer No,230,234,173
+,New Customer No,0,3,0
+,Paid Up No,5,4,10
+,Sales No,1,8,1
+,Sales Value,"1,631","11,687",680
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,111,96,79
+,Recent New Customers No 13 Weeks,20,23,14
+,Consecutive Misses 1,54,39,27
+,Scheduled Visit No,20,22,18
+Agent 13,Agencies No,1,1,1
+,Customer No,166,168,136
+,New Customer No,3,3,1
+,Paid Up No,2,3,5
+,Sales No,3,8,2
+,Sales Value,"3,352","14,103","3,468"
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,81,83,50
+,Recent New Customers No 13 Weeks,94,67,40
+,Consecutive Misses 1,30,40,13
+,Scheduled Visit No,9,25,18
+Lead Agent,Agencies No,12,11,10
+,Customer No,"2,417","2,403","1,986"
+,New Customer No,28,26,37
+,Paid Up No,59,53,109
+,Sales No,15,26,31
+,Sales Value,"56,615.80","41,653.20","91,190.50"
+,Parallel No,0,0,0
+,Refinance No,0,0,0
+,Real Misses No,965,913,755
+,Recent New Customers No 13 Weeks,697,648,464
+,Consecutive Misses 1,348,327,194
+,Scheduled Visit No,185,227,154
