@@ -13,6 +13,11 @@ export class LoginComponent {
 
   constructor(public authService: AuthService, private route: Router) {
     this.message = '';
+    if(authService.getUser())
+    {
+      this.route.navigate(['/logged-in']);
+      window.location.reload();
+    }
   }
 
   login(username: string, password: string) {
