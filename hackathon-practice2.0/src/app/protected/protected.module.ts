@@ -21,6 +21,7 @@ import { MetricComponent } from './metric/metric.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TableComponent } from './table/table.component';
 import { AgentComponent } from './agent/agent.component';
+import { SettingsComponent } from './settings/settings.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'lead-agent', pathMatch: 'full' },
@@ -30,7 +31,8 @@ export const routes: Routes = [
     { path: 'metric', redirectTo: 'metric/1', pathMatch: 'full' },
     { path: 'metric/:id', component: MetricComponent },
     { path: 'agent', redirectTo: 'agent/1', pathMatch: 'full' },
-    { path: 'agent/:id', component: AgentComponent }
+    { path: 'agent/:id', component: AgentComponent },
+    { path: 'settings', component: SettingsComponent }
 ];
 
 @NgModule({
@@ -41,6 +43,7 @@ export const routes: Routes = [
         TableComponent,
         AgentComponent,
         Collapse,
+        SettingsComponent,
     ],
     exports: [
         MainComponent,

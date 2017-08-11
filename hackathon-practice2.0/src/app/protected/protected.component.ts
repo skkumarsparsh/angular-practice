@@ -47,4 +47,9 @@ export class ProtectedComponent {
     this.route.navigate(['/login']);
     console.log("Logged Out")
   }
+
+  settings() {
+    this.route.navigate(['/logged-in/settings']);
+    return false;
+  }
 }
