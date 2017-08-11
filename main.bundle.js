@@ -375,6 +375,10 @@ var LoginComponent = (function () {
         this.authService = authService;
         this.route = route;
         this.message = '';
+        if (authService.getUser()) {
+            this.route.navigate(['/logged-in']);
+            window.location.reload();
+        }
     }
     LoginComponent.prototype.login = function (username, password) {
         this.message = '';
