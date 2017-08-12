@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter } from '@angular/core';
 import { UtilsService } from './utils.service';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
@@ -12,7 +12,10 @@ export class ProtectedComponent {
 
   title: string;
   k = 0;
+  z = 0;
+  emitter = new EventEmitter<any>();
   constructor(private utils: UtilsService, private authService: AuthService, private route: Router) {
+    this.emitter.subscribe(res => this.z--)
     this.title = this.utils.title;
     this.utils.titleChanged.subscribe(res => this.title = res)
     let color = "red";
@@ -28,15 +31,18 @@ export class ProtectedComponent {
                 <br>`+ res[0] + `
               </div>
             <hr>`;
+      let that = this;
       let k = this.k;
       divNode.addEventListener("click", function () {
         var div = document.getElementById("" + k);
         if (div) {
           div.parentNode.removeChild(div);
         }
+        that.emitter.emit("");
       })
       document.getElementById("testify").appendChild(divNode);
       this.k++;
+      this.z++;
     });
   }
 
@@ -61,5 +67,6 @@ export class ProtectedComponent {
       }
     }
     this.k=0;
+    this.z=0;
   }
 }

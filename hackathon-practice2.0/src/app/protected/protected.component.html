@@ -12,15 +12,15 @@
       </nav>
       <div>
         <popover-content #myPopover [closeOnClickOutside]="true" placement="bottom" [animation]="true">
-          <div id="testify" style="overflow-y:auto; max-height:80vh;">
+          <div id="testify" style="overflow-y:auto; max-height:80vh">
             <span style="color:black">
               <div style="padding-bottom:20px">
                 <div class="pull-left" style="display:inline;font-size:x-large">Notifications</div>
-                <button class="mdl-button mdl-js-button mdl-button--icon pull-right" (click)="clearall()"><i class="material-icons">clear_all</i></button>
+                <button *ngIf="z!=0" class="mdl-button mdl-js-button mdl-button--icon pull-right" (click)="clearall()"><i class="material-icons">clear_all</i></button>
               </div>
             </span>
             <hr>
-            <span *ngIf="k==0" style="color:black">No Notifications to show!</span>
+            <div *ngIf="z==0" style="color:black">No Notifications to show!</div>
           </div>
         </popover-content>
         <!-- <div class="mdl-navigation__link"> -->
