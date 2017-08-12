@@ -52,4 +52,8 @@ export class ProtectedComponent {
     this.route.navigate(['/logged-in/settings']);
     return false;
   }
+
+  clearall() {
+    alert("Hi")
+  }
 }

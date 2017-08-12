@@ -14,9 +14,12 @@
         <popover-content #myPopover [closeOnClickOutside]="true" placement="bottom" [animation]="true">
           <div id="testify" style="overflow-y:auto; max-height:80vh;">
             <span style="color:black">
-          <h3>Notifications</h3>
-          <hr>
-        </span>
+              <div style="padding-bottom:20px">
+                <div class="pull-left" style="display:inline">Notifications</div>
+                <button class="mdl-button mdl-js-button mdl-button--icon pull-right" (click)="clearall()"><i class="material-icons">clear_all</i></button>
+              </div>
+            </span>
+            <hr>
           </div>
         </popover-content>
         <!-- <div class="mdl-navigation__link"> -->
