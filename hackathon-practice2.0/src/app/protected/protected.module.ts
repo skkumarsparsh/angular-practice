@@ -11,6 +11,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import { MdSidenavModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { MdButtonModule } from '@angular/material';
+import { MdSnackBarModule } from '@angular/material';
 import { PopoverModule } from 'ngx-popover';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
@@ -55,6 +56,7 @@ export const routes: Routes = [
         HttpModule,
         PopoverModule,
         MdButtonModule,
+        MdSnackBarModule,
         BrowserAnimationsModule,
         AmChartsModule,
         MdSidenavModule,

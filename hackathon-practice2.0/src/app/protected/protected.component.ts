@@ -2,6 +2,7 @@ import { Component,EventEmitter } from '@angular/core';
 import { UtilsService } from './utils.service';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import {MdSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-protected',
@@ -14,7 +15,7 @@ export class ProtectedComponent {
   k = 0;
   z = 0;
   emitter = new EventEmitter<any>();
-  constructor(private utils: UtilsService, private authService: AuthService, private route: Router) {
+  constructor(private utils: UtilsService, private authService: AuthService, private route: Router, public snackBar: MdSnackBar) {
     this.emitter.subscribe(res => this.z--)
     this.title = this.utils.title;
     this.utils.titleChanged.subscribe(res => this.title = res)
@@ -38,6 +39,9 @@ export class ProtectedComponent {
         if (div) {
           div.parentNode.removeChild(div);
         }
+        that.snackBar.open("Notification Cleared!", "Close", {
+          duration: 2000,
+        });
         that.emitter.emit("");
       })
       document.getElementById("testify").appendChild(divNode);
@@ -68,5 +72,8 @@ export class ProtectedComponent {
     }
     this.k=0;
     this.z=0;
+    this.snackBar.open("All Notifications Cleared!", "Close", {
+      duration: 2000,
+    });
   }
 }
