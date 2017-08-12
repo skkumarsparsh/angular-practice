@@ -54,6 +54,12 @@ export class ProtectedComponent {
   }
 
   clearall() {
-    alert("Hi")
+    for(var x=0;x<=this.k;x++) {
+      var div = document.getElementById("" + x);
+      if (div) {
+        div.parentNode.removeChild(div);
+      }
+    }
+    this.k=0;
   }
 }
