@@ -1,0 +1,17 @@
+.demo-card1 > .mdl-card__title {
+    color: #fff;
+    background:
+      url('/assets/detective.png') bottom right 15% no-repeat #46B6AC;
+  }
+
+  .demo-card2 > .mdl-card__title {
+    color: #fff;
+    background:
+      url('/assets/metrics.png') bottom right 15% no-repeat #46B6AC;
+  }
+
+  .demo-card3 > .mdl-card__title {
+    color: #fff;
+    background:
+      url('/assets/speedometer.png') bottom right 15% no-repeat #46B6AC;
+  }

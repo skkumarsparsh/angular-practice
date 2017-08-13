@@ -11,6 +11,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import { MdSidenavModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { MdButtonModule } from '@angular/material';
+import {MdCardModule} from '@angular/material';
 import { MdSnackBarModule } from '@angular/material';
 import { PopoverModule } from 'ngx-popover';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,12 +24,14 @@ import { ProfileComponent } from './profile/profile.component';
 import { TableComponent } from './table/table.component';
 import { AgentComponent } from './agent/agent.component';
 import { SettingsComponent } from './settings/settings.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'lead-agent', pathMatch: 'full' },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'lead-agent', component: MainComponent },
     { path: 'table', component: TableComponent },
     { path: 'profile', component: ProfileComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'metric', redirectTo: 'metric/1', pathMatch: 'full' },
     { path: 'metric/:id', component: MetricComponent },
     { path: 'agent', redirectTo: 'agent/1', pathMatch: 'full' },
@@ -45,6 +48,7 @@ export const routes: Routes = [
         AgentComponent,
         Collapse,
         SettingsComponent,
+        HomeComponent,
     ],
     exports: [
         MainComponent,
@@ -55,6 +59,7 @@ export const routes: Routes = [
         MdTabsModule,
         HttpModule,
         PopoverModule,
+        MdCardModule,
         MdButtonModule,
         MdSnackBarModule,
         BrowserAnimationsModule,

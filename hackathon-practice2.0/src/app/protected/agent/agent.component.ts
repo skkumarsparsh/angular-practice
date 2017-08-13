@@ -21,18 +21,18 @@ export class AgentComponent implements OnInit {
   agents;
   months;
 
-  max = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  redthreshold = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  warnthreshold = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  maxagentjan = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  maxagentfeb = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  maxagentmar = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  redthresholdagentjan = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  redthresholdagentfeb = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  redthresholdagentmar = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  warnthresholdagentjan = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  warnthresholdagentfeb = new Array(100).fill(0).map(() => new Array(100).fill(0));
-  warnthresholdagentmar = new Array(100).fill(0).map(() => new Array(100).fill(0));
+  max = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  redthreshold = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  warnthreshold = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  maxagentjan = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  maxagentfeb = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  maxagentmar = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  redthresholdagentjan = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  redthresholdagentfeb = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  redthresholdagentmar = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  warnthresholdagentjan = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  warnthresholdagentfeb = new Array(20).fill(0).map(() => new Array(20).fill(0));
+  warnthresholdagentmar = new Array(20).fill(0).map(() => new Array(20).fill(0));
   j = 0;
   i = 0;
 
