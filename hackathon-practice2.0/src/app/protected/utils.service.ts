@@ -7,6 +7,7 @@ export class UtilsService {
   title: string;
   titleChanged = new EventEmitter<any>();
   notificationAdded = new EventEmitter<any>();
+  loaded = new EventEmitter<any>();
   coreMetrics = ["Sales No", "New Customer No", "Real Misses No"];
   months = ["Jan-17", "Feb-17", "Mar-17"];
   firstLoad = true;

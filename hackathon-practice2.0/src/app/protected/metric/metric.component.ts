@@ -27,6 +27,7 @@ export class MetricComponent implements OnInit {
       this.utils.titleChanged.emit(this.metric);
       this.assignData();
     })
+    this.utils.loaded.emit(false);
     this.metric = this.metrics[this.id];
     this.utils.titleChanged.emit(this.metric);
   }
@@ -116,7 +117,8 @@ export class MetricComponent implements OnInit {
         "column-2": parseInt(this.data[this.agents[i]][this.metric][months[j++]]),
         "column-3": parseInt(this.data[this.agents[i]][this.metric][months[j++]])
       })
-    }  
+    }
+    this.utils.loaded.emit(true);
     return this.AmCharts.makeChart(this.chartdiv, this.metaData);
   }
 

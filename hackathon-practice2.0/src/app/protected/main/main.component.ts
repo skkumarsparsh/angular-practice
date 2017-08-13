@@ -47,6 +47,7 @@ export class MainComponent implements OnInit {
 
   constructor(private http: Http, private AmCharts: AmChartsService, private utils: UtilsService, private route: Router, private _service: NotificationsService) {
     this.isCollapsed = !this.isCollapsed;
+    this.utils.loaded.emit(false);
     this.isCollapsed2 = !this.isCollapsed2;
     this.utils.titleChanged.emit("Dashboard");
     this.metaData = new Object({
@@ -159,6 +160,7 @@ export class MainComponent implements OnInit {
       this.warnmet();
       this.utils.firstLoad = false;
     }
+    this.utils.loaded.emit(true);
     return this.AmCharts.makeChart("chartdiv", this.metaData);
   }
 

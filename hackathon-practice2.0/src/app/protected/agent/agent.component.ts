@@ -50,6 +50,7 @@ export class AgentComponent implements OnInit {
       this.utils.titleChanged.emit(this.agent + " Dashboard");
       this.assignData();
     })
+    this.utils.loaded.emit(false);
     this.utils.titleChanged.emit("Agent " + this.id + " Dashboard");
     this.agent = "Agent " + this.id;
     // this.assignData();
@@ -281,6 +282,7 @@ export class AgentComponent implements OnInit {
       this.warnmet();
       this.utils.firstLoad2 = false;
     }
+    this.utils.loaded.emit(true);
     return this.AmCharts.makeChart(this.chartdiv, this.metaData);
   }
 

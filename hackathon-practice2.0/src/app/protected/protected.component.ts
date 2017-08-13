@@ -10,15 +10,16 @@ import {MdSnackBar} from '@angular/material';
   styleUrls: ['./protected.component.css']
 })
 export class ProtectedComponent {
-
+  loaded=false;
   title: string;
   k = 0;
   z = 0;
   emitter = new EventEmitter<any>();
   constructor(private utils: UtilsService, private authService: AuthService, private route: Router, public snackBar: MdSnackBar) {
-    this.emitter.subscribe(res => this.z--)
+    this.emitter.subscribe(res => this.z--);
+    this.utils.loaded.subscribe(res => this.loaded = res);
     this.title = this.utils.title;
-    this.utils.titleChanged.subscribe(res => this.title = res)
+    this.utils.titleChanged.subscribe(res => this.title = res);
     let color = "red";
     this.utils.notificationAdded.subscribe(res => {
       var divNode = document.createElement("span");
