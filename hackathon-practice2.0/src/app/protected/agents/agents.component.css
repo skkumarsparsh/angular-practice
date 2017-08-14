@@ -59,7 +59,7 @@
     url('/assets/AgentPic-11.png') bottom right 15% no-repeat #46B6AC;
 }
 .card-13 > .mdl-card__title {
-    color: #fff;
-    background:
-      url('/assets/AgentPic-12.png') bottom right 15% no-repeat #46B6AC;
-  }
+  color: #fff;
+  background:
+    url('/assets/AgentPic-12.png') bottom right 15% no-repeat #46B6AC;
+}

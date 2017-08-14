@@ -8,7 +8,8 @@ import { UtilsService } from '../utils.service';
 })
 export class MetricsComponent implements OnInit {
 
-  constructor(private utils:UtilsService) { 
+  constructor(private utils:UtilsService) {
+    this.utils.loaded.emit(true);
     this.utils.titleChanged.emit("Individual Metrics");
   }
 

@@ -12,12 +12,15 @@ export class HomeComponent implements OnInit {
   metric1;
   metric2;
   metric3;
+  metric4;
   metricname1;
   metricname2;
   metricname3;
+  metricname4;
   metricmonth1;
   metricmonth2;
   metricmonth3;
+  metricmonth4;
   data;
 
   options = {
@@ -81,6 +84,18 @@ export class HomeComponent implements OnInit {
           lar = val;
           this.metricmonth3 = months[i];
           this.metric3 = val;
+        }
+      }
+      this.metricname4 = "Sales Value";
+      lar = this.data[lead]["Sales Value"][months[0]];
+      this.metricmonth4 = months[0];
+      this.metric4 = lar;
+      for(var i=1;i<3;i++) {
+        let val = this.data[lead]["Sales Value"][months[i]];
+        if(val > lar) {
+          lar = val;
+          this.metricmonth4 = months[i];
+          this.metric4 = val;
         }
       }
     })
