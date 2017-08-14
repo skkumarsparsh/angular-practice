@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The whole content below can be removed with the new code.-->\n<!-- <div class=\"page-header\">\n  <div class=\"container\">\n    <h1>Router Sample</h1>\n    <div class=\"navLinks\">\n      <a [routerLink]=\"['/login']\">Login</a>\n      <a [routerLink]=\"['/logged-in']\">Protected</a>\n    </div>\n  </div>\n</div>\n\n<div id=\"content\"> -->\n    <router-outlet></router-outlet>\n<!--</div> -->\n\n"
+module.exports = "<router-outlet></router-outlet>\n\n"
 
 /***/ }),
 
@@ -53,7 +53,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'app';
     }
     return AppComponent;
 }());
@@ -478,18 +477,18 @@ var AgentComponent = (function () {
         this.AmCharts = AmCharts;
         this.utils = utils;
         this._service = _service;
-        this.max = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.redthreshold = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.warnthreshold = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.maxagentjan = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.maxagentfeb = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.maxagentmar = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.redthresholdagentjan = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.redthresholdagentfeb = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.redthresholdagentmar = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.warnthresholdagentjan = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.warnthresholdagentfeb = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.warnthresholdagentmar = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
+        this.max = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.redthreshold = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.warnthreshold = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.maxagentjan = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.maxagentfeb = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.maxagentmar = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.redthresholdagentjan = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.redthresholdagentfeb = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.redthresholdagentmar = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.warnthresholdagentjan = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.warnthresholdagentfeb = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.warnthresholdagentmar = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
         this.j = 0;
         this.i = 0;
         this.options = {
@@ -504,6 +503,7 @@ var AgentComponent = (function () {
             _this.utils.titleChanged.emit(_this.agent + " Dashboard");
             _this.assignData();
         });
+        this.utils.loaded.emit(false);
         this.utils.titleChanged.emit("Agent " + this.id + " Dashboard");
         this.agent = "Agent " + this.id;
         // this.assignData();
@@ -729,6 +729,7 @@ var AgentComponent = (function () {
             this.warnmet();
             this.utils.firstLoad2 = false;
         }
+        this.utils.loaded.emit(true);
         return this.AmCharts.makeChart(this.chartdiv, this.metaData);
     };
     AgentComponent.prototype.ngOnDestroy = function () {
@@ -747,6 +748,216 @@ AgentComponent = __decorate([
 
 var _a, _b, _c, _d, _e;
 //# sourceMappingURL=agent.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/protected/agents/agents.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".card-1 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-2 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-1.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-3 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-2.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-4 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-3.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-5 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-4.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-6 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-5.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-7 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-6.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-8 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-7.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-9 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-8.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-10 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-9.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-11 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-10.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-12 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-11.png') bottom right 15% no-repeat #46B6AC;\n}\n.card-13 > .mdl-card__title {\n  color: #fff;\n  background:\n    url('/angular-practice/assets/AgentPic-12.png') bottom right 15% no-repeat #46B6AC;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/protected/agents/agents.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"width:100%\">\n<div class=\"row\" style=\"padding-top:1%;\">\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:15px\">\n      <div class=\"card-1 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-1</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/1']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-1 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:7.5px;padding-right:7.5px\">\n      <div class=\"card-2 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-2</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/2']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-2 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:7.5px;padding-right:7.5px\">\n      <div class=\"card-3 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-3</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/3']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-3 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px; padding-right:15px\">\n      <div class=\"card-4 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-4</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/4']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-4 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\" style=\"padding-top:1%;padding-left:13%;padding-right:13%\">\n  <div class=\"col-sm-4\">\n    <div style=\"padding-top:15px;padding-left:15px\">\n      <div class=\"card-5 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-5</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/5']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-5 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-4\">\n    <div style=\"padding-top:15px;padding-left:7.5px;padding-right:7.5px\">\n      <div class=\"card-6 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-6</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/6']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-6 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-4\">\n    <div style=\"padding-top:15px;padding-right:15px\">\n      <div class=\"card-7 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-7</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/7']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-7 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\" style=\"padding-top:1%;\">\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:15px\">\n      <div class=\"card-8 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-8</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/8']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-8 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:7.5px;padding-right:7.5px\">\n      <div class=\"card-9 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-9</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/9']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-9 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:7.5px;padding-right:7.5px\">\n      <div class=\"card-10 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-10</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/10']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-10 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px; padding-right:15px\">\n      <div class=\"card-11 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-11</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/11']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-11 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\" style=\"padding-top:1%;padding-bottom:2%\">\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:15px\">\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:7.5px;padding-right:7.5px\">\n      <div class=\"card-12 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-12</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/12']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-12 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:7.5px;padding-right:7.5px\">\n      <div class=\"card-13 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:200px;text-align:center;\">\n        <div class=\"mdl-card__title mdl-card--expand\">\n          <h2 class=\"mdl-card__title-text\">Agent-13</h2>\n        </div>\n        <div class=\"mdl-card__actions mdl-card--border\">\n          <button [routerLink]=\"['/logged-in/agent/13']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\" >\n            Go to Agent-13 Metrics\n          </button>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px; padding-right:15px\">\n    </div>\n  </div>\n</div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/protected/agents/agents.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_service__ = __webpack_require__("../../../../../src/app/protected/utils.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgentsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AgentsComponent = (function () {
+    function AgentsComponent(utils) {
+        this.utils = utils;
+        this.utils.loaded.emit(true);
+        this.utils.titleChanged.emit("Individual Agents");
+    }
+    AgentsComponent.prototype.ngOnInit = function () {
+    };
+    return AgentsComponent;
+}());
+AgentsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-agents',
+        template: __webpack_require__("../../../../../src/app/protected/agents/agents.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/protected/agents/agents.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */]) === "function" && _a || Object])
+], AgentsComponent);
+
+var _a;
+//# sourceMappingURL=agents.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/protected/home/home.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".demo-card1 > .mdl-card__title {\n    color: #fff;\n    background:\n      url('/angular-practice/assets/detective.png') bottom right 15% no-repeat #46B6AC;\n  }\n\n  .demo-card2 > .mdl-card__title {\n    color: #fff;\n    background:\n      url('/angular-practice/assets/metrics.png') bottom right 15% no-repeat #46B6AC;\n  }\n\n  .demo-card3 > .mdl-card__title {\n    color: #fff;\n    background:\n      url('/angular-practice/assets/speedometer.png') bottom right 15% no-repeat #46B6AC;\n  }", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/protected/home/home.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\" style=\"padding:1%; padding-top:2%\">\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:15px\">\n      <div class=\"mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:100px;text-align:center;padding:10px;background-color:#D48CF8\">\n        <div>Max <br><span style=\"font-size:x-large;font-weight:800\">{{metricname1}}</span> :</div>\n        <div style=\"font-size:50px\">{{metric1}}</div>\n        <div>in <span style=\"font-weight:700\">{{metricmonth1}}</span></div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:7.5px;padding-right:7.5px\">\n      <div class=\"mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:100px;text-align:center;padding:10px;background-color:#FFA726\">\n        <div>Max <br><span style=\"font-size:x-large;font-weight:800\">{{metricname2}}</span> :</div>\n        <div style=\"font-size:50px\">{{metric2}}</div>\n        <div>in <span style=\"font-weight:700\">{{metricmonth2}}</span></div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px;padding-left:7.5px;padding-right:7.5px\">\n      <div class=\"mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:100px;text-align:center;padding:10px;background-color:#FF3B3F\">\n        <div>Max <br><span style=\"font-size:x-large;font-weight:800\">{{metricname3}}</span> :</div>\n        <div style=\"font-size:50px\">{{metric3}}</div>\n        <div>in <span style=\"font-weight:700\">{{metricmonth3}}</span></div>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-3\">\n    <div style=\"padding-top:15px; padding-right:15px\">\n      <div class=\"mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:100px;text-align:center;padding:10px;background-color:#9E9E9E\">\n        <div>Based on <br><span style=\"font-size:x-large;font-weight:800\">{{metricname4}}</span> :</div>\n        <div style=\"font-size:50px\">{{metric4}}</div>\n        <div>best month is <span style=\"font-weight:700\">{{metricmonth4}}</span></div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"row\" style=\"padding:1%\">\n    <div class=\"col-sm-4\">\n      <div style=\"padding-top:15px;padding-left:15px\">\n        <div class=\"demo-card1 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:400px;\">\n          <div class=\"mdl-card__title mdl-card--expand\">\n            <h2 class=\"mdl-card__title-text\">Agents</h2>\n          </div>\n          <div class=\"mdl-card__supporting-text\">\n            <h5> Click here to see performance of Individual Agents. </h5>\n          </div>\n          <div class=\"mdl-card__actions mdl-card--border\">\n            <button [routerLink]=\"['/logged-in/agents']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\">\n              Go to Individual Agents\n            </button>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-sm-4\">\n      <div style=\"padding-top:15px;padding-left:7.5px;padding-right:7.5px\">\n        <div class=\"demo-card2 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:400px;\">\n            <div class=\"mdl-card__title mdl-card--expand\">\n              <h2 class=\"mdl-card__title-text\">Metrics</h2>\n            </div>\n            <div class=\"mdl-card__supporting-text\">\n                <h5> Click here to see Individual Metrics for all Agents. </h5>\n              </div>\n            <div class=\"mdl-card__actions mdl-card--border\">\n              <button [routerLink]=\"['/logged-in/metrics']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\">\n                Go to Individual Metrics\n              </button>\n            </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-sm-4\">\n      <div style=\"padding-top:15px;padding-right:15px\">\n        <div class=\"demo-card3 mdl-card mdl-shadow--6dp\" style=\"width:100%;min-height:400px;\">\n            <div class=\"mdl-card__title mdl-card--expand\">\n              <h2 class=\"mdl-card__title-text\">Dashboard</h2>\n            </div>\n            <div class=\"mdl-card__supporting-text\">\n                <h5> Click here to see the Dashboard with the three Core Metrics. </h5>\n              </div>\n            <div class=\"mdl-card__actions mdl-card--border\">\n              <button [routerLink]=\"['/logged-in/lead-agent']\" class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\">\n                Go to Dashboard\n              </button>\n            </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/protected/home/home.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_service__ = __webpack_require__("../../../../../src/app/protected/utils.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_notifications__ = __webpack_require__("../../../../angular2-notifications/dist/index.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var HomeComponent = (function () {
+    function HomeComponent(utils, http, _service) {
+        this.utils = utils;
+        this.http = http;
+        this._service = _service;
+        this.options = {
+            timeOut: 3000,
+            showProgressBar: true,
+            pauseOnHover: true,
+            clickToClose: true
+        };
+        this.utils.loaded.emit(true);
+        this.utils.titleChanged.emit("Home");
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        if (this.utils.firstLoad3) {
+            var that_1 = this;
+            setTimeout(function () {
+                that_1._service.success("Hi, Lead Agent! Welcome back!");
+                // this.utils.notificationAdded.emit(["Hi, Lead Agent! Welcome back!", "green", "check_circle"])
+            }, 200);
+            this.utils.firstLoad3 = false;
+        }
+        this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(function (res) {
+            _this.data = res.json();
+            console.log(_this.data);
+            var lead = "Lead Agent";
+            var core = _this.utils.coreMetrics;
+            var months = _this.utils.months;
+            _this.metricname1 = core[0];
+            _this.metricname2 = core[1];
+            _this.metricname3 = core[2];
+            var lar = _this.data[lead][core[0]][months[0]];
+            _this.metricmonth2 = months[0];
+            _this.metric2 = lar;
+            for (var i = 1; i < 3; i++) {
+                var val = _this.data[lead][core[0]][months[i]];
+                if (val > lar) {
+                    lar = val;
+                    _this.metricmonth1 = months[i];
+                    _this.metric1 = val;
+                }
+            }
+            lar = _this.data[lead][core[1]][months[0]];
+            _this.metricmonth2 = months[0];
+            _this.metric2 = lar;
+            for (var i = 1; i < 3; i++) {
+                var val = _this.data[lead][core[1]][months[i]];
+                if (val > lar) {
+                    lar = val;
+                    _this.metricmonth2 = months[i];
+                    _this.metric2 = val;
+                }
+            }
+            lar = _this.data[lead][core[2]][months[0]];
+            _this.metricmonth3 = months[0];
+            _this.metric3 = lar;
+            for (var i = 1; i < 3; i++) {
+                var val = _this.data[lead][core[2]][months[i]];
+                if (val > lar) {
+                    lar = val;
+                    _this.metricmonth3 = months[i];
+                    _this.metric3 = val;
+                }
+            }
+            _this.metricname4 = "Sales Value";
+            lar = _this.data[lead]["Sales Value"][months[0]];
+            _this.metricmonth4 = months[0];
+            _this.metric4 = lar;
+            for (var i = 1; i < 3; i++) {
+                var val = _this.data[lead]["Sales Value"][months[i]];
+                if (val > lar) {
+                    lar = val;
+                    _this.metricmonth4 = months[i];
+                    _this.metric4 = val;
+                }
+            }
+        });
+    };
+    return HomeComponent;
+}());
+HomeComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-home',
+        template: __webpack_require__("../../../../../src/app/protected/home/home.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/protected/home/home.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_notifications__["b" /* NotificationsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_notifications__["b" /* NotificationsService */]) === "function" && _c || Object])
+], HomeComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=home.component.js.map
 
 /***/ }),
 
@@ -771,7 +982,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/protected/main/main.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<md-tab-group [dynamicHeight]=true [disableRipple]=true>\n  <md-tab label=\"Graph\">\n    <div style=\"padding:10px\">\n      <div class=\"mdl-card mdl-shadow--6dp\" style=\"width: 100%;\">\n        <div id=\"chartdiv\" [style.width.%]=\"100\" [style.height.px]=\"500\"></div>\n      </div>\n    </div>\n\n    <div style=\"padding:10px\">\n      <div class=\"mdl-shadow--6dp\" style=\"min-height:30px\" [collapse]=\"isCollapsed\">\n        <div class=\"mdl-card mdl-shadow--6dp\" style=\"width: 100%; height:300px\">\n          <div style=\"text-align:center; padding-top: 2px; cursor:pointer\" (click)=\"isCollapsed = !isCollapsed\" title=\"Click to show all Agents\">\n            <span style=\"font-size:16; font-weight:600\">Individual Agent Metrics</span>\n            <span style=\"float: right\">\n\t\t\t\t      <span style=\"padding-top:6px; padding-right: 9px;\" class=\"glyphicon\" [ngClass]=\"{'glyphicon-chevron-down':!isCollapsed,'glyphicon-chevron-up':isCollapsed}\" ></span>\n            </span>\n          </div>\n          <div>\n            <div class=\"row\">\n              <div class=\"col-xs-1\"></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(1)\"\n                  title=\"Click to show metrics of this Agent\">Agent 1</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(2)\"\n                  title=\"Click to show metrics of this Agent\">Agent 2</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(3)\"\n                  title=\"Click to show metrics of this Agent\">Agent 3</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(4)\"\n                  title=\"Click to show metrics of this Agent\">Agent 4</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(5)\"\n                  title=\"Click to show metrics of this Agent\">Agent 5</a></div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-xs-1\"></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(6)\"\n                  title=\"Click to show metrics of this Agent\">Agent 6</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(7)\"\n                  title=\"Click to show metrics of this Agent\">Agent 7</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(8)\"\n                  title=\"Click to show metrics of this Agent\">Agent 8</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(9)\"\n                  title=\"Click to show metrics of this Agent\">Agent 9</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(10)\"\n                  title=\"Click to show metrics of this Agent\">Agent 10</a></div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-xs-1\"></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(11)\"\n                  title=\"Click to show metrics of this Agent\">Agent 11</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(12)\"\n                  title=\"Click to show metrics of this Agent\">Agent 12</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(13)\"\n                  title=\"Click to show metrics of this Agent\">Agent 13</a></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div style=\"padding:10px\">\n      <div class=\"mdl-shadow--6dp\" style=\"min-height:30px\" [collapse]=\"isCollapsed2\">\n        <div class=\"mdl-card mdl-shadow--6dp\" style=\"width: 100%;height:300px\">\n          <div style=\"text-align:center; padding-top: 2px; cursor: pointer\" (click)=\"isCollapsed2 = !isCollapsed2\" title=\"Click to this metric of all agents\">\n            <span style=\"font-size:16; font-weight:600\">Individual Metrics for all Agents</span>\n            <span style=\"float: right\">\n\t\t\t\t      <span style=\"padding-top:6px; padding-right: 9px;\" class=\"glyphicon\" [ngClass]=\"{'glyphicon-chevron-down':!isCollapsed2,'glyphicon-chevron-up':isCollapsed2}\" ></span>\n            </span>\n          </div>\n          <div>\n            <div class=\"row\">\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(1)\"\n                  title=\"Click to show metrics of this Agent\">Agencies No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(2)\"\n                  title=\"Click to show metrics of this Agent\">Consecutive Misses 1</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(3)\"\n                  title=\"Click to show metrics of this Agent\">Customer No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(4)\"\n                  title=\"Click to show metrics of this Agent\">New Customer No</a></div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(5)\"\n                  title=\"Click to show metrics of this Agent\">Paid Up No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(6)\"\n                  title=\"Click to show metrics of this Agent\">Parallel No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(7)\"\n                  title=\"Click to show metrics of this Agent\">Refinance No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(8)\"\n                  title=\"Click to show metrics of this Agent\">Sales Value</a></div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(9)\"\n                  title=\"Click to show metrics of this Agent\">Scheduled Visit No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(10)\"\n                  title=\"Click to show metrics of this Agent\">Real Misses No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(11)\"\n                  title=\"Click to show metrics of this Agent\">Sales No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(12)\"\n                  title=\"Click to show metrics of this Agent\">Recent New Customers No 13 Weeks</a></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </md-tab>\n\n\n  <md-tab label=\"Table\">\n    <h4 style=\"text-align: center\">\n      Lead agent\n    </h4>\n    <br>\n    <div *ngIf=\"data\" align=\"center\">\n      <table style=\"width: 60%;\" class=\"mdl-data-table mdl-js-data-table mdl-shadow--4dp\">\n        <thead>\n          <tr>\n            <th colspan=\"2\" class=\"mdl-data-table__cell--non-numeric\">Metric</th>\n            <th>Month</th>\n            <th>Value</th>\n          </tr>\n        </thead>\n        <tbody *ngFor=\"let metric of metrics\">\n          <tr>\n            <td rowspan=\"3\" colspan=\"2\" class=\"mdl-data-table__cell--non-numeric\">{{ metric}}</td>\n            <td>Jan-17</td>\n            <td>{{ data[agent][metric][\"Jan-17\"] }}</td>\n          </tr>\n          <tr>\n            <td>Feb-17</td>\n            <td>{{ data[agent][metric][\"Feb-17\"] }}</td>\n          </tr>\n          <tr>\n            <td>Mar-17</td>\n            <td>{{ data[agent][metric][\"Mar-17\"] }}</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n    <br>\n    <br>\n  </md-tab>\n</md-tab-group>\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
+module.exports = "<md-tab-group [dynamicHeight]=true [disableRipple]=true>\n  <md-tab label=\"Graph\">\n    <div style=\"padding:10px\">\n      <div class=\"mdl-card mdl-shadow--6dp\" style=\"width: 100%;\">\n        <div id=\"chartdiv\" [style.width.%]=\"100\" [style.height.px]=\"500\"></div>\n      </div>\n    </div>\n\n    <!-- <div style=\"padding:10px\">\n      <div class=\"mdl-shadow--6dp\" style=\"min-height:30px\" [collapse]=\"isCollapsed\">\n        <div class=\"mdl-card mdl-shadow--6dp\" style=\"width: 100%; height:300px\">\n          <div style=\"text-align:center; padding-top: 2px; cursor:pointer\" (click)=\"isCollapsed = !isCollapsed\" title=\"Click to show all Agents\">\n            <span style=\"font-size:16; font-weight:600\">Individual Agent Metrics</span>\n            <span style=\"float: right\">\n\t\t\t\t      <span style=\"padding-top:6px; padding-right: 9px;\" class=\"glyphicon\" [ngClass]=\"{'glyphicon-chevron-down':!isCollapsed,'glyphicon-chevron-up':isCollapsed}\" ></span>\n            </span>\n          </div>\n          <div>\n            <div class=\"row\">\n              <div class=\"col-xs-1\"></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(1)\"\n                  title=\"Click to show metrics of this Agent\">Agent 1</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(2)\"\n                  title=\"Click to show metrics of this Agent\">Agent 2</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(3)\"\n                  title=\"Click to show metrics of this Agent\">Agent 3</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(4)\"\n                  title=\"Click to show metrics of this Agent\">Agent 4</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(5)\"\n                  title=\"Click to show metrics of this Agent\">Agent 5</a></div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-xs-1\"></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(6)\"\n                  title=\"Click to show metrics of this Agent\">Agent 6</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(7)\"\n                  title=\"Click to show metrics of this Agent\">Agent 7</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(8)\"\n                  title=\"Click to show metrics of this Agent\">Agent 8</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(9)\"\n                  title=\"Click to show metrics of this Agent\">Agent 9</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(10)\"\n                  title=\"Click to show metrics of this Agent\">Agent 10</a></div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-xs-1\"></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(11)\"\n                  title=\"Click to show metrics of this Agent\">Agent 11</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(12)\"\n                  title=\"Click to show metrics of this Agent\">Agent 12</a></div>\n              <div class=\"col-xs-2\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test(13)\"\n                  title=\"Click to show metrics of this Agent\">Agent 13</a></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div> -->\n\n    <div style=\"padding:10px\">\n      <div class=\"mdl-shadow--6dp\" style=\"min-height:30px\" [collapse]=\"isCollapsed2\">\n        <div class=\"mdl-card mdl-shadow--6dp\" style=\"width: 100%;height:300px\">\n          <div style=\"text-align:center; padding-top: 2px; cursor: pointer\" (click)=\"isCollapsed2 = !isCollapsed2\" title=\"Click to this metric of all agents\">\n            <span style=\"font-size:16; font-weight:600\">Individual Metrics for all Agents</span>\n            <span style=\"float: right\">\n\t\t\t\t      <span style=\"padding-top:6px; padding-right: 9px;\" class=\"glyphicon\" [ngClass]=\"{'glyphicon-chevron-down':!isCollapsed2,'glyphicon-chevron-up':isCollapsed2}\" ></span>\n            </span>\n          </div>\n          <div>\n            <div class=\"row\">\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(1)\"\n                  title=\"Click to show metrics of this Agent\">Agencies No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(2)\"\n                  title=\"Click to show metrics of this Agent\">Consecutive Misses 1</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(3)\"\n                  title=\"Click to show metrics of this Agent\">Customer No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(4)\"\n                  title=\"Click to show metrics of this Agent\">New Customer No</a></div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(5)\"\n                  title=\"Click to show metrics of this Agent\">Paid Up No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(6)\"\n                  title=\"Click to show metrics of this Agent\">Parallel No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(7)\"\n                  title=\"Click to show metrics of this Agent\">Refinance No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(8)\"\n                  title=\"Click to show metrics of this Agent\">Sales Value</a></div>\n            </div>\n            <div class=\"row\">\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(9)\"\n                  title=\"Click to show metrics of this Agent\">Scheduled Visit No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(10)\"\n                  title=\"Click to show metrics of this Agent\">Real Misses No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(11)\"\n                  title=\"Click to show metrics of this Agent\">Sales No</a></div>\n              <div class=\"col-xs-3\"><a style=\"padding-left:2%; padding-right: 1.9%; cursor:pointer; font-size:0.8em !important\" (click)=\"test2(12)\"\n                  title=\"Click to show metrics of this Agent\">Recent New Customers No 13 Weeks</a></div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </md-tab>\n\n\n  <md-tab label=\"Table\">\n    <h4 style=\"text-align: center\">\n      Lead agent\n    </h4>\n    <br>\n    <div *ngIf=\"data\" align=\"center\">\n      <table style=\"width: 60%;\" class=\"mdl-data-table mdl-js-data-table mdl-shadow--4dp\">\n        <thead>\n          <tr>\n            <th colspan=\"2\" class=\"mdl-data-table__cell--non-numeric\">Metric</th>\n            <th>Month</th>\n            <th>Value</th>\n          </tr>\n        </thead>\n        <tbody *ngFor=\"let metric of metrics\">\n          <tr>\n            <td rowspan=\"3\" colspan=\"2\" class=\"mdl-data-table__cell--non-numeric\">{{ metric}}</td>\n            <td>Jan-17</td>\n            <td>{{ data[agent][metric][\"Jan-17\"] }}</td>\n          </tr>\n          <tr>\n            <td>Feb-17</td>\n            <td>{{ data[agent][metric][\"Feb-17\"] }}</td>\n          </tr>\n          <tr>\n            <td>Mar-17</td>\n            <td>{{ data[agent][metric][\"Mar-17\"] }}</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n    <br>\n    <br>\n  </md-tab>\n</md-tab-group>\n\n<simple-notifications [options]=\"options\"></simple-notifications>"
 
 /***/ }),
 
@@ -811,18 +1022,18 @@ var MainComponent = (function () {
         this.isCollapsed = true;
         this.isCollapsed2 = true;
         this.agent = "Lead Agent";
-        this.max = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.redthreshold = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.warnthreshold = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.maxagentjan = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.maxagentfeb = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.maxagentmar = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.redthresholdagentjan = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.redthresholdagentfeb = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.redthresholdagentmar = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.warnthresholdagentjan = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.warnthresholdagentfeb = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
-        this.warnthresholdagentmar = new Array(100).fill(0).map(function () { return new Array(100).fill(0); });
+        this.max = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.redthreshold = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.warnthreshold = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.maxagentjan = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.maxagentfeb = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.maxagentmar = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.redthresholdagentjan = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.redthresholdagentfeb = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.redthresholdagentmar = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.warnthresholdagentjan = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.warnthresholdagentfeb = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
+        this.warnthresholdagentmar = new Array(20).fill(0).map(function () { return new Array(20).fill(0); });
         this.j = 0;
         this.i = 0;
         this.options = {
@@ -832,6 +1043,7 @@ var MainComponent = (function () {
             clickToClose: true
         };
         this.isCollapsed = !this.isCollapsed;
+        this.utils.loaded.emit(false);
         this.isCollapsed2 = !this.isCollapsed2;
         this.utils.titleChanged.emit("Dashboard");
         this.metaData = new Object({
@@ -905,13 +1117,6 @@ var MainComponent = (function () {
             _this.months = _this.utils.months;
             _this.chart = _this.afterAssignDataForLeadAgent();
         });
-        if (this.utils.firstLoad) {
-            var that_1 = this;
-            setTimeout(function () {
-                that_1._service.success("Hi, Lead Agent! Welcome back!");
-                that_1.utils.notificationAdded.emit(["Hi, Lead Agent! Welcome back!", "green", "check_circle"]);
-            }, 2000);
-        }
     };
     MainComponent.prototype.test = function (n) {
         this.route.navigate(['/logged-in/agent', n]);
@@ -937,6 +1142,7 @@ var MainComponent = (function () {
             this.warnmet();
             this.utils.firstLoad = false;
         }
+        this.utils.loaded.emit(true);
         return this.AmCharts.makeChart("chartdiv", this.metaData);
     };
     MainComponent.prototype.warnmet = function () {
@@ -1083,6 +1289,7 @@ var MetricComponent = (function () {
             _this.utils.titleChanged.emit(_this.metric);
             _this.assignData();
         });
+        this.utils.loaded.emit(false);
         this.metric = this.metrics[this.id];
         this.utils.titleChanged.emit(this.metric);
     }
@@ -1168,6 +1375,7 @@ var MetricComponent = (function () {
                 "column-3": parseInt(this.data[this.agents[i]][this.metric][months[j++]])
             });
         }
+        this.utils.loaded.emit(true);
         return this.AmCharts.makeChart(this.chartdiv, this.metaData);
     };
     MetricComponent.prototype.ngOnDestroy = function () {
@@ -1188,6 +1396,73 @@ MetricComponent = __decorate([
 
 var _a, _b, _c, _d;
 //# sourceMappingURL=metric.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/protected/metrics/metrics.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/protected/metrics/metrics.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  metrics works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/protected/metrics/metrics.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_service__ = __webpack_require__("../../../../../src/app/protected/utils.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MetricsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MetricsComponent = (function () {
+    function MetricsComponent(utils) {
+        this.utils = utils;
+        this.utils.loaded.emit(true);
+        this.utils.titleChanged.emit("Individual Metrics");
+    }
+    MetricsComponent.prototype.ngOnInit = function () {
+    };
+    return MetricsComponent;
+}());
+MetricsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-metrics',
+        template: __webpack_require__("../../../../../src/app/protected/metrics/metrics.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/protected/metrics/metrics.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */]) === "function" && _a || Object])
+], MetricsComponent);
+
+var _a;
+//# sourceMappingURL=metrics.component.js.map
 
 /***/ }),
 
@@ -1265,7 +1540,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "html, body, material-app, md-sidenav-container, .my-content {\n  margin: 0;\n  height: 100%;\n}\n\nmd-sidenav {\n  width: 18%;\n}\n\n.graph1 {\n  height: 500px;\n  border: 1px solid black;\n}\n\n.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {\n    background-color: #6495ed;\n}", ""]);
+exports.push([module.i, "html, body, material-app, md-sidenav-container, .my-content {\n  margin: 0;\n  height: 100%;\n}\n\nmd-sidenav {\n  width: 18%;\n}\n\n.graph1 {\n  height: 500px;\n  border: 1px solid black;\n}\n\n.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {\n    background-color: #6495ed;\n}\n\n#overlay {\n  position: fixed; /* Sit on top of the page content */\n  display: block; /* Hidden by default */\n  width: 100%; /* Full width (cover the whole page) */\n  height: 100%; /* Full height (cover the whole page) */\n  top: 3px; \n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: rgba(0,0,0,0.2); /* Black background with opacity */\n  z-index: 10; /* Specify a stack order in case you're using a different order for other elements */\n  cursor: pointer; /* Add a pointer on hover */\n}\n\n#loader {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  margin-top: -2.7em;\n  margin-left: -2.7em;\n  width: 5.4em;\n  height: 5.4em;\n  background-color: rgb(0,0,0,0.2);\n}\n\n#hill {\n  position: absolute;\n  width: 7.1em;\n  height: 7.1em;\n  top: 1.7em;\n  left: 1.7em;\n  background-color: transparent;\n  border-left: .25em solid black;\n  -webkit-transform: rotate(45deg);\n          transform: rotate(45deg);\n}\n\n#hill:after {\n  content: '';\n  position: absolute;\n  width: 7.1em;\n  height: 7.1em;\n  left: 0;\n  background-color: rgb(0,0,0,0.2);\n}\n\n#box {\n  position: absolute;\n  left: 0;\n  bottom: -.1em;\n  width: 1em;\n  height: 1em;\n  background-color: transparent;\n  border: .25em solid black;\n  border-radius: 15%;\n  -webkit-transform: translate(0, -1em) rotate(-45deg);\n          transform: translate(0, -1em) rotate(-45deg);\n  -webkit-animation: push 2.5s cubic-bezier(.79, 0, .47, .97) infinite;\n          animation: push 2.5s cubic-bezier(.79, 0, .47, .97) infinite;\n}\n\n@-webkit-keyframes push {\n  0% {\n    -webkit-transform: translate(0, -1em) rotate(-45deg);\n            transform: translate(0, -1em) rotate(-45deg);\n  }\n  5% {\n    -webkit-transform: translate(0, -1em) rotate(-50deg);\n            transform: translate(0, -1em) rotate(-50deg);\n  }\n  20% {\n    -webkit-transform: translate(1em, -2em) rotate(47deg);\n            transform: translate(1em, -2em) rotate(47deg);\n  }\n  25% {\n    -webkit-transform: translate(1em, -2em) rotate(45deg);\n            transform: translate(1em, -2em) rotate(45deg);\n  }\n  30% {\n    -webkit-transform: translate(1em, -2em) rotate(40deg);\n            transform: translate(1em, -2em) rotate(40deg);\n  }\n  45% {\n    -webkit-transform: translate(2em, -3em) rotate(137deg);\n            transform: translate(2em, -3em) rotate(137deg);\n  }\n  50% {\n    -webkit-transform: translate(2em, -3em) rotate(135deg);\n            transform: translate(2em, -3em) rotate(135deg);\n  }\n  55% {\n    -webkit-transform: translate(2em, -3em) rotate(130deg);\n            transform: translate(2em, -3em) rotate(130deg);\n  }\n  70% {\n    -webkit-transform: translate(3em, -4em) rotate(217deg);\n            transform: translate(3em, -4em) rotate(217deg);\n  }\n  75% {\n    -webkit-transform: translate(3em, -4em) rotate(220deg);\n            transform: translate(3em, -4em) rotate(220deg);\n  }\n  100% {\n    -webkit-transform: translate(0, -1em) rotate(-225deg);\n            transform: translate(0, -1em) rotate(-225deg);\n  }\n}\n\n@keyframes push {\n  0% {\n    -webkit-transform: translate(0, -1em) rotate(-45deg);\n            transform: translate(0, -1em) rotate(-45deg);\n  }\n  5% {\n    -webkit-transform: translate(0, -1em) rotate(-50deg);\n            transform: translate(0, -1em) rotate(-50deg);\n  }\n  20% {\n    -webkit-transform: translate(1em, -2em) rotate(47deg);\n            transform: translate(1em, -2em) rotate(47deg);\n  }\n  25% {\n    -webkit-transform: translate(1em, -2em) rotate(45deg);\n            transform: translate(1em, -2em) rotate(45deg);\n  }\n  30% {\n    -webkit-transform: translate(1em, -2em) rotate(40deg);\n            transform: translate(1em, -2em) rotate(40deg);\n  }\n  45% {\n    -webkit-transform: translate(2em, -3em) rotate(137deg);\n            transform: translate(2em, -3em) rotate(137deg);\n  }\n  50% {\n    -webkit-transform: translate(2em, -3em) rotate(135deg);\n            transform: translate(2em, -3em) rotate(135deg);\n  }\n  55% {\n    -webkit-transform: translate(2em, -3em) rotate(130deg);\n            transform: translate(2em, -3em) rotate(130deg);\n  }\n  70% {\n    -webkit-transform: translate(3em, -4em) rotate(217deg);\n            transform: translate(3em, -4em) rotate(217deg);\n  }\n  75% {\n    -webkit-transform: translate(3em, -4em) rotate(220deg);\n            transform: translate(3em, -4em) rotate(220deg);\n  }\n  100% {\n    -webkit-transform: translate(0, -1em) rotate(-225deg);\n            transform: translate(0, -1em) rotate(-225deg);\n  }\n}", ""]);
 
 // exports
 
@@ -1278,7 +1553,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/protected/protected.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Always shows a header, even in smaller screens. -->\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer\">\n  <header class=\"mdl-layout__header\">\n    <div class=\"mdl-layout__header-row\" style=\"padding-right: 10px !important\">\n      <!-- Title -->\n      <span class=\"mdl-layout-title\">{{title}}</span>\n      <!-- Add spacer, to align navigation to the right -->\n      <div class=\"mdl-layout-spacer\"></div>\n      <!-- Navigation. We hide it in small screens. -->\n      <nav class=\"mdl-navigation mdl-layout--large-screen-only\">\n        <!-- <a class=\"mdl-navigation__link\" href=\"\">Link</a>  -->\n      </nav>\n      <div>\n        <popover-content #myPopover [closeOnClickOutside]=\"true\" placement=\"bottom\" [animation]=\"true\">\n          <div id=\"testify\" style=\"overflow-y:auto; max-height:80vh;\">\n            <span style=\"color:black\">\n          <h3>Notifications</h3>\n          <hr>\n        </span>\n          </div>\n        </popover-content>\n        <!-- <div class=\"mdl-navigation__link\"> -->\n        <span [popover]=\"myPopover\" class=\"mdl-badge mdl-badge--overlap\" count=\"$dataBadge\" style=\"margin-left: 4px; margin-right:70px; display:block; cursor:pointer\">\n            <img style=\"height:18px; width: auto; display:block; margin-top:10%; margin-right:30%\" src=\"/angular-practice/assets/notification-bell.png\">\n          </span>\n        <!-- </div> -->\n      </div>\n      <button id=\"demo-menu-lower-right\" class=\"mdl-button mdl-js-button mdl-button--icon\" style=\"margin-right: 2%\">\n        <i class=\"material-icons\" style=\"font-size: 28px;\">account_box</i>\n      </button>\n\n      <ul class=\"mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect\" for=\"demo-menu-lower-right\">\n        <li class=\"mdl-menu__item\"><div (click)=\"settings()\">Personal Settings</div></li>\n        <li class=\"mdl-menu__item\"><div (click)=\"logout()\">Logout</div></li>\n      </ul>\n    </div>\n  </header>\n  <div class=\"mdl-layout__drawer\" style=\"background: rgb(63,81,181)\">\n    <span class=\"mdl-layout-title\" style=\"padding-left: 40%\"><span style=\"color:white\">IPF</span></span>\n    <div style=\"height:10%\"></div>\n    <nav class=\"mdl-navigation\">\n      <button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./lead-agent']\"><img style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/line-chart.png\"><span style=\"color:white\">Dashboard</span></button>\n      <button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./table']\"><img style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/table-grid.png\"><span style=\"color:white\">Table</span></button>\n      <button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./profile']\"><img style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/profile.png\"><span style=\"color:white\">Profile</span></button>\n    </nav>\n  </div>\n  <main class=\"mdl-layout__content\">\n    <div>\n      <router-outlet></router-outlet>\n    </div>\n  </main>\n</div>"
+module.exports = "<div *ngIf=\"!loaded\" id=\"overlay\">\n  <div id=\"loader\">\n    <div id=\"box\"></div>\n    <div id=\"hill\"></div>\n  </div>\n</div>\n\n<!-- Always shows a header, even in smaller screens. -->\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer\">\n  <header class=\"mdl-layout__header\">\n    <div class=\"mdl-layout__header-row\" style=\"padding-right: 10px !important\">\n      <!-- Title -->\n      <span class=\"mdl-layout-title\">{{title}}</span>\n      <!-- Add spacer, to align navigation to the right -->\n      <div class=\"mdl-layout-spacer\"></div>\n      <!-- Navigation. We hide it in small screens. -->\n      <nav class=\"mdl-navigation mdl-layout--large-screen-only\">\n        <!-- <a class=\"mdl-navigation__link\" href=\"\">Link</a>  -->\n      </nav>\n      <div>\n        <popover-content #myPopover [closeOnClickOutside]=\"true\" placement=\"bottom\" [animation]=\"true\">\n          <div id=\"testify\" style=\"overflow-y:auto; max-height:80vh; margin-right:-9px; margin-left:-5px\">\n            <span style=\"color:black\">\n              <div style=\"padding-bottom:20px\">\n                <div class=\"pull-left\" style=\"display:inline;font-size:x-large\">Notifications</div>\n                <button *ngIf=\"z!=0\" class=\"mdl-button mdl-js-button mdl-button--icon pull-right\" (click)=\"clearall()\"><i class=\"material-icons\">clear_all</i></button>\n              </div>\n            </span>\n            <hr>\n            <div *ngIf=\"z==0\" style=\"color:black;padding-bottom: 8px;\">No Notifications to show!</div>\n          </div>\n        </popover-content>\n        <!-- <div class=\"mdl-navigation__link\"> -->\n        <span [popover]=\"myPopover\" class=\"mdl-badge mdl-badge--overlap\" count=\"$dataBadge\" style=\"margin-left: 4px; margin-right:70px; display:block; cursor:pointer\">\n            <img style=\"height:18px; width: auto; display:block; margin-top:10%; margin-right:30%\" src=\"/angular-practice/assets/notification-bell.png\">\n          </span>\n        <!-- </div> -->\n      </div>\n      <button id=\"demo-menu-lower-right\" class=\"mdl-button mdl-js-button mdl-button--icon\" style=\"margin-right: 2%\">\n        <i class=\"material-icons\" style=\"font-size: 28px;\">account_box</i>\n      </button>\n\n      <ul class=\"mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect\" for=\"demo-menu-lower-right\">\n        <li class=\"mdl-menu__item\"><div (click)=\"settings()\">Personal Settings</div></li>\n        <li class=\"mdl-menu__item\"><div (click)=\"logout()\">Logout</div></li>\n      </ul>\n    </div>\n  </header>\n  <div class=\"mdl-layout__drawer\" style=\"background: rgb(63,81,181)\">\n    <span class=\"mdl-layout-title\" style=\"padding-left: 40%\"><span style=\"color:white\">IPF</span></span>\n    <div style=\"height:10%\"></div>\n    <nav class=\"mdl-navigation\">\n      <button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./home']\"><img style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/line-chart.png\"><span style=\"color:white\">Home</span></button>\n      <button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./table']\"><img style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/table-grid.png\"><span style=\"color:white\">Table</span></button>\n      <button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./profile']\"><img style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/profile.png\"><span style=\"color:white\">Profile</span></button>\n    </nav>\n  </div>\n  <main class=\"mdl-layout__content\">\n    <div>\n      <router-outlet></router-outlet>\n    </div>\n  </main>\n</div>"
 
 /***/ }),
 
@@ -1290,6 +1565,7 @@ module.exports = "<!-- Always shows a header, even in smaller screens. -->\n<div
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_service__ = __webpack_require__("../../../../../src/app/protected/utils.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__("../../../../../src/app/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProtectedComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1304,13 +1580,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProtectedComponent = (function () {
-    function ProtectedComponent(utils, authService, route) {
+    function ProtectedComponent(utils, authService, route, snackBar) {
         var _this = this;
         this.utils = utils;
         this.authService = authService;
         this.route = route;
+        this.snackBar = snackBar;
+        this.loaded = false;
         this.k = 0;
+        this.z = 0;
+        this.emitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.emitter.subscribe(function (res) { return _this.z--; });
+        this.utils.loaded.subscribe(function (res) { return _this.loaded = res; });
         this.title = this.utils.title;
         this.utils.titleChanged.subscribe(function (res) { return _this.title = res; });
         var color = "red";
@@ -1320,15 +1603,21 @@ var ProtectedComponent = (function () {
             divNode.setAttribute("style", "cursor:pointer;");
             divNode.setAttribute("title", "Click to dismiss this notification!");
             divNode.innerHTML = "\n              <div style=\"color:" + res[1] + "\">\n                <span style=\"padding-top: 4px;\" class=\"pull-left\"><i class=\"material-icons\">" + res[2] + "</i></span>\n                <br>\n                <br>" + res[0] + "\n              </div>\n            <hr>";
+            var that = _this;
             var k = _this.k;
             divNode.addEventListener("click", function () {
                 var div = document.getElementById("" + k);
                 if (div) {
                     div.parentNode.removeChild(div);
                 }
+                that.snackBar.open("Notification Cleared!", "Close", {
+                    duration: 2000,
+                });
+                that.emitter.emit("");
             });
             document.getElementById("testify").appendChild(divNode);
             _this.k++;
+            _this.z++;
         });
     }
     // <button id="button" class="mdl-button mdl-js-button mdl-button--icon pull-right"><span class="material-icons">close</span></button>
@@ -1338,8 +1627,21 @@ var ProtectedComponent = (function () {
         console.log("Logged Out");
     };
     ProtectedComponent.prototype.settings = function () {
-        this.route.navigate(['/logged-in/settings']);
+        // this.route.navigate(['/logged-in/settings']);
         return false;
+    };
+    ProtectedComponent.prototype.clearall = function () {
+        for (var x = 0; x <= this.k; x++) {
+            var div = document.getElementById("" + x);
+            if (div) {
+                div.parentNode.removeChild(div);
+            }
+        }
+        this.k = 0;
+        this.z = 0;
+        this.snackBar.open("All Notifications Cleared!", "Close", {
+            duration: 2000,
+        });
     };
     return ProtectedComponent;
 }());
@@ -1349,10 +1651,10 @@ ProtectedComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/protected/protected.component.html"),
         styles: [__webpack_require__("../../../../../src/app/protected/protected.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["b" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["b" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["b" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["b" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["f" /* MdSnackBar */]) === "function" && _d || Object])
 ], ProtectedComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=protected.component.js.map
 
 /***/ }),
@@ -1377,7 +1679,9 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__profile_profile_component__ = __webpack_require__("../../../../../src/app/protected/profile/profile.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__table_table_component__ = __webpack_require__("../../../../../src/app/protected/table/table.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__agent_agent_component__ = __webpack_require__("../../../../../src/app/protected/agent/agent.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__settings_settings_component__ = __webpack_require__("../../../../../src/app/protected/settings/settings.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__home_home_component__ = __webpack_require__("../../../../../src/app/protected/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__agents_agents_component__ = __webpack_require__("../../../../../src/app/protected/agents/agents.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__metrics_metrics_component__ = __webpack_require__("../../../../../src/app/protected/metrics/metrics.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ProtectedModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1404,16 +1708,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
 var routes = [
-    { path: '', redirectTo: 'lead-agent', pathMatch: 'full' },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'lead-agent', component: __WEBPACK_IMPORTED_MODULE_10__main_main_component__["a" /* MainComponent */] },
     { path: 'table', component: __WEBPACK_IMPORTED_MODULE_13__table_table_component__["a" /* TableComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_12__profile_profile_component__["a" /* ProfileComponent */] },
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_15__home_home_component__["a" /* HomeComponent */] },
     { path: 'metric', redirectTo: 'metric/1', pathMatch: 'full' },
     { path: 'metric/:id', component: __WEBPACK_IMPORTED_MODULE_11__metric_metric_component__["a" /* MetricComponent */] },
     { path: 'agent', redirectTo: 'agent/1', pathMatch: 'full' },
     { path: 'agent/:id', component: __WEBPACK_IMPORTED_MODULE_14__agent_agent_component__["a" /* AgentComponent */] },
-    { path: 'settings', component: __WEBPACK_IMPORTED_MODULE_15__settings_settings_component__["a" /* SettingsComponent */] }
+    { path: 'agents', component: __WEBPACK_IMPORTED_MODULE_16__agents_agents_component__["a" /* AgentsComponent */] },
+    { path: 'metrics', component: __WEBPACK_IMPORTED_MODULE_17__metrics_metrics_component__["a" /* MetricsComponent */] }
 ];
 var ProtectedModule = (function () {
     function ProtectedModule() {
@@ -1429,7 +1739,9 @@ ProtectedModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_13__table_table_component__["a" /* TableComponent */],
             __WEBPACK_IMPORTED_MODULE_14__agent_agent_component__["a" /* AgentComponent */],
             __WEBPACK_IMPORTED_MODULE_9__collapse__["a" /* Collapse */],
-            __WEBPACK_IMPORTED_MODULE_15__settings_settings_component__["a" /* SettingsComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__agents_agents_component__["a" /* AgentsComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__metrics_metrics_component__["a" /* MetricsComponent */],
         ],
         exports: [
             __WEBPACK_IMPORTED_MODULE_10__main_main_component__["a" /* MainComponent */],
@@ -1440,7 +1752,9 @@ ProtectedModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdTabsModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_6_ngx_popover__["PopoverModule"],
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["d" /* MdCardModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["a" /* MdButtonModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MdSnackBarModule */],
             __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             __WEBPACK_IMPORTED_MODULE_8__amcharts_amcharts3_angular__["a" /* AmChartsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["b" /* MdSidenavModule */],
@@ -1450,67 +1764,6 @@ ProtectedModule = __decorate([
 ], ProtectedModule);
 
 //# sourceMappingURL=protected.module.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/protected/settings/settings.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/protected/settings/settings.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  settings works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/protected/settings/settings.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var SettingsComponent = (function () {
-    function SettingsComponent() {
-    }
-    SettingsComponent.prototype.ngOnInit = function () {
-    };
-    return SettingsComponent;
-}());
-SettingsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-settings',
-        template: __webpack_require__("../../../../../src/app/protected/settings/settings.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/protected/settings/settings.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], SettingsComponent);
-
-//# sourceMappingURL=settings.component.js.map
 
 /***/ }),
 
@@ -1598,7 +1851,6 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_notifications__ = __webpack_require__("../../../../angular2-notifications/dist/index.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UtilsService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1610,16 +1862,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
 var UtilsService = (function () {
-    function UtilsService(_service) {
-        this._service = _service;
+    function UtilsService() {
         this.titleChanged = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.notificationAdded = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.loaded = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.coreMetrics = ["Sales No", "New Customer No", "Real Misses No"];
         this.months = ["Jan-17", "Feb-17", "Mar-17"];
         this.firstLoad = true;
         this.firstLoad2 = true;
+        this.firstLoad3 = true;
         this.title = "Dashboard";
     }
     UtilsService.prototype.getAgents = function (data) {
@@ -1653,10 +1905,9 @@ var UtilsService = (function () {
 }());
 UtilsService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_notifications__["b" /* NotificationsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_notifications__["b" /* NotificationsService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [])
 ], UtilsService);
 
-var _a;
 //# sourceMappingURL=utils.service.js.map
 
 /***/ }),
