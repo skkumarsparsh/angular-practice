@@ -123,15 +123,6 @@ export class MainComponent implements OnInit {
       this.months = this.utils.months;
       this.chart = this.afterAssignDataForLeadAgent();
     });
-
-    if (this.utils.firstLoad) {
-      let that = this;
-      setTimeout(function () {
-        that._service.success("Hi, Lead Agent! Welcome back!");
-        that.utils.notificationAdded.emit(["Hi, Lead Agent! Welcome back!", "green", "check_circle"])
-      }, 2000);
-    }
-
   }
 
   test(n) {

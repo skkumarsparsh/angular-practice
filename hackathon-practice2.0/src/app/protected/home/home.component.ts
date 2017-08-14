@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilsService } from '../utils.service';
 import { Http } from '@angular/http';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-home',
@@ -19,12 +20,27 @@ export class HomeComponent implements OnInit {
   metricmonth3;
   data;
 
-  constructor(private utils:UtilsService, private http: Http) { 
+  options = {
+    timeOut: 3000,
+    showProgressBar: true,
+    pauseOnHover: true,
+    clickToClose: true
+  };
+
+  constructor(private utils:UtilsService, private http: Http, private _service: NotificationsService) { 
     this.utils.loaded.emit(true);
     this.utils.titleChanged.emit("Home");
   }
 
   ngOnInit() {
+    if (this.utils.firstLoad3) {
+      let that = this;
+      setTimeout(function () {
+        that._service.success("Hi, Lead Agent! Welcome back!");
+        // this.utils.notificationAdded.emit(["Hi, Lead Agent! Welcome back!", "green", "check_circle"])
+      }, 200);
+      this.utils.firstLoad3 = false;
+    }
     this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
       this.data = res.json();
       console.log(this.data);

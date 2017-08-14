@@ -60,7 +60,7 @@ export class ProtectedComponent {
   }
 
   settings() {
-    this.route.navigate(['/logged-in/settings']);
+    // this.route.navigate(['/logged-in/settings']);
     return false;
   }
 

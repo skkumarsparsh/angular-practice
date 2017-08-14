@@ -1,5 +1,4 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { NotificationsService } from 'angular2-notifications';
 
 @Injectable()
 export class UtilsService {
@@ -12,8 +11,9 @@ export class UtilsService {
   months = ["Jan-17", "Feb-17", "Mar-17"];
   firstLoad = true;
   firstLoad2 = true;
+  firstLoad3 = true;
 
-  constructor(private _service: NotificationsService) {
+  constructor() {
     this.title = "Dashboard";
   }
 

@@ -1,8 +1,8 @@
-<div class="row" style="padding:1%; padding-top:4%">
+<div class="row" style="padding:1%; padding-top:2%">
   <div class="col-sm-3">
     <div style="padding-top:15px;padding-left:15px">
       <div class="mdl-card mdl-shadow--6dp" style="width:100%;min-height:100px;text-align:center;padding:10px;background-color:#D48CF8">
-        <div>Max <span style="font-size:x-large">{{metricname1}}</span> :</div>
+        <div>Max <br><span style="font-size:x-large;font-weight:800">{{metricname1}}</span> :</div>
         <div style="font-size:50px">{{metric1}}</div>
         <div>in {{metricmonth1}}</div>
       </div>
@@ -11,7 +11,7 @@
   <div class="col-sm-3">
     <div style="padding-top:15px;padding-left:7.5px;padding-right:7.5px">
       <div class="mdl-card mdl-shadow--6dp" style="width:100%;min-height:100px;text-align:center;padding:10px;background-color:#4ABDAC">
-        <div>Max <span style="font-size:x-large">{{metricname2}}</span> :</div>
+        <div>Max <br><span style="font-size:x-large;font-weight:800">{{metricname2}}</span> :</div>
         <div style="font-size:50px">{{metric2}}</div>
         <div>in {{metricmonth2}}</div>
       </div>
@@ -20,7 +20,7 @@
   <div class="col-sm-3">
     <div style="padding-top:15px;padding-left:7.5px;padding-right:7.5px">
       <div class="mdl-card mdl-shadow--6dp" style="width:100%;min-height:100px;text-align:center;padding:10px;background-color:#FF3B3F">
-        <div>Max <span style="font-size:x-large">{{metricname3}}</span> :</div>
+        <div>Max <br><span style="font-size:x-large;font-weight:800">{{metricname3}}</span> :</div>
         <div style="font-size:50px">{{metric3}}</div>
         <div>in {{metricmonth3}}</div>
       </div>
@@ -37,38 +37,47 @@
 <div class="row" style="padding:1%">
     <div class="col-sm-4">
       <div style="padding-top:15px;padding-left:15px">
-        <div class="demo-card1 mdl-card mdl-shadow--6dp" style="width:100%;min-height:340px;">
+        <div class="demo-card1 mdl-card mdl-shadow--6dp" style="width:100%;min-height:400px;">
           <div class="mdl-card__title mdl-card--expand">
             <h2 class="mdl-card__title-text">Agents</h2>
           </div>
+          <div class="mdl-card__supporting-text">
+            <h5> Click here to see performance of Individual Agents. </h5>
+          </div>
           <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" >
-              Individual Agents
-            </a>
+            <button [routerLink]="['/logged-in/agents']" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+              Go to Individual Agents
+            </button>
           </div>
         </div>
       </div>
     </div>
     <div class="col-sm-4">
       <div style="padding-top:15px;padding-left:7.5px;padding-right:7.5px">
-        <div class="demo-card2 mdl-card mdl-shadow--6dp" style="width:100%;min-height:340px;">
+        <div class="demo-card2 mdl-card mdl-shadow--6dp" style="width:100%;min-height:400px;">
             <div class="mdl-card__title mdl-card--expand">
               <h2 class="mdl-card__title-text">Metrics</h2>
             </div>
+            <div class="mdl-card__supporting-text">
+                <h5> Click here to see Individual Metrics for all Agents. </h5>
+              </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                Individual Metrics
-              </a>
+              <button [routerLink]="['/logged-in/metrics']" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                Go to Individual Metrics
+              </button>
             </div>
         </div>
       </div>
     </div>
     <div class="col-sm-4">
       <div style="padding-top:15px;padding-right:15px">
-        <div class="demo-card3 mdl-card mdl-shadow--6dp" style="width:100%;min-height:340px;">
+        <div class="demo-card3 mdl-card mdl-shadow--6dp" style="width:100%;min-height:400px;">
             <div class="mdl-card__title mdl-card--expand">
               <h2 class="mdl-card__title-text">Dashboard</h2>
             </div>
+            <div class="mdl-card__supporting-text">
+                <h5> Click here to see the Dashboard with the three Core Metrics. </h5>
+              </div>
             <div class="mdl-card__actions mdl-card--border">
               <button [routerLink]="['/logged-in/lead-agent']" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                 Go to Dashboard
@@ -78,3 +87,5 @@
       </div>
     </div>
   </div>
+
+<simple-notifications [options]="options"></simple-notifications>
