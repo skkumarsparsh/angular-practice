@@ -56,6 +56,7 @@ export class ProtectedComponent {
   logout() {
     this.authService.logout();
     this.route.navigate(['/login']);
+    window.location.reload();
     console.log("Logged Out")
   }
 
