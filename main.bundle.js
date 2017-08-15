@@ -114,6 +114,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     // basic routes
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -143,6 +144,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             __WEBPACK_IMPORTED_MODULE_2__amcharts_amcharts3_angular__["a" /* AmChartsModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_material__["c" /* MdSidenavModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MdSelectModule */],
             __WEBPACK_IMPORTED_MODULE_3_angular2_notifications__["a" /* SimpleNotificationsModule */].forRoot(),
         ],
         providers: [
@@ -334,7 +336,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\n  background: #e9e9e9;\n  color: #666666;\n  font-family: 'RobotoDraft', 'Roboto', sans-serif;\n  font-size: 14px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Form Module */\n.form-module {\n\n  background: #ffffff;\n  width: 100%;\n  border-top: 10px solid #33b5e5;\n  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);\n  margin: 0 auto;\n}\n.form-module .toggle {\n  cursor: pointer;\n  top: -0;\n  right: -0;\n  background: #33b5e5;\n  width: 30px;\n  height: 30px;\n  margin: -5px 0 0;\n  color: #ffffff;\n  font-size: 12px;\n  line-height: 30px;\n  text-align: center;\n}\n.form-module .toggle .tooltip {\n  top: 5px;\n  right: -65px;\n  display: block;\n  background: rgba(0, 0, 0, 0.6);\n  width: auto;\n  padding: 5px;\n  font-size: 10px;\n  line-height: 1;\n  text-transform: uppercase;\n}\n.form-module .toggle .tooltip:before {\n  content: '';\n  top: 5px;\n  left: -5px;\n  display: block;\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  border-right: 5px solid rgba(0, 0, 0, 0.6);\n}\n.form-module .form {\n  display: none;\n  padding: 50px;\n}\n.form-module .form:nth-child(2) {\n  display: block;\n}\n.form-module h2 {\n  margin: 0 0 20px;\n  color: #33b5e5;\n  font-size: 18px;\n  font-weight: 400;\n  line-height: 1;\n}\n.form-module input {\n  outline: none;\n  display: block;\n  width: 100%;\n  border: 1px solid #d9d9d9;\n  margin: 0 0 20px;\n  padding: 10px 15px;\n  box-sizing: border-box;\n  font-weight: 400;\n  transition: 0.3s ease;\n}\n.form-module input:focus {\n  border: 1px solid #33b5e5;\n  color: #333333;\n}\n.form-module button {\n  cursor: pointer;\n  background: #33b5e5;\n  width: 100%;\n  border: 0;\n  padding: 10px 15px;\n  color: #ffffff;\n  transition: 0.3s ease;\n}\n.form-module button:hover {\n  background: #178ab4;\n}\n.form-module .cta {\n  background: #f2f2f2;\n  width: 100%;\n  padding: 15px 40px;\n  box-sizing: border-box;\n  color: #666666;\n  font-size: 12px;\n  text-align: center;\n}\n.form-module .cta a {\n  color: #333333;\n  text-decoration: none;\n}", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n}\n\n.background-image {\n  background-image: url('https://wallpaperscraft.com/image/abstraction_geometry_shapes_colors_93400_1920x1080.jpg');\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center center;\n  display: block;\n  filter: blur(5px);\n  -webkit-filter: blur(5px);\n  height: 100%;\n  left: 0;\n  position: fixed;\n  right: 0;\n  z-index: 1;\n}\n\n.content {\n  border-radius: 20px;\n  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);\n  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;\n  top: 10px;\n  left: 0;\n  margin-left: 20px;\n  margin-right: 20px;\n  bottom:15px;\n  right: 0;\n  z-index: 2;\n}\n\nbody {\n  background: #e9e9e9;\n  color: #666666;\n  font-family: 'RobotoDraft', 'Roboto', sans-serif;\n  font-size: 14px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.form-module {\n  background: #ffffff;\n  width: 100%;\n  border-top: 30px solid rgb(63,81,181);\n  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);\n  margin: 0 auto;\n}\n.form-module .form {\n  display: none;\n  padding: 50px;\n}\n.form-module .form:nth-child(2) {\n  display: block;\n}\n.form-module h2 {\n  margin: 0 0 20px;\n  color: rgb(63,81,181);\n  font-size: 18px;\n  font-weight: 400;\n  line-height: 1;\n}\n.form-module button {\n  cursor: pointer;\n  width: 100%;\n}\n.form-module .cta {\n  background: #f2f2f2;\n  width: 100%;\n  padding: 15px 40px;\n  box-sizing: border-box;\n  color: #666666;\n  font-size: 12px;\n  text-align: center;\n}\n.form-module .cta a {\n  color: #333333;\n  text-decoration: none;\n}", ""]);
 
 // exports
 
@@ -347,7 +349,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css\">\n\n<link rel='stylesheet prefetch'\n      href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>\n<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css '>\n<body>\n\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n  <header class=\"mdl-layout__header\">\n    <div class=\"mdl-layout__header-row\">\n      <span class=\"mdl-layout-title\"><i class=\"fa fa-user-circle-o fa-2x\" aria-hidden=\"true\"></i>IPF LOGIN PAGE</span>\n    </div>\n  </header>\n</div>\n<div align=\"center\">\n  <main class=\"mdl-layout__content\" style=\"padding-top:14%;align-content: center;\">\n    <div class=\"page-content\" style=\"text-align:center;\">\n      <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"message\">\n        {{ message }}\n      </div>\n    <div style=\"padding:15px\">\n        <div class=\"mdl-card mdl-shadow--6dp content\" style=\"width:400px;min-height:300px\">\n          <form class=\"form-inline\" *ngIf=\"!authService.getUser()\">\n            <div class=\"module form-module\">\n              <div class=\"toggle\"><i class=\"fa fa-user fa-2x\" aria-hidden=\"true\"></i>\n                <div class=\"tooltip\">LOG IN</div>\n              </div>\n              <div class=\"form\">\n                <h2>Login to your account</h2>\n                <form>\n                  <input class=\"form-control\" placeholder=\"Username\" name=\"username\" #username>\n                  <input class=\"form-control\" placeholder=\"Password\" type=\"password\" name=\"password\" #password>\n                  <button (click)=\"login(username.value, password.value)\">Login</button>\n                </form>\n              </div>\n              <div class=\"cta\"><a href=\"#\">Forgot your password?</a></div>\n            </div>\n            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>\n            <script src=\"js/index.js\"></script>\n          </form>\n        </div>\n    </div>\n      </div>\n    <div class=\"well\" *ngIf=\"authService.getUser()\">\n      Logged in as <b>{{ authService.getUser() }}</b>\n      <a href (click)=\"logout()\">Log out</a>\n      <a href (click)=\"dashboard()\">Dashboard</a>\n    </div>\n  </main>\n</div>\n</body>"
+module.exports = "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css\">\n<link rel='stylesheet prefetch'\n      href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>\n<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css '>\n<div class=\"background-image\"></div>\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header\">\n  <header class=\"mdl-layout__header\">\n    <div class=\"mdl-layout__header-row\">\n      <span class=\"mdl-layout-title\">IPF LOGIN PAGE</span>\n    </div>\n  </header>\n</div>\n<div align=\"center\">\n  <main class=\"mdl-layout__content\" style=\"padding-top:14%;align-content: center;\">\n    <div class=\"page-content\" style=\"text-align:center;\">\n      <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"message\">\n        {{ message }}\n      </div>\n    <div style=\"padding:15px\">\n        <div class=\"mdl-card mdl-shadow--6dp content\" style=\"width:400px;min-height:300px\">\n          <form class=\"form-inline\" *ngIf=\"!authService.getUser()\">\n            <div class=\"module form-module\">\n              <div class=\"toggle\">\n              </div>\n              <div class=\"form\">\n                <h2>Login to your account</h2>\n                <form>\n                  <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\n                    <input class=\"mdl-textfield__input\" type=\"text\" id=\"sample3\" name=\"username\" #username>\n                    <label class=\"mdl-textfield__label\" for=\"sample3\">Username</label>\n                  </div>\n                  <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\">\n                    <input class=\"mdl-textfield__input\" type=\"password\" id=\"sample3\" name=\"password\" #password>\n                    <label class=\"mdl-textfield__label\" for=\"sample3\">Password</label>\n                  </div>\n                  <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored\" (click)=\"login(username.value, password.value)\">\n                    LOGIN\n                  </button>\n                </form>\n              </div>\n              <div class=\"cta\"><a href=\"#\">Forgot your password?</a></div>\n            </div>\n            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>\n            <script src=\"js/index.js\"></script>\n          </form>\n        </div>\n    </div>\n      </div>\n    <div class=\"well\" *ngIf=\"authService.getUser()\">\n      Logged in as <b>{{ authService.getUser() }}</b>\n      <a href (click)=\"logout()\">Log out</a>\n      <a href (click)=\"dashboard()\">Dashboard</a>\n    </div>\n  </main>\n</div>"
 
 /***/ }),
 
@@ -894,58 +896,64 @@ var HomeComponent = (function () {
         this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(function (res) {
             _this.data = res.json();
             console.log(_this.data);
-            var lead = "Lead Agent";
-            var core = _this.utils.coreMetrics;
-            var months = _this.utils.months;
-            _this.metricname1 = core[0];
-            _this.metricname2 = core[1];
-            _this.metricname3 = core[2];
-            var lar = _this.data[lead][core[0]][months[0]];
-            _this.metricmonth2 = months[0];
-            _this.metric2 = lar;
-            for (var i = 1; i < 3; i++) {
-                var val = _this.data[lead][core[0]][months[i]];
-                if (val > lar) {
-                    lar = val;
-                    _this.metricmonth1 = months[i];
-                    _this.metric1 = val;
-                }
-            }
-            lar = _this.data[lead][core[1]][months[0]];
-            _this.metricmonth2 = months[0];
-            _this.metric2 = lar;
-            for (var i = 1; i < 3; i++) {
-                var val = _this.data[lead][core[1]][months[i]];
-                if (val > lar) {
-                    lar = val;
-                    _this.metricmonth2 = months[i];
-                    _this.metric2 = val;
-                }
-            }
-            lar = _this.data[lead][core[2]][months[0]];
-            _this.metricmonth3 = months[0];
-            _this.metric3 = lar;
-            for (var i = 1; i < 3; i++) {
-                var val = _this.data[lead][core[2]][months[i]];
-                if (val > lar) {
-                    lar = val;
-                    _this.metricmonth3 = months[i];
-                    _this.metric3 = val;
-                }
-            }
-            _this.metricname4 = "Sales Value";
-            lar = _this.data[lead]["Sales Value"][months[0]];
-            _this.metricmonth4 = months[0];
-            _this.metric4 = lar;
-            for (var i = 1; i < 3; i++) {
-                var val = _this.data[lead]["Sales Value"][months[i]];
-                if (val > lar) {
-                    lar = val;
-                    _this.metricmonth4 = months[i];
-                    _this.metric4 = val;
-                }
-            }
+            _this.calValue();
         });
+        this.utils.coreMetricsChanged.subscribe(function (res) {
+            _this.calValue();
+        });
+    };
+    HomeComponent.prototype.calValue = function () {
+        var lead = "Lead Agent";
+        var core = this.utils.coreMetrics;
+        var months = this.utils.months;
+        this.metricname1 = core[0];
+        this.metricname2 = core[1];
+        this.metricname3 = core[2];
+        var lar = this.data[lead][core[0]][months[0]];
+        this.metricmonth2 = months[0];
+        this.metric2 = lar;
+        for (var i = 1; i < 3; i++) {
+            var val = this.data[lead][core[0]][months[i]];
+            if (val > lar) {
+                lar = val;
+                this.metricmonth1 = months[i];
+                this.metric1 = val;
+            }
+        }
+        lar = this.data[lead][core[1]][months[0]];
+        this.metricmonth2 = months[0];
+        this.metric2 = lar;
+        for (var i = 1; i < 3; i++) {
+            var val = this.data[lead][core[1]][months[i]];
+            if (val > lar) {
+                lar = val;
+                this.metricmonth2 = months[i];
+                this.metric2 = val;
+            }
+        }
+        lar = this.data[lead][core[2]][months[0]];
+        this.metricmonth3 = months[0];
+        this.metric3 = lar;
+        for (var i = 1; i < 3; i++) {
+            var val = this.data[lead][core[2]][months[i]];
+            if (val > lar) {
+                lar = val;
+                this.metricmonth3 = months[i];
+                this.metric3 = val;
+            }
+        }
+        this.metricname4 = "Sales Value";
+        lar = this.data[lead]["Sales Value"][months[0]];
+        this.metricmonth4 = months[0];
+        this.metric4 = lar;
+        for (var i = 1; i < 3; i++) {
+            var val = this.data[lead]["Sales Value"][months[i]];
+            if (val > lar) {
+                lar = val;
+                this.metricmonth4 = months[i];
+                this.metric4 = val;
+            }
+        }
     };
     return HomeComponent;
 }());
@@ -1049,6 +1057,9 @@ var MainComponent = (function () {
         this.isCollapsed2 = !this.isCollapsed2;
         this.utils.titleChanged.emit("Dashboard");
         this.metaData = new Object({
+            "responsive": {
+                "enabled": true
+            },
             "type": "serial",
             "categoryField": "category",
             "startDuration": 1,
@@ -1089,8 +1100,10 @@ var MainComponent = (function () {
             "guides": [],
             "valueAxes": [
                 {
+                    "logarithmic": true,
                     "id": "ValueAxis-1",
-                    "title": "Number"
+                    "title": "Number",
+                    "labelFrequency": 2
                 }
             ],
             "allLabels": [],
@@ -1119,6 +1132,11 @@ var MainComponent = (function () {
             _this.months = _this.utils.months;
             _this.chart = _this.afterAssignDataForLeadAgent();
         });
+        this.utils.coreMetricsChanged.subscribe(function (res) {
+            _this.AmCharts.destroyChart(_this.chart);
+            _this.chart = _this.afterAssignDataForLeadAgent();
+            _this.chart.invalidateSize();
+        });
     };
     MainComponent.prototype.test = function (n) {
         this.route.navigate(['/logged-in/agent', n]);
@@ -1128,6 +1146,7 @@ var MainComponent = (function () {
     };
     MainComponent.prototype.afterAssignDataForLeadAgent = function () {
         var lead = "Lead Agent";
+        this.metaData["dataProvider"] = [];
         var core = this.utils.coreMetrics;
         var months = this.utils.months;
         var k;
@@ -1555,7 +1574,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/protected/protected.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700,800'\r\n      rel='stylesheet'\r\n      type='text/css'>\r\n\r\n<div *ngIf=\"!loaded\" id=\"overlay\">\r\n  <div id=\"loader\">\r\n    <div id=\"box\"></div>\r\n    <div id=\"hill\"></div>\r\n  </div>\r\n</div>\r\n\r\n<!-- Always shows a header, even in smaller screens. -->\r\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer\">\r\n  <div class=\"mdl-layout__header\">\r\n    <div class=\"mdl-layout__header-row\" style=\"padding-right: 10px !important\">\r\n      <!-- Title -->\r\n      <span class=\"mdl-layout-title\">{{title}}</span>\r\n      <!-- Add spacer, to align navigation to the right -->\r\n      <div class=\"mdl-layout-spacer\"></div>\r\n      <!-- Navigation. We hide it in small screens. -->\r\n      <nav class=\"mdl-navigation mdl-layout--large-screen-only\">\r\n        <!-- <a class=\"mdl-navigation__link\" href=\"\">Link</a>  -->\r\n      </nav>\r\n      <div>\r\n        <popover-content #myPopover [closeOnClickOutside]=\"true\" placement=\"bottom\" [animation]=\"true\">\r\n          <div id=\"testify\" style=\"overflow-y:auto; max-height:80vh; margin-right:-9px; margin-left:-5px\">\r\n            <span style=\"color:black\">\r\n              <div style=\"padding-bottom:20px\">\r\n                <div class=\"pull-left\" style=\"display:inline;font-size:x-large\">Notifications</div>\r\n                <button *ngIf=\"z!=0\" class=\"mdl-button mdl-js-button mdl-button--icon pull-right\" (click)=\"clearall()\"><i class=\"material-icons\">clear_all</i></button>\r\n              </div>\r\n            </span>\r\n            <hr>\r\n            <div *ngIf=\"z==0\" style=\"color:black;padding-bottom: 8px;\">No Notifications to show!</div>\r\n          </div>\r\n        </popover-content>\r\n        <!-- <div class=\"mdl-navigation__link\"> -->\r\n        <span [popover]=\"myPopover\" class=\"mdl-badge mdl-badge--overlap\" count=\"$dataBadge\"\r\n              style=\"margin-left: 4px; margin-right:70px; display:block; cursor:pointer\">\r\n            <img style=\"height:18px; width: auto; display:block; margin-top:10%; margin-right:30%\"\r\n                 src=\"/angular-practice/assets/notification-bell.png\">\r\n          </span>\r\n        <!-- </div> -->\r\n      </div>\r\n      <button id=\"demo-menu-lower-right\" [popover]=\"mypopover2\" class=\"mdl-button mdl-js-button mdl-button--icon\"\r\n              style=\"margin-right: 2%\">\r\n        <i class=\"material-icons\" style=\"font-size: 28px;\">account_box</i>\r\n      </button>\r\n\r\n      <popover-content #mypopover2 [closeOnClickOutside]=\"true\" placement=\"auto bottom\" [animation]=\"true\" style=\"margin-right: 50px\">\r\n        <div id=\"testify2\">\r\n            <span style=\"color:black\">\r\n              <div style=\"padding-bottom:20px\">\r\n                <div class=\"pull-left\" style=\"display:inline;font-size:x-large\">Settings</div>\r\n\r\n              </div>\r\n            </span>\r\n          <hr>\r\n          <div style=\"color:black\">\r\n            <table style=\"width: 100%\">\r\n              <tr>\r\n                <td rowspan=\"3\"> <img class=\"img-circle\" height=\"100\" width=\"100\" src=\"https://lh4.googleusercontent.com/-KrUpjv4wae8/AAAAAAAAAAI/AAAAAAAAHhM/iGPGrEMUnwQ/photo.jpg\">\r\n                </td>\r\n                <td>Theme <md-slide-toggle>Dark mode</md-slide-toggle> </td>\r\n              </tr>\r\n              <hr>\r\n              <tr>\r\n                <td> Choose Metrics</td>\r\n              </tr>\r\n              <tr>\r\n                <td colspan=\"2\">\r\n                  <button (click)=\"logout()\" md-button style=\"background-color: #6495ed\">LOG OUT</button>\r\n                </td>\r\n              </tr>\r\n\r\n            </table>\r\n          </div>\r\n        </div>\r\n      </popover-content>\r\n\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\" mdl-layout__drawer\" style=\"background: rgb(63,81,181)\">\r\n    <span class=\"mdl-layout-title\" style=\"padding-left: 40%\"><span style=\"color:white\">IPF</span></span>\r\n    <div style=\"height:10%\"></div>\r\n    <nav class=\"mdl-navigation\">\r\n      <button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./home']\"><img\r\n        style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/line-chart.png\"><span\r\n        style=\"color:white\">Home</span></button>\r\n      <button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./table']\"><img\r\n        style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/table-grid.png\"><span\r\n        style=\"color:white\">Table</span></button>\r\n      <button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./profile']\"><img\r\n        style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/profile.png\"><span\r\n        style=\"color:white\">Profile</span></button>\r\n    </nav>\r\n  </div>\r\n  <main class=\"mdl-layout__content\">\r\n    <div>\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </main>\r\n</div>\r\n"
+module.exports = "<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700,800'\r\nrel='stylesheet'\r\ntype='text/css'>\r\n\r\n<div *ngIf=\"!loaded\" id=\"overlay\">\r\n<div id=\"loader\">\r\n<div id=\"box\"></div>\r\n<div id=\"hill\"></div>\r\n</div>\r\n</div>\r\n\r\n<!-- Always shows a header, even in smaller screens. -->\r\n<div class=\"mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer\">\r\n<div class=\"mdl-layout__header\">\r\n<div class=\"mdl-layout__header-row\" style=\"padding-right: 10px !important\">\r\n<!-- Title -->\r\n<span class=\"mdl-layout-title\">{{title}}</span>\r\n<!-- Add spacer, to align navigation to the right -->\r\n<div class=\"mdl-layout-spacer\"></div>\r\n<!-- Navigation. We hide it in small screens. -->\r\n<nav class=\"mdl-navigation mdl-layout--large-screen-only\">\r\n  <!-- <a class=\"mdl-navigation__link\" href=\"\">Link</a>  -->\r\n</nav>\r\n<div>\r\n  <popover-content #myPopover [closeOnClickOutside]=\"true\" placement=\"bottom\" [animation]=\"true\">\r\n    <div id=\"testify\" style=\"overflow-y:auto; max-height:80vh; margin-right:-9px; margin-left:-5px\">\r\n      <span style=\"color:black\">\r\n        <div style=\"padding-bottom:20px\">\r\n          <div class=\"pull-left\" style=\"display:inline;font-size:x-large\">Notifications</div>\r\n          <button *ngIf=\"z!=0\" class=\"mdl-button mdl-js-button mdl-button--icon pull-right\"\r\n                  (click)=\"clearall()\"><i class=\"material-icons\">clear_all</i></button>\r\n        </div>\r\n      </span>\r\n      <hr>\r\n      <div *ngIf=\"z==0\" style=\"color:black;padding-bottom: 8px;\">No Notifications to show!</div>\r\n    </div>\r\n  </popover-content>\r\n  <!-- <div class=\"mdl-navigation__link\"> -->\r\n  <span [popover]=\"myPopover\" class=\"mdl-badge mdl-badge--overlap\" count=\"$dataBadge\"\r\n        style=\"margin-left: 4px; margin-right:70px; display:block; cursor:pointer\">\r\n      <img style=\"height:18px; width: auto; display:block; margin-top:10%; margin-right:30%\"\r\n           src=\"/angular-practice/assets/notification-bell.png\">\r\n    </span>\r\n  <!-- </div> -->\r\n</div>\r\n<button id=\"demo-menu-lower-right\" [popover]=\"mypopover2\" class=\"mdl-button mdl-js-button mdl-button--icon\"\r\n        style=\"margin-right: 2%\">\r\n  <i class=\"material-icons\" style=\"font-size: 28px;\">account_box</i>\r\n</button>\r\n\r\n<popover-content #mypopover2 [closeOnClickOutside]=\"true\" placement=\"auto bottom\" [animation]=\"true\"\r\n                 style=\"margin-right: 50px\">\r\n  <div id=\"testify2\">\r\n      <span style=\"color:black\">\r\n        <div style=\"padding-bottom:20px\">\r\n          <div class=\"pull-left\" style=\"display:inline;font-size:x-large\">Settings</div>\r\n\r\n        </div>\r\n      </span>\r\n    <hr>\r\n    <div style=\"color:black\">\r\n      <table style=\"width: 100%\">\r\n        <tr>\r\n          <td rowspan=\"3\"><img class=\"img-circle\" height=\"100\" width=\"100\"\r\n                               src=\"https://lh4.googleusercontent.com/-KrUpjv4wae8/AAAAAAAAAAI/AAAAAAAAHhM/iGPGrEMUnwQ/photo.jpg\">\r\n          </td>\r\n          <td>Theme\r\n            <md-slide-toggle>Dark mode</md-slide-toggle>\r\n          </td>\r\n        </tr>\r\n        <hr>\r\n        <tr>\r\n          <td><button md-raised-button data-toggle=\"modal\" data-target=\"#myModal\">Choose Metrics</button></td>\r\n        </tr>\r\n        <br>\r\n        <tr>\r\n          <td colspan=\"2\">\r\n            <button (click)=\"logout()\" md-button style=\"background-color: #6495ed\">LOG OUT</button>\r\n          </td>\r\n        </tr>\r\n\r\n      </table>\r\n    </div>\r\n  </div>\r\n</popover-content>\r\n\r\n\r\n</div>\r\n</div>\r\n<div class=\" mdl-layout__drawer\" style=\"background: rgb(63,81,181)\">\r\n<span class=\"mdl-layout-title\" style=\"padding-left: 33.5%\"><span style=\"color:white\">Welcome</span></span>\r\n<nav class=\"mdl-navigation\">\r\n\r\n<button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./profile']\"><img class=\"img-circle\" height=\"100\" style=\"width:auto;display:block;margin-left:22%\" src=\"https://lh4.googleusercontent.com/-KrUpjv4wae8/AAAAAAAAAAI/AAAAAAAAHhM/iGPGrEMUnwQ/photo.jpg\">\r\n  <span style=\"color:white;align-self: center;font-weight:400;font-size:20px\">John Herbert</span>\r\n</button>\r\n<hr>\r\n<button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./home']\"><img\r\n  style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/line-chart.png\"><span\r\n  style=\"color:white;font-weight:400;font-size:20px\">Home</span></button>\r\n<button class=\"mdl-navigation__link\" md-button [routerLink]=\"['./table']\"><img\r\n  style=\"height:70px; width: auto; display:block; margin-left:28%\" src=\"/angular-practice/assets/table-grid.png\"><span\r\n  style=\"color:white;font-weight:400;font-size:20px\">Table</span></button>\r\n\r\n</nav>\r\n</div>\r\n<main class=\"mdl-layout__content\">\r\n<div>\r\n<router-outlet></router-outlet>\r\n</div>\r\n</main>\r\n</div>\r\n<div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\" style=\"width:400px\">\r\n    \r\n      <!-- Modal content-->\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n          <h4 class=\"modal-title\" style=\"font-weight:600;font-size:20px\">Core Metrics</h4>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <label for=\"sel1\">Core Metric 1:</label>\r\n          <select class=\"form-control\" id=\"sel1\" (change)=\"onChange1($event.target.value)\">\r\n            <option *ngFor=\"let metric of metrics\" [selected]=\"metric==core1\">{{metric}}</option>\r\n          </select>\r\n          <br>\r\n          <br>\r\n          <label for=\"sel2\">Core Metric 2:</label>\r\n          <select class=\"form-control\" id=\"sel2\" (change)=\"onChange2($event.target.value)\">\r\n            <option *ngFor=\"let metric of metrics\" [selected]=\"metric==core2\">{{metric}}</option>\r\n          </select>\r\n          <br>\r\n          <br>\r\n          <label for=\"sel3\">Core Metric 3:</label>\r\n          <select class=\"form-control\" id=\"sel3\" (change)=\"onChange3($event.target.value)\">\r\n            <option *ngFor=\"let metric of metrics\" [selected]=\"metric==core3\">{{metric}}</option>\r\n          </select>\r\n          <br>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\" (click)=\"modalclosed()\">OK</button>\r\n        </div>\r\n      </div>\r\n      \r\n    </div>\r\n  </div>"
 
 /***/ }),
 
@@ -1566,8 +1585,9 @@ module.exports = "<link href='https://fonts.googleapis.com/css?family=Open+Sans:
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_service__ = __webpack_require__("../../../../../src/app/protected/utils.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__("../../../../../src/app/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProtectedComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1583,19 +1603,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProtectedComponent = (function () {
-    function ProtectedComponent(utils, authService, route, snackBar) {
+    function ProtectedComponent(utils, authService, route, snackBar, http) {
         var _this = this;
         this.utils = utils;
         this.authService = authService;
         this.route = route;
         this.snackBar = snackBar;
+        this.http = http;
         this.loaded = false;
         this.k = 0;
         this.z = 0;
         this.emitter = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.emitter.subscribe(function (res) { return _this.z--; });
         this.utils.loaded.subscribe(function (res) { return _this.loaded = res; });
+        this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(function (res) {
+            _this.data = res.json();
+            console.log(_this.data);
+            _this.metrics = _this.utils.getHeaderNames(_this.data);
+        });
+        this.core1 = this.utils.coreMetrics[0];
+        this.core2 = this.utils.coreMetrics[1];
+        this.core3 = this.utils.coreMetrics[2];
         this.title = this.utils.title;
         this.utils.titleChanged.subscribe(function (res) { return _this.title = res; });
         var color = "red";
@@ -1626,6 +1656,7 @@ var ProtectedComponent = (function () {
     ProtectedComponent.prototype.logout = function () {
         this.authService.logout();
         this.route.navigate(['/login']);
+        window.location.reload();
         console.log("Logged Out");
     };
     ProtectedComponent.prototype.settings = function () {
@@ -1645,6 +1676,18 @@ var ProtectedComponent = (function () {
             duration: 2000,
         });
     };
+    ProtectedComponent.prototype.onChange1 = function (change) {
+        this.utils.coreMetrics[0] = change;
+    };
+    ProtectedComponent.prototype.onChange2 = function (change) {
+        this.utils.coreMetrics[1] = change;
+    };
+    ProtectedComponent.prototype.onChange3 = function (change) {
+        this.utils.coreMetrics[2] = change;
+    };
+    ProtectedComponent.prototype.modalclosed = function () {
+        this.utils.coreMetricsChanged.emit();
+    };
     return ProtectedComponent;
 }());
 ProtectedComponent = __decorate([
@@ -1653,10 +1696,10 @@ ProtectedComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/protected/protected.component.html"),
         styles: [__webpack_require__("../../../../../src/app/protected/protected.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["b" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["b" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["g" /* MdSnackBar */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__utils_service__["a" /* UtilsService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["b" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["b" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_material__["h" /* MdSnackBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_material__["h" /* MdSnackBar */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* Http */]) === "function" && _e || Object])
 ], ProtectedComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=protected.component.js.map
 
 /***/ }),
@@ -1751,12 +1794,12 @@ ProtectedModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["d" /* MdTabsModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MdTabsModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_6_ngx_popover__["PopoverModule"],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MdCardModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["f" /* MdCardModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["b" /* MdButtonModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["f" /* MdSnackBarModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["g" /* MdSnackBarModule */],
             __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             __WEBPACK_IMPORTED_MODULE_8__amcharts_amcharts3_angular__["a" /* AmChartsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_material__["c" /* MdSidenavModule */],
@@ -1874,6 +1917,7 @@ var UtilsService = (function () {
         this.firstLoad = true;
         this.firstLoad2 = true;
         this.firstLoad3 = true;
+        this.coreMetricsChanged = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
         this.title = "Dashboard";
     }
     UtilsService.prototype.getAgents = function (data) {
