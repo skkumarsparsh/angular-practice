@@ -1,3 +1,7 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700,800'
+      rel='stylesheet'
+      type='text/css'>
+
 <div *ngIf="!loaded" id="overlay">
   <div id="loader">
     <div id="box"></div>
@@ -7,7 +11,7 @@
 
 <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
-  <header class="mdl-layout__header">
+  <div class="mdl-layout__header">
     <div class="mdl-layout__header-row" style="padding-right: 10px !important">
       <!-- Title -->
       <span class="mdl-layout-title">{{title}}</span>
@@ -31,28 +35,65 @@
           </div>
         </popover-content>
         <!-- <div class="mdl-navigation__link"> -->
-        <span [popover]="myPopover" class="mdl-badge mdl-badge--overlap" count="$dataBadge" style="margin-left: 4px; margin-right:70px; display:block; cursor:pointer">
-            <img style="height:18px; width: auto; display:block; margin-top:10%; margin-right:30%" src="/assets/notification-bell.png">
+        <span [popover]="myPopover" class="mdl-badge mdl-badge--overlap" count="$dataBadge"
+              style="margin-left: 4px; margin-right:70px; display:block; cursor:pointer">
+            <img style="height:18px; width: auto; display:block; margin-top:10%; margin-right:30%"
+                 src="/assets/notification-bell.png">
           </span>
         <!-- </div> -->
       </div>
-      <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon" style="margin-right: 2%">
+      <button id="demo-menu-lower-right" [popover]="mypopover2" class="mdl-button mdl-js-button mdl-button--icon"
+              style="margin-right: 2%">
         <i class="material-icons" style="font-size: 28px;">account_box</i>
       </button>
 
-      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
-        <li class="mdl-menu__item"><div (click)="settings()">Personal Settings</div></li>
-        <li class="mdl-menu__item"><div (click)="logout()">Logout</div></li>
-      </ul>
+      <popover-content #mypopover2 [closeOnClickOutside]="true" placement="auto bottom" [animation]="true" style="margin-right: 50px">
+        <div id="testify2">
+            <span style="color:black">
+              <div style="padding-bottom:20px">
+                <div class="pull-left" style="display:inline;font-size:x-large">Settings</div>
+
+              </div>
+            </span>
+          <hr>
+          <div style="color:black">
+            <table style="width: 100%">
+              <tr>
+                <td rowspan="3"> <img class="img-circle" height="100" width="100" src="https://lh4.googleusercontent.com/-KrUpjv4wae8/AAAAAAAAAAI/AAAAAAAAHhM/iGPGrEMUnwQ/photo.jpg">
+                </td>
+                <td>Theme <md-slide-toggle>Dark mode</md-slide-toggle> </td>
+              </tr>
+              <hr>
+              <tr>
+                <td> Choose Metrics</td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button (click)="logout()" md-button style="background-color: #6495ed">LOG OUT</button>
+                </td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+      </popover-content>
+
+
     </div>
-  </header>
-  <div class="mdl-layout__drawer" style="background: rgb(63,81,181)">
+  </div>
+  <div class=" mdl-layout__drawer" style="background: rgb(63,81,181)">
     <span class="mdl-layout-title" style="padding-left: 40%"><span style="color:white">IPF</span></span>
     <div style="height:10%"></div>
     <nav class="mdl-navigation">
-      <button class="mdl-navigation__link" md-button [routerLink]="['./home']"><img style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/line-chart.png"><span style="color:white">Home</span></button>
-      <button class="mdl-navigation__link" md-button [routerLink]="['./table']"><img style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/table-grid.png"><span style="color:white">Table</span></button>
-      <button class="mdl-navigation__link" md-button [routerLink]="['./profile']"><img style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/profile.png"><span style="color:white">Profile</span></button>
+      <button class="mdl-navigation__link" md-button [routerLink]="['./home']"><img
+        style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/line-chart.png"><span
+        style="color:white">Home</span></button>
+      <button class="mdl-navigation__link" md-button [routerLink]="['./table']"><img
+        style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/table-grid.png"><span
+        style="color:white">Table</span></button>
+      <button class="mdl-navigation__link" md-button [routerLink]="['./profile']"><img
+        style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/profile.png"><span
+        style="color:white">Profile</span></button>
     </nav>
   </div>
   <main class="mdl-layout__content">
