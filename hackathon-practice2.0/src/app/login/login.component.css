@@ -45,7 +45,7 @@ body {
 .form-module {
   background: #ffffff;
   width: 100%;
-  border-top: 10px solid rgb(63,81,181);
+  border-top: 30px solid rgb(63,81,181);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
 }
