@@ -828,7 +828,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".demo-card1 > .mdl-card__title {\n    color: #fff;\n    background:\n      url('/assets/detective.png') bottom right 15% no-repeat #46B6AC;\n  }\n\n  .demo-card2 > .mdl-card__title {\n    color: #fff;\n    background:\n      url('/assets/metrics.png') bottom right 15% no-repeat #46B6AC;\n  }\n\n  .demo-card3 > .mdl-card__title {\n    color: #fff;\n    background:\n      url('/assets/speedometer.png') bottom right 15% no-repeat #46B6AC;\n  }", ""]);
+exports.push([module.i, ".demo-card1 > .mdl-card__title {\n    color: #fff;\n    background:\n      url('/angular-practice/assets/detective.png') bottom right 15% no-repeat #46B6AC;\n  }\n\n  .demo-card2 > .mdl-card__title {\n    color: #fff;\n    background:\n      url('/angular-practice/assets/metrics.png') bottom right 15% no-repeat #46B6AC;\n  }\n\n  .demo-card3 > .mdl-card__title {\n    color: #fff;\n    background:\n      url('/angular-practice/assets/speedometer.png') bottom right 15% no-repeat #46B6AC;\n  }", ""]);
 
 // exports
 
