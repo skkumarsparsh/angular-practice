@@ -70,8 +70,9 @@ type='text/css'>
         </tr>
         <hr>
         <tr>
-          <td> Choose Metrics</td>
+          <td><button md-raised-button data-toggle="modal" data-target="#myModal">Choose Metrics</button></td>
         </tr>
+        <br>
         <tr>
           <td colspan="2">
             <button (click)="logout()" md-button style="background-color: #6495ed">LOG OUT</button>
@@ -91,15 +92,15 @@ type='text/css'>
 <nav class="mdl-navigation">
 
 <button class="mdl-navigation__link" md-button [routerLink]="['./profile']"><img class="img-circle" height="100" style="width:auto;display:block;margin-left:22%" src="https://lh4.googleusercontent.com/-KrUpjv4wae8/AAAAAAAAAAI/AAAAAAAAHhM/iGPGrEMUnwQ/photo.jpg">
-  <span style="color:white;align-self: center;font-weight:600;font-size:18px">John Herbert</span>
+  <span style="color:white;align-self: center;font-weight:400;font-size:20px">John Herbert</span>
 </button>
 <hr>
 <button class="mdl-navigation__link" md-button [routerLink]="['./home']"><img
   style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/line-chart.png"><span
-  style="color:white;font-weight:600;font-size:18px">Home</span></button>
+  style="color:white;font-weight:400;font-size:20px">Home</span></button>
 <button class="mdl-navigation__link" md-button [routerLink]="['./table']"><img
   style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/table-grid.png"><span
-  style="color:white;font-weight:600;font-size:18px">Table</span></button>
+  style="color:white;font-weight:400;font-size:20px">Table</span></button>
 
 </nav>
 </div>
@@ -109,3 +110,38 @@ type='text/css'>
 </div>
 </main>
 </div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="width:400px">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Core Metrics</h4>
+        </div>
+        <div class="modal-body">
+          <label for="sel1">Core Metric 1:</label>
+          <select class="form-control" id="sel1" (change)="onChange1($event.target.value)">
+            <option *ngFor="let metric of metrics" [selected]="metric==core1">{{metric}}</option>
+          </select>
+          <br>
+          <br>
+          <label for="sel2">Core Metric 2:</label>
+          <select class="form-control" id="sel2" (change)="onChange2($event.target.value)">
+            <option *ngFor="let metric of metrics" [selected]="metric==core2">{{metric}}</option>
+          </select>
+          <br>
+          <br>
+          <label for="sel3">Core Metric 3:</label>
+          <select class="form-control" id="sel3" (change)="onChange3($event.target.value)">
+            <option *ngFor="let metric of metrics" [selected]="metric==core3">{{metric}}</option>
+          </select>
+          <br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modalclosed()">OK</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>

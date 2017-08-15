@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { MdSidenavModule } from '@angular/material';
-import {MdSlideToggleModule} from '@angular/material';
+import { MdSlideToggleModule } from '@angular/material';
+import { MdSelectModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { MdButtonModule } from '@angular/material';
 import { PopoverModule } from 'ngx-popover';
@@ -41,6 +42,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     AmChartsModule,
     MdSidenavModule,
+    MdSelectModule,
     SimpleNotificationsModule.forRoot(),
   ],
   providers: [

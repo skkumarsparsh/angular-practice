@@ -1,8 +1,9 @@
 import { Component,EventEmitter } from '@angular/core';
 import { UtilsService } from './utils.service';
 import { AuthService } from '../auth.service';
+import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-import {MdSnackBar} from '@angular/material';
+import { MdSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-protected',
@@ -11,13 +12,27 @@ import {MdSnackBar} from '@angular/material';
 })
 export class ProtectedComponent {
   loaded=false;
+  data;
   title: string;
+  metrics;
   k = 0;
   z = 0;
+  core1;
+  core2;
+  core3;
+
   emitter = new EventEmitter<any>();
-  constructor(private utils: UtilsService, private authService: AuthService, private route: Router, public snackBar: MdSnackBar) {
+  constructor(private utils: UtilsService, private authService: AuthService, private route: Router, public snackBar: MdSnackBar,private http: Http) {
     this.emitter.subscribe(res => this.z--);
     this.utils.loaded.subscribe(res => this.loaded = res);
+    this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
+      this.data = res.json();
+      console.log(this.data);
+      this.metrics = this.utils.getHeaderNames(this.data);
+    })
+    this.core1 = this.utils.coreMetrics[0];
+    this.core2 = this.utils.coreMetrics[1];
+    this.core3 = this.utils.coreMetrics[2];
     this.title = this.utils.title;
     this.utils.titleChanged.subscribe(res => this.title = res);
     let color = "red";
@@ -77,5 +92,21 @@ export class ProtectedComponent {
     this.snackBar.open("All Notifications Cleared!", "Close", {
       duration: 2000,
     });
+  }
+
+  onChange1(change) {
+    this.utils.coreMetrics[0] = change;
+  }
+
+  onChange2(change) {
+    this.utils.coreMetrics[1] = change;
+  }
+
+  onChange3(change) {
+    this.utils.coreMetrics[2] = change;
+  }
+
+  modalclosed() {
+    this.utils.coreMetricsChanged.emit();
   }
 }

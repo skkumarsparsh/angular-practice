@@ -12,6 +12,7 @@ export class UtilsService {
   firstLoad = true;
   firstLoad2 = true;
   firstLoad3 = true;
+  coreMetricsChanged = new EventEmitter<any>();
 
   constructor() {
     this.title = "Dashboard";

@@ -11,7 +11,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import { MdSidenavModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { MdButtonModule } from '@angular/material';
-import {MdCardModule} from '@angular/material';
+import { MdCardModule } from '@angular/material';
 import { MdSnackBarModule } from '@angular/material';
 import { PopoverModule } from 'ngx-popover';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

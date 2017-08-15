@@ -51,6 +51,9 @@ export class MainComponent implements OnInit {
     this.isCollapsed2 = !this.isCollapsed2;
     this.utils.titleChanged.emit("Dashboard");
     this.metaData = new Object({
+      "responsive": {
+        "enabled": true
+      },
       "type": "serial",
       "categoryField": "category",
       "startDuration": 1,
@@ -93,8 +96,10 @@ export class MainComponent implements OnInit {
       "guides": [],
       "valueAxes": [
         {
+          "logarithmic": true,
           "id": "ValueAxis-1",
-          "title": "Number"
+          "title": "Number",
+          "labelFrequency": 2
         }
       ],
       "allLabels": [],
@@ -123,6 +128,11 @@ export class MainComponent implements OnInit {
       this.months = this.utils.months;
       this.chart = this.afterAssignDataForLeadAgent();
     });
+    this.utils.coreMetricsChanged.subscribe(res => {
+      this.AmCharts.destroyChart(this.chart);
+      this.chart = this.afterAssignDataForLeadAgent();
+      this.chart.invalidateSize();
+    })
   }
 
   test(n) {
@@ -134,7 +144,8 @@ export class MainComponent implements OnInit {
   }
 
   afterAssignDataForLeadAgent() {
-    let lead = "Lead Agent"
+    let lead = "Lead Agent";
+    this.metaData["dataProvider"] = [];
     let core = this.utils.coreMetrics;
     let months = this.utils.months;
     let k;
