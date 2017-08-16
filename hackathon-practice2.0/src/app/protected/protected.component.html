@@ -35,17 +35,15 @@ type='text/css'>
       <div *ngIf="z==0" style="color:black;padding-bottom: 8px;">No Notifications to show!</div>
     </div>
   </popover-content>
-  <!-- <div class="mdl-navigation__link"> -->
-  <span [popover]="myPopover" class="mdl-badge mdl-badge--overlap" count="$dataBadge"
-        style="margin-left: 4px; margin-right:70px; display:block; cursor:pointer">
-      <img style="height:18px; width: auto; display:block; margin-top:10%; margin-right:30%"
-           src="/assets/notification-bell.png">
-    </span>
-  <!-- </div> -->
+  <div style="padding-right:50px">
+  <button [popover]="myPopover" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">notifications</i>
+    </button>
+  </div>
 </div>
 <button id="demo-menu-lower-right" [popover]="mypopover2" class="mdl-button mdl-js-button mdl-button--icon"
         style="margin-right: 2%">
-  <i class="material-icons" style="font-size: 28px;">account_box</i>
+        <i class="material-icons">settings</i>
 </button>
 
 <popover-content #mypopover2 [closeOnClickOutside]="true" placement="auto bottom" [animation]="true"
@@ -59,27 +57,15 @@ type='text/css'>
       </span>
     <hr>
     <div style="color:black">
-      <table style="width: 100%">
-        <tr>
-          <td rowspan="3"><img class="img-circle" height="100" width="100"
-                               src="https://lh4.googleusercontent.com/-KrUpjv4wae8/AAAAAAAAAAI/AAAAAAAAHhM/iGPGrEMUnwQ/photo.jpg">
-          </td>
-          <td>Theme
-            <md-slide-toggle>Dark mode</md-slide-toggle>
-          </td>
-        </tr>
+          <div style="font-size:16px;font-weight:600;">Theme</div>
+          <br>
+            <md-slide-toggle style="padding-left:15%;">Dark mode</md-slide-toggle>
         <hr>
-        <tr>
-          <td><button md-raised-button data-toggle="modal" data-target="#myModal">Choose Metrics</button></td>
-        </tr>
-        <br>
-        <tr>
-          <td colspan="2">
-            <button (click)="logout()" md-button style="background-color: #6495ed">LOG OUT</button>
-          </td>
-        </tr>
-
-      </table>
+          <div data-toggle="modal" data-target="#myModal" style="cursor:pointer;font-size:16px;font-weight:600">Choose Core Metrics</div>
+        <hr>
+        <div style="padding-left:22%">
+          <button (click)="logout()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">LOG OUT</button>
+        </div>
     </div>
   </div>
 </popover-content>

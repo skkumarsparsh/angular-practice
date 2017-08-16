@@ -10,6 +10,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private utils: UtilsService) {
     this.utils.titleChanged.emit("Profile");
+    this.utils.loaded.emit(true);
   }
 
   ngOnInit() {
