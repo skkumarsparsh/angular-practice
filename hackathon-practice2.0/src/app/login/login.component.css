@@ -3,7 +3,7 @@
 }
 
 .background-image {
-  background-image: url('https://wallpaperscraft.com/image/abstraction_geometry_shapes_colors_93400_1920x1080.jpg');
+  background-image: url('/assets/Back.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

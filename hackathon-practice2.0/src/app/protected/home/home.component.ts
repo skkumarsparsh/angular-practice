@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   data;
 
   options = {
-    timeOut: 3000,
+    timeOut: 4000,
     showProgressBar: true,
     pauseOnHover: true,
     clickToClose: true

@@ -58,3 +58,22 @@
   background:
     url('/assets/MetricPic-11.png') bottom right 15% no-repeat #46B6AC;
 }
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+.buttontext {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color:rgb(63,81,181);
+  padding:6px;
+}

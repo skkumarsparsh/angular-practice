@@ -96,10 +96,8 @@ export class MainComponent implements OnInit {
       "guides": [],
       "valueAxes": [
         {
-          "logarithmic": true,
           "id": "ValueAxis-1",
-          "title": "Number",
-          "labelFrequency": 2
+          "title": "Number"
         }
       ],
       "allLabels": [],
