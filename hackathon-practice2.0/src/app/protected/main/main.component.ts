@@ -12,7 +12,7 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class MainComponent implements OnInit {
   data;
-  metaData;
+  metaData:any;
   chart: any;
   isCollapsed = true;
   isCollapsed2 = true;
@@ -117,6 +117,14 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(this.utils.checked==true) {
+      this.metaData.theme="dark";
+    } else {
+      this.metaData.theme="default";
+    }
+    setTimeout(()=>{
+      this.loading(this.utils.checked);
+    },50)
     this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
       this.data = res.json();
       console.log(this.data);
@@ -131,6 +139,20 @@ export class MainComponent implements OnInit {
       this.chart = this.afterAssignDataForLeadAgent();
       this.chart.invalidateSize();
     })
+    this.utils.slidetoggle.subscribe(res => {
+      if(res==true) {
+        this.metaData.theme = "dark";
+        this.AmCharts.destroyChart(this.chart);
+        this.chart = this.afterAssignDataForLeadAgent();
+        this.chart.invalidateSize();
+      } else {
+        this.metaData.theme = "default";
+        this.AmCharts.destroyChart(this.chart);
+        this.chart = this.afterAssignDataForLeadAgent();
+        this.chart.invalidateSize();
+      }
+      this.loading(res);
+    })
   }
 
   test(n) {
@@ -139,6 +161,38 @@ export class MainComponent implements OnInit {
 
   test2(n) {
     this.route.navigate(['/logged-in/metric', n]);
+  }
+
+  loading(res) {
+    if(document.getElementById("cardcolor")&&document.getElementById("cardcolor2")&&document.getElementById("changecolor")&&document.getElementById("heading")) {
+      if(res==true) {
+        document.getElementById("changecolor").setAttribute("style","background-color:#222");
+        this.metaData.theme = "dark";
+        document.getElementById("cardcolor").setAttribute("style","background-color:rgb(51, 51, 51);");
+        document.getElementById("cardcolor2").setAttribute("style","background-color:rgb(51, 51, 51);");
+        document.getElementById("heading").setAttribute("style","color:white");
+        for(var i=0;i<12;i++) {
+          for(var j=1;j<=7;j++) {
+            if(document.getElementById("text"+j+""+i)) {
+              document.getElementById("text"+j+""+i).setAttribute("style","color:white");
+            }
+          }
+        }
+      } else {
+        this.metaData.theme = "default";
+        document.getElementById("changecolor").setAttribute("style","background-color:#f0f8ff");
+        document.getElementById("cardcolor").setAttribute("style","background-color:white");
+        document.getElementById("cardcolor2").setAttribute("style","background-color:white");
+        document.getElementById("heading").setAttribute("style","color:black");
+        for(var i=0;i<12;i++) {
+          for(var j=1;j<=7;j++) {
+            if(document.getElementById("text"+j+""+i)) {
+              document.getElementById("text"+j+""+i).setAttribute("style","color:black");
+            }
+          }
+        }
+      }
+    }
   }
 
   afterAssignDataForLeadAgent() {

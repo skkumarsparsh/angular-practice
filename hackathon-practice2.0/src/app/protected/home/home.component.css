@@ -1,28 +1,29 @@
 .demo-card1 > .mdl-card__title {
     color: #fff;
     background:
-      url('/assets/detective.png') bottom right 15% no-repeat #46B6AC;
+      url('/assets/reunion.png') bottom right 15% no-repeat #25383c;
   }
 
   .demo-card2 > .mdl-card__title {
     color: #fff;
     background:
-      url('/assets/metrics.png') bottom right 15% no-repeat #46B6AC;
+      url('/assets/analytics.png') bottom 10% right 15% no-repeat #2b3856;
   }
 
   .demo-card3 > .mdl-card__title {
     color: #fff;
     background:
-      url('/assets/speedometer.png') bottom right 15% no-repeat #46B6AC;
+      url('/assets/dash.png') center 12% no-repeat #4b0082;
   }
 
 .card {
-  /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   transition: 0.3s;
+  width:100%;
+  min-height:400px;
+  cursor:pointer;
 }
 
-/* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
 }

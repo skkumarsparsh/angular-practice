@@ -30,11 +30,15 @@ export class MetricComponent implements OnInit {
     this.utils.loaded.emit(false);
     this.metric = this.metrics[this.id];
     this.utils.titleChanged.emit(this.metric);
+    if(this.utils.checked==true) {
+      this.metaData.theme="dark";
+    } else {
+      this.metaData.theme="default";
+    }
   }
 
   assignData() {
     this.chartdiv = "chartdiv" + this.id;
-
     this.metaData = new Object(
       {
         "type": "serial",
@@ -106,6 +110,7 @@ export class MetricComponent implements OnInit {
   }
 
   afterAssignDataForLeadAgent() {
+    this.metaData["dataProvider"] = [];
     this.agents = this.utils.getAgents(this.data);
     let headers = this.utils.getHeaderNames(this.data);
     let months = this.utils.months;
@@ -127,7 +132,58 @@ export class MetricComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    setTimeout(()=>{
+      this.loading(this.utils.checked);
+    },50)
+    this.utils.slidetoggle.subscribe(res => {
+      if(res==true) {
+        this.metaData.theme = "dark";
+        this.AmCharts.destroyChart(this.chart);
+        this.chart = this.afterAssignDataForLeadAgent();
+        this.chart.invalidateSize();
+      } else {
+        this.metaData.theme = "default";
+        this.AmCharts.destroyChart(this.chart);
+        this.chart = this.afterAssignDataForLeadAgent();
+        this.chart.invalidateSize();
+      }
+      this.loading(res);
+    })
   }
 
+  loading(res) {
+    if(document.getElementById("cardcolor")&&document.getElementById("changecolor")&&document.getElementById("heading")) {
+      if(res==true) {
+        this.metaData.theme = "dark";
+        document.getElementById("cardcolor").setAttribute("style","background-color:rgb(51, 51, 51);");
+        document.getElementById("changecolor").setAttribute("style","background-color:#222");
+        document.getElementById("heading").setAttribute("style","color:white");
+        for(var i=0;i<14;i++) {
+          if(document.getElementById("cardcolor2"+i)) {
+            document.getElementById("cardcolor2"+i).setAttribute("style","background-color:rgb(51, 51, 51);");
+          }
+          for(var j=1;j<=7;j++) {
+            if(document.getElementById("text"+j+""+i)) {
+              document.getElementById("text"+j+""+i).setAttribute("style","color:white");
+            }
+          }
+        }
+      } else {
+        this.metaData.theme = "default";
+        document.getElementById("cardcolor").setAttribute("style","background-color:white");
+        document.getElementById("changecolor").setAttribute("style","background-color:#f0f8ff");
+        document.getElementById("heading").setAttribute("style","color:black");
+        for(var i=0;i<14;i++) {
+          if(document.getElementById("cardcolor2"+i)) {
+            document.getElementById("cardcolor2"+i).setAttribute("style","background-color:white");
+          }
+          for(var j=1;j<=7;j++) {
+            if(document.getElementById("text"+j+""+i)) {
+              document.getElementById("text"+j+""+i).setAttribute("style","color:black");
+            }
+          }
+        }
+      }
+    }
+  }
 }

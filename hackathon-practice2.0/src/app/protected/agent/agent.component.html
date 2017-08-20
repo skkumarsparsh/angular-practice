@@ -1,47 +1,46 @@
-<md-tab-group [dynamicHeight]=true [disableRipple]=true>
-  <md-tab label="Graph">
+<div style="height:-webkit-fill-available">
     <div style="padding:10px">
-      <div class="mdl-card mdl-shadow--4dp" style="width: 100%;">
+      <div id="cardcolor" class="mdl-card mdl-shadow--4dp card">
         <div id="{{chartdiv}}" [style.width.%]="100" [style.height.px]="500"></div>
       </div>
     </div>
-  </md-tab>
-
-
-  <md-tab label="Table">
-    <h4 style="text-align: center">
+    <br>
+    <hr>
+    <br>
+    <div id="changecolor">
+    <h4 id="heading" class="heading">
       {{agent}} Table
     </h4>
     <br>
     <div *ngIf="data" align="center">
-      <table style="width: 60%;" class="mdl-data-table mdl-js-data-table mdl-shadow--4dp">
+      <table id="cardcolor2" class="mdl-data-table mdl-js-data-table mdl-shadow--4dp table">
         <thead>
           <tr>
-            <th colspan="2" class="mdl-data-table__cell--non-numeric">Metric</th>
-            <th>Month</th>
-            <th>Value</th>
+            <th colspan="2" class="mdl-data-table__cell--non-numeric" style="color:orange">Metric</th>
+            <th style="color:orange">Month</th>
+            <th style="color:orange">Value</th>
           </tr>
         </thead>
-        <tbody *ngFor="let metric of metrics">
+        <tbody *ngFor="let metric of metrics;let i=index;">
           <tr>
-            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric">{{ metric}}</td>
-            <td>Jan-17</td>
-            <td>{{ data[agent][metric]["Jan-17"] }}</td>
+            <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric" id="text1{{i}}">{{ metric}}</td>
+            <td id="text2{{i}}">Jan-17</td>
+            <td id="text3{{i}}">{{ data[agent][metric]["Jan-17"] }}</td>
           </tr>
           <tr>
-            <td>Feb-17</td>
-            <td>{{ data[agent][metric]["Feb-17"] }}</td>
+            <td id="text4{{i}}">Feb-17</td>
+            <td id="text5{{i}}">{{ data[agent][metric]["Feb-17"] }}</td>
           </tr>
           <tr>
-            <td>Mar-17</td>
-            <td>{{ data[agent][metric]["Mar-17"] }}</td>
+            <td id="text6{{i}}">Mar-17</td>
+            <td id="text7{{i}}">{{ data[agent][metric]["Mar-17"] }}</td>
           </tr>
         </tbody>
       </table>
     </div>
     <br>
     <br>
-  </md-tab>
-</md-tab-group>
+    </div>
+</div>
 
 <simple-notifications [options]="options"></simple-notifications>

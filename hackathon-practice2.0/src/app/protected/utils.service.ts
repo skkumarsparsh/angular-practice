@@ -11,8 +11,10 @@ export class UtilsService {
   months = ["Jan-17", "Feb-17", "Mar-17"];
   firstLoad = true;
   firstLoad2 = true;
+  checked = false;
   firstLoad3 = true;
   coreMetricsChanged = new EventEmitter<any>();
+  slidetoggle = new EventEmitter<any>();
 
   constructor() {
     this.title = "Dashboard";

@@ -11,3 +11,15 @@ md-sidenav {
   height: 500px;
   border: 1px solid black;
 }
+
+.card {
+  width: 100%;
+}
+
+.table {
+  width: 60%;
+}
+
+.heading {
+  text-align: center;
+}

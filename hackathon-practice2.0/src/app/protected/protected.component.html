@@ -59,7 +59,7 @@ type='text/css'>
     <div style="color:black">
           <div style="font-size:16px;font-weight:600;">Theme</div>
           <br>
-            <md-slide-toggle style="padding-left:15%;">Dark mode</md-slide-toggle>
+            <md-slide-toggle [checked]="checked" (change)="slidetogglechecked()" style="padding-left:15%;">Dark mode</md-slide-toggle>
         <hr>
           <div data-toggle="modal" data-target="#myModal" style="cursor:pointer;font-size:16px;font-weight:600">Choose Core Metrics</div>
         <hr>
@@ -91,7 +91,7 @@ type='text/css'>
 </nav>
 </div>
 <main class="mdl-layout__content">
-<div>
+<div id="outlet" class="background-image">
 <router-outlet></router-outlet>
 </div>
 </main>

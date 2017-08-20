@@ -109,3 +109,10 @@ md-sidenav {
     transform: translate(0, -1em) rotate(-225deg);
   }
 }
+
+.background-image {
+  background-color: #f0f8ff;
+  display: block;
+  margin:0;
+  padding:0;
+}

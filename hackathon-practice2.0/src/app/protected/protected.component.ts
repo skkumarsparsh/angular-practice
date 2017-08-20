@@ -17,6 +17,7 @@ export class ProtectedComponent {
   metrics;
   k = 0;
   z = 0;
+  checked=false;
   core1;
   core2;
   core3;
@@ -66,8 +67,6 @@ export class ProtectedComponent {
     });
   }
 
-  // <button id="button" class="mdl-button mdl-js-button mdl-button--icon pull-right"><span class="material-icons">close</span></button>
-
   logout() {
     this.authService.logout();
     this.route.navigate(['/login']);
@@ -76,7 +75,6 @@ export class ProtectedComponent {
   }
 
   settings() {
-    // this.route.navigate(['/logged-in/settings']);
     return false;
   }
 
@@ -108,5 +106,19 @@ export class ProtectedComponent {
 
   modalclosed() {
     this.utils.coreMetricsChanged.emit();
+  }
+
+  slidetogglechecked() {
+    this.checked = !this.checked;
+    this.utils.checked = this.checked;
+    if(this.checked==true) {
+      this.utils.slidetoggle.emit(this.checked);
+      document.getElementById("outlet").setAttribute("style","background-color:#222");
+    }
+    else {
+      this.utils.slidetoggle.emit(this.checked);
+      document.getElementById("outlet").setAttribute("style","background-color:#f0f8ff");
+    }
+    console.log(this.checked);
   }
 }
