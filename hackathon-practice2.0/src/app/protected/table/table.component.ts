@@ -29,6 +29,9 @@ export class TableComponent implements OnInit {
         this.loading(res);
       },50)
     })
+    setTimeout(() => {
+      this.loading(this.utils.checked);
+    },50)
   }
 
   afterDataReceived() {
@@ -44,12 +47,12 @@ export class TableComponent implements OnInit {
           if(document.getElementById("heading"+i)&&document.getElementById("cardcolor"+i)) {
             document.getElementById("heading"+i).setAttribute("style","color:white");
             document.getElementById("cardcolor"+i).setAttribute("style","background-color:rgb(51, 51, 51);");
-            for(var j=0;i<12;j++) {
+            for(var j=0;j<12;j++) {
               for(var k=1;k<=7;k++) {
-                // if(document.getElementById("text"+k+""+i+""+j)) {
+                if(document.getElementById("text"+k+""+i+""+j)) {
                   document.getElementById("text"+k+""+i+""+j).setAttribute("style","color:white");
                 }
-              // }
+              }
             }
           }
         }
@@ -59,11 +62,11 @@ export class TableComponent implements OnInit {
           if(document.getElementById("heading"+i)&&document.getElementById("cardcolor"+i)) {
             document.getElementById("heading"+i).setAttribute("style","color:black");
             document.getElementById("cardcolor"+i).setAttribute("style","background-color:white");
-            for(var j=0;i<12;j++) {
+            for(var j=0;j<12;j++) {
               for(var k=1;k<=7;k++) {
-                // if(document.getElementById("text"+k+""+i+""+j)) {
-                  document.getElementById("text"+k+""+i+""+j).setAttribute("style","color:black");
-                // }
+                if(document.getElementById("text"+k+""+i+""+j)) {
+                  document.getElementById("text"+k+""+j+""+i).setAttribute("style","color:black");
+                }
               }
             }
           }
