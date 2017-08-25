@@ -9,17 +9,12 @@ type='text/css'>
 </div>
 </div>
 
-<!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
 <div class="mdl-layout__header">
 <div class="mdl-layout__header-row" style="padding-right: 10px !important">
-<!-- Title -->
 <span class="mdl-layout-title">{{title}}</span>
-<!-- Add spacer, to align navigation to the right -->
 <div class="mdl-layout-spacer"></div>
-<!-- Navigation. We hide it in small screens. -->
 <nav class="mdl-navigation mdl-layout--large-screen-only">
-  <!-- <a class="mdl-navigation__link" href="">Link</a>  -->
 </nav>
 <div>
   <popover-content #myPopover [closeOnClickOutside]="true" placement="bottom" [animation]="true">
@@ -59,12 +54,15 @@ type='text/css'>
     <div style="color:black">
           <div style="font-size:16px;font-weight:600;">Theme</div>
           <br>
-            <md-slide-toggle [checked]="checked" (change)="slidetogglechecked()" style="padding-left:15%;">Dark mode</md-slide-toggle>
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+            <input type="checkbox" id="switch-1" class="mdl-switch__input" [checked]="checked" (change)="slidetogglechecked()">
+            <span class="mdl-switch__label">Dark Mode</span>
+          </label>
         <hr>
           <div data-toggle="modal" data-target="#myModal" style="cursor:pointer;font-size:16px;font-weight:600">Choose Core Metrics</div>
         <hr>
         <div style="padding-left:22%">
-          <button (click)="logout()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">LOG OUT</button>
+          <button (click)="logout()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">LOG OUT</button>
         </div>
     </div>
   </div>
@@ -73,7 +71,7 @@ type='text/css'>
 
 </div>
 </div>
-<div class=" mdl-layout__drawer" style="background: rgb(63,81,181)">
+<div class=" mdl-layout__drawer" style="background: rgb(233,30,99)">
 <span class="mdl-layout-title" style="padding-left: 33.5%"><span style="color:white">Welcome</span></span>
 <nav class="mdl-navigation">
 
@@ -82,7 +80,7 @@ type='text/css'>
 </button>
 <hr>
 <button class="mdl-navigation__link" md-button [routerLink]="['./home']"><img
-  style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/line-chart.png"><span
+  style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/home.png"><span
   style="color:white;font-weight:400;font-size:20px">Home</span></button>
 <button class="mdl-navigation__link" md-button [routerLink]="['./table']"><img
   style="height:70px; width: auto; display:block; margin-left:28%" src="/assets/table-grid.png"><span
@@ -98,8 +96,6 @@ type='text/css'>
 </div>
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog" style="width:400px">
-    
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -128,6 +124,5 @@ type='text/css'>
           <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modalclosed()">OK</button>
         </div>
       </div>
-      
     </div>
   </div>

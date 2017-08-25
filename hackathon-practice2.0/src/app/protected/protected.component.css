@@ -1,19 +1,14 @@
-html, body, material-app, md-sidenav-container, .my-content {
-  margin: 0;
-  height: 100%;
-}
-
-md-sidenav {
-  width: 18%;
-}
-
 .graph1 {
   height: 500px;
   border: 1px solid black;
 }
 
+.mdl-navigation__link {
+  background-color: rgb(233,30,99);
+}
+
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
-    background-color: #6495ed;
+    background-color: rgb(233,30,99);
 }
 
 #overlay {
