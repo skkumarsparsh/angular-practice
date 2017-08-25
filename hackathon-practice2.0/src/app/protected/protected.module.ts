@@ -26,6 +26,7 @@ import { AgentComponent } from './agent/agent.component';
 import { HomeComponent } from './home/home.component';
 import { AgentsComponent } from './agents/agents.component';
 import { MetricsComponent } from './metrics/metrics.component';
+import { CircleProgressComponent } from './circle-progress/circle-progress.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -52,6 +53,7 @@ export const routes: Routes = [
         HomeComponent,
         AgentsComponent,
         MetricsComponent,
+        CircleProgressComponent
     ],
     exports: [
         MainComponent,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UtilsService } from '../utils.service';
 import { Http } from '@angular/http';
 import { NotificationsService } from 'angular2-notifications';
+import { CircleProgressComponent } from '../circle-progress/circle-progress.component';
 
 @Component({
   selector: 'app-home',
