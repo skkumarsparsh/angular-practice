@@ -65,7 +65,7 @@ export class TableComponent implements OnInit {
             for(var j=0;j<12;j++) {
               for(var k=1;k<=7;k++) {
                 if(document.getElementById("text"+k+""+i+""+j)) {
-                  document.getElementById("text"+k+""+j+""+i).setAttribute("style","color:black");
+                  document.getElementById("text"+k+""+i+""+j).setAttribute("style","color:black");
                 }
               }
             }

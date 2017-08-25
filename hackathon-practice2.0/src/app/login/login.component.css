@@ -45,7 +45,7 @@ body {
 .form-module {
   background: #ffffff;
   width: 100%;
-  border-top: 30px solid rgb(63,81,181);
+  border-top: 30px solid rgb(233,30,99);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
 }
@@ -58,7 +58,7 @@ body {
 }
 .form-module h2 {
   margin: 0 0 20px;
-  color: rgb(63,81,181);
+  color: rgb(233,30,99);
   font-size: 18px;
   font-weight: 400;
   line-height: 1;
