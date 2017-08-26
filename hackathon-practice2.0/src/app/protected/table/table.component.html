@@ -13,17 +13,17 @@
       </thead>
       <tbody *ngFor="let metric of headers;let j=index">
         <tr>
-          <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric" id="text1{{i}}{{j}}">{{ metric}}</td>
-          <td id="text2{{i}}{{j}}">Jan-17</td>
-          <td id="text3{{i}}{{j}}">{{ data[agent][metric]["Jan-17"] }}</td>
+          <td rowspan="3" colspan="2" class="mdl-data-table__cell--non-numeric" id="text1 {{i}} {{j}}">{{ metric}}</td>
+          <td id="text2 {{i}} {{j}}">Jan-17</td>
+          <td id="text3 {{i}} {{j}}">{{ data[agent][metric]["Jan-17"] }}</td>
         </tr>
         <tr>
-          <td id="text4{{i}}{{j}}">Feb-17</td>
-          <td id="text5{{i}}{{j}}">{{ data[agent][metric]["Feb-17"] }}</td>
+          <td id="text4 {{i}} {{j}}">Feb-17</td>
+          <td id="text5 {{i}} {{j}}">{{ data[agent][metric]["Feb-17"] }}</td>
         </tr>
         <tr>
-          <td id="text6{{i}}{{j}}">Mar-17</td>
-          <td id="text7{{i}}{{j}}">{{ data[agent][metric]["Mar-17"] }}</td>
+          <td id="text6 {{i}} {{j}}">Mar-17</td>
+          <td id="text7 {{i}} {{j}}">{{ data[agent][metric]["Mar-17"] }}</td>
         </tr>
       </tbody>
     </table>
