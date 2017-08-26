@@ -25,9 +25,9 @@ export class TableComponent implements OnInit {
       this.afterDataReceived();
     });
     this.utils.slidetoggle.subscribe(res => {
-      setTimeout(() => {
+      // setTimeout(() => {
         this.loading(res);
-      },50)
+      // },1)
     })
     setTimeout(() => {
       this.loading(this.utils.checked);

@@ -3,5 +3,6 @@
 }
 
 .table {
+    transition: 0.2s;
     width: 60%;
 }
