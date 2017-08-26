@@ -58,7 +58,6 @@ export class HomeComponent implements OnInit {
     setTimeout(()=>{
       this.loading(this.utils.checked);
     },200);
-    
   }
 
   calValue() {
