@@ -58,7 +58,6 @@ export class HomeComponent implements OnInit {
       this.data = res.json();
       console.log(this.data);
       this.calValue();
-      this.putValue();
     })
     this.utils.coreMetricsChanged.subscribe(res => {
       this.calValue();
@@ -103,10 +102,15 @@ export class HomeComponent implements OnInit {
     } else {
       this.metricname4sub = this.metricname4
     }
+    this.putValue();
   }
 
   putValue() {
     var latestmon = this.utils.months[this.utils.months.length-1]
+    this.data1 = [];
+    this.data2 = [];
+    this.data3 = [];
+    this.data4 = [];
     this.data1 = [{
       "name": "Goal Value",
       "value": this.utils.goals[this.metricname1]
