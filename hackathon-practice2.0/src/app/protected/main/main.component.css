@@ -1,10 +1,12 @@
 .card {
     width: 100%;
     background-color:white;
+    transition: 0.3s;
 }
 
 .table {
     width: 60%;
+    transition: 0.3s;
 }
 
 .text {

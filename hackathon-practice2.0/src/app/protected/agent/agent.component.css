@@ -14,10 +14,12 @@ md-sidenav {
 
 .card {
   width: 100%;
+  transition: 0.3s;
 }
 
 .table {
   width: 60%;
+  transition: 0.3s;
 }
 
 .heading {

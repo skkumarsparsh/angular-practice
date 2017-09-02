@@ -15,6 +15,33 @@ export class UtilsService {
   firstLoad3 = true;
   coreMetricsChanged = new EventEmitter<any>();
   slidetoggle = new EventEmitter<any>();
+  goals = {
+    "Agencies No":15,
+    "Customer No":2500,
+    "New Customer No":30,
+    "Paid Up No":110,
+    "Sales No":35,
+    "Sales Value":100000.0,
+    "Parallel No":5,
+    "Refinance No":10,
+    "Real Misses No":950,
+    "Recent New Customers No 13 Weeks":700,
+    "Consecutive Misses 1":350,
+    "Scheduled Visit No":250
+  }
+  data1 = [
+    {
+      "name": "Germany",
+      "value": 8940000
+    },
+    {
+      "name": "USA",
+      "value": 5000000
+    }
+  ];
+  data2 = [];
+  data3 = [];
+  data4 = [];
 
   constructor() {
     this.title = "Dashboard";

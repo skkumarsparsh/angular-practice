@@ -16,6 +16,7 @@ import { MdSnackBarModule } from '@angular/material';
 import { PopoverModule } from 'ngx-popover';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { Collapse } from '../collapse';
 
 import { MainComponent } from './main/main.component';
@@ -26,7 +27,6 @@ import { AgentComponent } from './agent/agent.component';
 import { HomeComponent } from './home/home.component';
 import { AgentsComponent } from './agents/agents.component';
 import { MetricsComponent } from './metrics/metrics.component';
-import { CircleProgressComponent } from './circle-progress/circle-progress.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -52,8 +52,7 @@ export const routes: Routes = [
         Collapse,
         HomeComponent,
         AgentsComponent,
-        MetricsComponent,
-        CircleProgressComponent
+        MetricsComponent
     ],
     exports: [
         MainComponent,
@@ -65,6 +64,7 @@ export const routes: Routes = [
         HttpModule,
         PopoverModule,
         MdCardModule,
+        NgxChartsModule,
         MdButtonModule,
         MdSnackBarModule,
         BrowserAnimationsModule,

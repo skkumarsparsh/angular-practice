@@ -1,5 +1,6 @@
 .card {
     width: 100%;
+    transition: 0.3s;
 }
 
 .header {
@@ -8,4 +9,5 @@
 
 .table {
     width: 60%;
+    transition: 0.3s;
 }

@@ -1,109 +1,65 @@
 <div style="height:-webkit-fill-available;margin-right:1%">
 <div class="row" style="padding:1%; padding-top:2%">
   <div class="col-sm-3">
-      <div class="mdl-card mdl-shadow--6dp" style="width:100%;min-height:100px;text-align:center;padding:10px;background-color:#D48CF8">
-        <div class="row">
-          <div class="col-sm-6">
-            <circle-progress #circleProg1
-              [percent]="75"
-              [boxSize]="130"
-              [radius]="65"
-              [lowColor]="'red'"
-              [middleColor]="'orange'"
-              [interColor]="'#f1c40f'"
-              [highColor]="'#16a085'"
-              [border]="20"
-              [time]="0"
-              [innerFill]="'#D48CF8'">
-            </circle-progress>
-          </div>
-          <div class="col-sm-6">
-            <div>Max <br><span style="font-size:large;font-weight:800">{{metricname1}}</span> :</div>
-            <div style="font-size:30px">{{metric1}}</div>
-            <div>in <span style="font-weight:700">{{metricmonth1}}</span></div>
-          </div>
-        </div>
-      </div>
-  </div>
-  <div class="col-sm-3">
-    <div>
-      <div class="mdl-card mdl-shadow--6dp" style="width:100%;min-height:100px;text-align:center;padding:10px;background-color:#FFA726">
-        <div class="row">
-          <div class="col-sm-6">
-            <circle-progress #circleProg2
-              [percent]="75"
-              [boxSize]="130"
-              [radius]="65"
-              [lowColor]="'red'"
-              [middleColor]="'orange'"
-              [interColor]="'#f1c40f'"
-              [highColor]="'#16a085'"
-              [border]="20"
-              [time]="0"
-              [innerFill]="'#FFA726'">
-            </circle-progress>
-          </div>
-          <div class="col-sm-6">
-            <div>Max <br><span style="font-size:large;font-weight:800">{{metricname2}}</span> :</div>
-            <div style="font-size:30px">{{metric2}}</div>
-            <div>in <span style="font-weight:700">{{metricmonth2}}</span></div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-    <div class="col-sm-3">
-    <div>
-      <div class="mdl-card mdl-shadow--6dp" style="width:100%;min-height:100px;text-align:center;padding:10px;background-color:#FF3B3F">
-        <div class="row">
-          <div class="col-sm-6">
-            <circle-progress #circleProg3
-              [percent]="75"
-              [boxSize]="130"
-              [radius]="65"
-              [lowColor]="'red'"
-              [middleColor]="'orange'"
-              [interColor]="'#f1c40f'"
-              [highColor]="'#16a085'"
-              [border]="20"
-              [time]="0"
-              [innerFill]="'#FF3B3F'">
-            </circle-progress>
-          </div>
-          <div class="col-sm-6">
-            <div>Max <br><span style="font-size:large;font-weight:800">{{metricname3}}</span> :</div>
-            <div style="font-size:30px">{{metric3}}</div>
-            <div>in <span style="font-weight:700">{{metricmonth3}}</span></div>
-          </div>
-        </div>
-      </div>
+    <div class="mdl-card mdl-shadow--6dp topcard">
+      <ngx-charts-gauge
+        [results]="data1"
+        [min]="0"
+        [max]="100"
+        [showAxis]=false
+        [angleSpan]="240"
+        [startAngle]="-120"
+        [units]="metricname1"
+        [valueFormatting]="lol"
+        [tooltipDisabled]=true >
+      </ngx-charts-gauge>
+      <!-- <span class="topcardheading">{{metricname1}}</span> -->
     </div>
   </div>
   <div class="col-sm-3">
-    <div>
-      <div class="mdl-card mdl-shadow--6dp" style="width:100%;min-height:100px;text-align:center;padding:10px;background-color:#9E9E9E">
-        <div class="row">
-          <div class="col-sm-6">
-            <circle-progress #circleProg4
-              [percent]="75"
-              [boxSize]="130"
-              [radius]="65"
-              [lowColor]="'red'"
-              [middleColor]="'orange'"
-              [interColor]="'#f1c40f'"
-              [highColor]="'#16a085'"
-              [border]="20"
-              [time]="0"
-              [innerFill]="'#9E9E9E'">
-            </circle-progress>
-          </div>
-          <div class="col-sm-6">
-            <div>Based on <br><span style="font-size:large;font-weight:800">{{metricname4}}</span> :</div>
-            <div style="font-size:30px">{{metric4}}</div>
-            <div>best month is <span style="font-weight:700">{{metricmonth4}}</span></div>
-          </div>
-      </div>
-      </div>
+    <div class="mdl-card mdl-shadow--6dp topcard">
+        <ngx-charts-gauge
+        [results]="data1"
+        [min]="0"
+        [max]="100"
+        [showAxis]=false
+        [angleSpan]="240"
+        [startAngle]="-120"
+        [units]="metricname2"
+        [valueFormatting]="lol"
+        [tooltipDisabled]=true >
+      </ngx-charts-gauge>
+      <!-- <span class="topcardheading">{{metricname2}}</span> -->
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="mdl-card mdl-shadow--6dp topcard">
+        <ngx-charts-gauge
+        [results]="data1"
+        [min]="0"
+        [max]="100"
+        [showAxis]=false
+        [angleSpan]="240"
+        [startAngle]="-120"
+        [units]="metricname3"
+        [tooltipDisabled]=true >
+      </ngx-charts-gauge>
+      <!-- <span class="topcardheading">{{metricname3}}</span> -->
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="mdl-card mdl-shadow--6dp topcard">
+        <ngx-charts-gauge
+        [results]="data1"
+        [min]="0"
+        [max]="100"
+        [showAxis]=false
+        [angleSpan]="240"
+        [startAngle]="-120"
+        [units]="metricname4"
+        [tooltipDisabled]=true >
+      </ngx-charts-gauge>
+      <!-- <span class="topcardheading">{{metricname4}}</span> -->
     </div>
   </div>
 </div>
