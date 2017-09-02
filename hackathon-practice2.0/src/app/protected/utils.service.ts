@@ -29,16 +29,7 @@ export class UtilsService {
     "Consecutive Misses 1":350,
     "Scheduled Visit No":250
   }
-  data1 = [
-    {
-      "name": "Germany",
-      "value": 8940000
-    },
-    {
-      "name": "USA",
-      "value": 5000000
-    }
-  ];
+  data1 = [];
   data2 = [];
   data3 = [];
   data4 = [];

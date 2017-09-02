@@ -1,65 +1,63 @@
 <div style="height:-webkit-fill-available;margin-right:1%">
 <div class="row" style="padding:1%; padding-top:2%">
   <div class="col-sm-3">
-    <div class="mdl-card mdl-shadow--6dp topcard">
+    <div id="top1" class="mdl-card mdl-shadow--6dp topcard" title="Goal for {{metricname1}}">
       <ngx-charts-gauge
         [results]="data1"
         [min]="0"
-        [max]="100"
+        [max]="1"
         [showAxis]=false
         [angleSpan]="240"
         [startAngle]="-120"
-        [units]="metricname1"
+        [units]="metricname1sub"
         [valueFormatting]="lol"
         [tooltipDisabled]=true >
       </ngx-charts-gauge>
-      <!-- <span class="topcardheading">{{metricname1}}</span> -->
     </div>
   </div>
   <div class="col-sm-3">
-    <div class="mdl-card mdl-shadow--6dp topcard">
+    <div id="top2" class="mdl-card mdl-shadow--6dp topcard" title="Goal for {{metricname2}}">
         <ngx-charts-gauge
-        [results]="data1"
+        [results]="data2"
         [min]="0"
-        [max]="100"
+        [max]="1"
         [showAxis]=false
         [angleSpan]="240"
         [startAngle]="-120"
-        [units]="metricname2"
+        [units]="metricname2sub"
         [valueFormatting]="lol"
         [tooltipDisabled]=true >
       </ngx-charts-gauge>
-      <!-- <span class="topcardheading">{{metricname2}}</span> -->
     </div>
   </div>
   <div class="col-sm-3">
-    <div class="mdl-card mdl-shadow--6dp topcard">
+    <div id="top3" class="mdl-card mdl-shadow--6dp topcard" title="Goal for {{metricname3}}">
         <ngx-charts-gauge
-        [results]="data1"
+        [results]="data3"
         [min]="0"
-        [max]="100"
+        [max]="1"
         [showAxis]=false
         [angleSpan]="240"
         [startAngle]="-120"
-        [units]="metricname3"
+        [valueFormatting]="lol"
+        [units]="metricname3sub"
         [tooltipDisabled]=true >
       </ngx-charts-gauge>
-      <!-- <span class="topcardheading">{{metricname3}}</span> -->
     </div>
   </div>
   <div class="col-sm-3">
-    <div class="mdl-card mdl-shadow--6dp topcard">
+    <div id="top4" class="mdl-card mdl-shadow--6dp topcard" title="Goal for {{metricname4}}">
         <ngx-charts-gauge
-        [results]="data1"
+        [results]="data4"
         [min]="0"
-        [max]="100"
+        [max]="1"
         [showAxis]=false
         [angleSpan]="240"
+        [valueFormatting]="lol"
         [startAngle]="-120"
-        [units]="metricname4"
+        [units]="metricname4sub"
         [tooltipDisabled]=true >
       </ngx-charts-gauge>
-      <!-- <span class="topcardheading">{{metricname4}}</span> -->
     </div>
   </div>
 </div>
