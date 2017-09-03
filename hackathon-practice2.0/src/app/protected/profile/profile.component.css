@@ -11,12 +11,10 @@ div.portfoliocard{
 	position:relative;
 	height:450px;
 	width:400px;
-	background:rgba(255,255,255,1);
 	border:1px solid rgba(0,0,0,0.7);
 	box-shadow:0px -1px 3px rgba(0,0,0,0.1),
 				0px 2px 6px rgba(0,0,0,0.5);
 	border-radius:6px;
-	/* margin:10% auto; */
 	overflow:hidden;
 	z-index:100;
 }
@@ -55,7 +53,7 @@ div.portfoliocard div.profile_picture{
 	background:rgba(255,255,255,1);
 	position:absolute;
 	top:65px;
-	left:40px;
+	left:27px;
 	border-radius:100%;
 	background-image: url('https://lh4.googleusercontent.com/-KrUpjv4wae8/AAAAAAAAAAI/AAAAAAAAHhM/iGPGrEMUnwQ/photo.jpg');
 	background-size:100% 100%;
@@ -67,18 +65,18 @@ div.portfoliocard div.right_col h2.name{
 	font-weight:300;
 	color: rgba(30,30,30,1);
 	padding:0;
-	margin:20px 10px 0px 30px;
+	margin:20px 10px 0px 10px;
 }
 div.portfoliocard div.right_col h3.location{
 	font-size:15px;
 	font-weight:300;
 	color:rgba(170,170,170,1);
 	padding:0;
-	margin:10px 10px 10px 30px;
+	margin:10px 10px 10px 10px;
 }
 div.portfoliocard ul.contact_information{
 	margin-top:20px;
-	padding-left:30px;
+	padding-left:5px;
 	list-style-type:none;
 }
 div.portfoliocard ul.contact_information li{
@@ -127,7 +125,7 @@ div.portfoliocard ul.contact_information li.resume:before{
 	background-image: url('http://schulzmarcel.de/x/icons/inbox_24.png');
 }
 div.portfoliocard div.followers, div.portfoliocard div.following{
-	margin:15px 0px 0px 35px;
+	margin:15px 30px 0px 35px;
 	font-weight:300;
 	font-size:16px;
 	color:rgba(30,30,30,1);

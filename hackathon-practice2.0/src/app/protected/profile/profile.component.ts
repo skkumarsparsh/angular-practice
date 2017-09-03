@@ -15,6 +15,13 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.utils.slidetoggle.subscribe(res => {
+      if(document.getElementById("card")) {
+        if(res==true) {
+          document.getElementById("card").setAttribute("style","background-color:rgb(51,51,51);");
+        } else {
+          document.getElementById("card").setAttribute("style","background:rgba(255,255,255,1);");
+        }
+      }
     })
   }
 
