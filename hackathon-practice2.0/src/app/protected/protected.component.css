@@ -4,11 +4,11 @@
 }
 
 .mdl-navigation__link {
-  background-color: rgb(233,30,99);
+  background-color: rgb(63,81,181);
 }
 
 .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
-    background-color: rgb(233,30,99);
+    background-color: rgb(63,81,181);
 }
 
 #overlay {

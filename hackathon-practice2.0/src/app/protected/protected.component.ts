@@ -108,6 +108,10 @@ export class ProtectedComponent {
     this.utils.coreMetricsChanged.emit();
   }
 
+  modalclosed2() {
+    
+  }
+
   slidetogglechecked() {
     this.checked = !this.checked;
     this.utils.checked = this.checked;
