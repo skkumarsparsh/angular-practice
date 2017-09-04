@@ -26,7 +26,7 @@ export class ProtectedComponent {
   constructor(private utils: UtilsService, private authService: AuthService, private route: Router, public snackBar: MdSnackBar,private http: Http) {
     this.emitter.subscribe(res => this.z--);
     this.utils.loaded.subscribe(res => this.loaded = res);
-    this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
+    this.http.get(this.utils.url).subscribe(res => {
       this.data = res.json();
       console.log(this.data);
       this.metrics = this.utils.getHeaderNames(this.data);

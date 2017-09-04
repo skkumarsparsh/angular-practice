@@ -125,7 +125,7 @@ export class MainComponent implements OnInit {
     setTimeout(()=>{
       this.loading(this.utils.checked);
     },50)
-    this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
+    this.http.get(this.utils.url).subscribe(res => {
       this.data = res.json();
       console.log(this.data);
       this.metrics = this.utils.getHeaderNames(this.data);

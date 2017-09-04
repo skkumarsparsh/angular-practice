@@ -198,7 +198,7 @@ export class AgentComponent implements OnInit {
       }
     )
 
-    this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
+    this.http.get(this.utils.url).subscribe(res => {
       this.data = res.json();
       this.metrics = this.utils.getHeaderNames(this.data);
       this.agents = this.utils.getAgents(this.data);

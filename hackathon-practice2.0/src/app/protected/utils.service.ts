@@ -13,6 +13,8 @@ export class UtilsService {
   firstLoad2 = true;
   checked = false;
   firstLoad3 = true;
+  url = "https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json";
+  // url = "http://localhost:8000/data.json";
   coreMetricsChanged = new EventEmitter<any>();
   slidetoggle = new EventEmitter<any>();
   goals = {

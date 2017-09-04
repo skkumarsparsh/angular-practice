@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
       }, 200);
       this.utils.firstLoad3 = false;
     }
-    this.http.get('https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json').subscribe(res => {
+    this.http.get(this.utils.url).subscribe(res => {
       this.data = res.json();
       console.log(this.data);
       this.calValue();
