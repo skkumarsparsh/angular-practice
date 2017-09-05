@@ -44,3 +44,22 @@
   border-radius: 30px;
   transition: 0.3s;
 }
+
+.color1 {
+  /* background-color: #B7FFFE; */
+  background-color: #99FFCC;
+}
+
+.color2 {
+  /* background-color: rgb(198, 255, 0); */
+  background-color: #E0FF3F;
+}
+.color3 {
+  /* background-color: #64ffda; */
+  /* background-color: #99FF99; */
+  background-color: #FF8F90;
+}
+.color4 {
+  /* background-color: #E0B0FF; */
+  background-color: #FFCD42;
+}
