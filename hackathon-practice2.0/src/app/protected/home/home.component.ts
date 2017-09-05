@@ -148,43 +148,33 @@ export class HomeComponent implements OnInit {
   loading(res) {
     if(document.getElementById("cardcolor") && document.getElementById("textcolor") && document.getElementById("bordercolor") &&
       document.getElementById("cardcolor1") && document.getElementById("textcolor1") && document.getElementById("bordercolor1") &&
-      document.getElementById("cardcolor2") && document.getElementById("textcolor2") && document.getElementById("bordercolor2")
-      && document.getElementById("top1") && document.getElementById("top2") && document.getElementById("top3") && 
-      document.getElementById("top4")) {
+      document.getElementById("cardcolor2") && document.getElementById("textcolor2") && document.getElementById("bordercolor2")) {
       if(res==true) {
         document.getElementById("cardcolor").setAttribute("style","background-color:rgb(51, 51, 51);");
-        // document.getElementById("top1").setAttribute("style","background-color:rgb(51, 51, 51);");
         document.getElementById("textcolor").setAttribute("style","color:white");
         document.getElementById("bordercolor").setAttribute("style","border-top: 1px solid rgba(255,255,255,.1)");
         document.getElementById("linkcolor").setAttribute("style","color:#8FAEEE");
         document.getElementById("cardcolor1").setAttribute("style","background-color:rgb(51, 51, 51);");
-        // document.getElementById("top2").setAttribute("style","background-color:rgb(51, 51, 51);");
         document.getElementById("textcolor1").setAttribute("style","color:white");
         document.getElementById("bordercolor1").setAttribute("style","border-top: 1px solid rgba(255,255,255,.1)");
         document.getElementById("linkcolor1").setAttribute("style","color:#8FAEEE");
         document.getElementById("cardcolor2").setAttribute("style","background-color:rgb(51, 51, 51);");
-        // document.getElementById("top3").setAttribute("style","background-color:rgb(51, 51, 51);");
         document.getElementById("textcolor2").setAttribute("style","color:white");
         document.getElementById("bordercolor2").setAttribute("style","border-top: 1px solid rgba(255,255,255,.1)");
         document.getElementById("linkcolor2").setAttribute("style","color:#8FAEEE");
-        // document.getElementById("top4").setAttribute("style","background-color:rgb(51, 51, 51);");
       } else {
         document.getElementById("cardcolor").setAttribute("style","background-color:white");
-        // document.getElementById("top1").setAttribute("style","background-color:white");
         document.getElementById("textcolor").setAttribute("style","color:rgba(0,0,0,.54)");
         document.getElementById("bordercolor").setAttribute("style","border-top: 1px solid rgba(0,0,0,.1)");
         document.getElementById("linkcolor").setAttribute("style","color:rgb(63,81,181);");
         document.getElementById("cardcolor1").setAttribute("style","background-color:white");
-        // document.getElementById("top2").setAttribute("style","background-color:white");
         document.getElementById("textcolor1").setAttribute("style","color:rgba(0,0,0,.54)");
         document.getElementById("bordercolor1").setAttribute("style","border-top: 1px solid rgba(0,0,0,.1)");
         document.getElementById("linkcolor1").setAttribute("style","color:rgb(63,81,181);");
         document.getElementById("cardcolor2").setAttribute("style","background-color:white");
-        // document.getElementById("top3").setAttribute("style","background-color:white");
         document.getElementById("textcolor2").setAttribute("style","color:rgba(0,0,0,.54)");
         document.getElementById("bordercolor2").setAttribute("style","border-top: 1px solid rgba(0,0,0,.1)");
         document.getElementById("linkcolor2").setAttribute("style","color:rgb(63,81,181);");
-        // document.getElementById("top4").setAttribute("style","background-color:white");
       }
     }
   }
