@@ -109,7 +109,7 @@ export class ProtectedComponent {
   }
 
   modalclosed2() {
-    
+    this.utils.goalsChanged.emit();
   }
 
   slidetogglechecked() {

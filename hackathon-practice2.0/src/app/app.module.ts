@@ -1,6 +1,7 @@
 import 'hammerjs';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { MdSidenavModule } from '@angular/material';
@@ -38,6 +39,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ProtectedModule,
     PopoverModule,
+    FormsModule,
     MdSlideToggleModule,
     MdButtonModule,
     BrowserAnimationsModule,

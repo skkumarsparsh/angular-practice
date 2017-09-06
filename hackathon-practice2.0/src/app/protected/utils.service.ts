@@ -7,14 +7,14 @@ export class UtilsService {
   titleChanged = new EventEmitter<any>();
   notificationAdded = new EventEmitter<any>();
   loaded = new EventEmitter<any>();
+  goalsChanged = new EventEmitter<any>();
   coreMetrics = ["Sales No", "New Customer No", "Real Misses No"];
   months = ["Jan-17", "Feb-17", "Mar-17"];
   firstLoad = true;
   firstLoad2 = true;
   checked = false;
   firstLoad3 = true;
-  url = "https://raw.githubusercontent.com/WV-no7/hello-world/master/god.json";
-  // url = "http://localhost:8000/data.json";
+  url = "http://0.0.0.0:8000/data.json";
   coreMetricsChanged = new EventEmitter<any>();
   slidetoggle = new EventEmitter<any>();
   goals = {

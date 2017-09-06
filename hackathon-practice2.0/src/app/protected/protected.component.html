@@ -139,90 +139,92 @@ type='text/css'>
           <h4 class="modal-title" style="font-weight:600;font-size:20px">Goals</h4>
         </div>
         <div class="modal-body">
+          <div *ngIf="metrics">
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal1">
+                <label for="goal1">{{metrics[0]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[0]]" id="goal1">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal2">
+                <label for="goal1">{{metrics[1]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[1]]" id="goal2">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal3">
+                <label for="goal1">{{metrics[2]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[2]]" id="goal3">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal4">
+                <label for="goal1">{{metrics[3]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[3]]" id="goal4">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal5">
+                <label for="goal1">{{metrics[4]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[4]]" id="goal5">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal6">
+                <label for="goal1">{{metrics[5]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[5]]" id="goal6">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal7">
+                <label for="goal1">{{metrics[6]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[6]]" id="goal7">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal8">
+                <label for="goal1">{{metrics[7]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[7]]" id="goal8">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal9">
+                <label for="goal1">{{metrics[8]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[8]]" id="goal9">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal10">
+                <label for="goal1">{{metrics[9]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[9]]" id="goal10">
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal11">
+                <label for="goal1">{{metrics[10]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[10]]" id="goal11">
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="goal1">Name:</label>
-                <input type="text" class="form-control" id="goal12">
+                <label for="goal1">{{metrics[11]}}:</label>
+                <input type="text" class="form-control" [(ngModel)]="utils.goals[metrics[11]]" id="goal12">
               </div>
             </div>
           </div>
+        </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modalclosed2()">OK</button>

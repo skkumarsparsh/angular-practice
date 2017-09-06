@@ -62,6 +62,9 @@ export class HomeComponent implements OnInit {
     this.utils.coreMetricsChanged.subscribe(res => {
       this.calValue();
     })
+    this.utils.goalsChanged.subscribe(res => {
+      this.calValue();
+    })
     this.utils.slidetoggle.subscribe(res => {
       this.loading(res);
     })
