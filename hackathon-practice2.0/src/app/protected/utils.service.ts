@@ -14,7 +14,7 @@ export class UtilsService {
   firstLoad2 = true;
   checked = false;
   firstLoad3 = true;
-  url = "http://0.0.0.0:8000/data.json";
+  url = "http://localhost:8000/data.json";
   coreMetricsChanged = new EventEmitter<any>();
   slidetoggle = new EventEmitter<any>();
   goals = {
