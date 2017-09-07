@@ -1,13 +1,13 @@
 .demo-card1 > .mdl-card__title {
     color: #fff;
     background:
-      url('/assets/reunion.png') bottom 50% right 15% no-repeat #25383c;
+      url('/assets/ag.png') bottom 50% right 15% no-repeat #f23b79;
   }
 
   .demo-card2 > .mdl-card__title {
     color: #fff;
     background:
-      url('/assets/analytics.png') bottom 50% right 15% no-repeat #2b3856;
+      url('/assets/analytics.png') bottom 50% right 15% no-repeat rgba(4,4,180,0.91);
   }
 
   .demo-card3 > .mdl-card__title {
@@ -46,15 +46,15 @@
 }
 
 .color1 {
-  background-color: #99FFCC;
+  background-color: #bfff00;
 }
 
 .color2 {
-  background-color: #E0FF3F;
+  background-color: #18ffff;
 }
 .color3 {
-  background-color: #FF8F90;
+  background-color: #1de9b6;
 }
 .color4 {
-  background-color: #FFCD42;
+  background-color: #fef100;
 }
