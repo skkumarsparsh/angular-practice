@@ -8,12 +8,14 @@ export class UtilsService {
   notificationAdded = new EventEmitter<any>();
   loaded = new EventEmitter<any>();
   goalsChanged = new EventEmitter<any>();
+  checkboxesChanged = new EventEmitter<any>();
   coreMetrics = ["Sales No", "New Customer No", "Real Misses No"];
   months = ["Jan-17", "Feb-17", "Mar-17"];
   firstLoad = true;
   firstLoad2 = true;
-  checked = false;
   firstLoad3 = true;
+  firstLoad4 = true;
+  checked = false;
   url = "http://localhost:8000/data.json";
   coreMetricsChanged = new EventEmitter<any>();
   slidetoggle = new EventEmitter<any>();

@@ -21,8 +21,8 @@ export class CompareagentsComponent implements OnInit {
   ngOnInit() {
     this.http.get(this.utils.url).subscribe(res => {
       this.data = res.json();
+      this.utils.loaded.emit(true);
       this.agents = this.utils.getAgents(this.data);
-      console.log(this.agents);
     })
   }
 

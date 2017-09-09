@@ -8,9 +8,9 @@
   <br>
   <br>
   <div *ngIf="agents">
-    <div *ngFor="let agent of agents">
+    <div *ngFor="let agent of agents;let i=index">
       <div [dragula]='"bag-one"'>
-        <app-compareagent [agentname]="agent"></app-compareagent>
+        <app-compareagent *ngIf="utils.comparecheckboxes[i]" [agentname]="agent"></app-compareagent>
       </div>
     </div>
   </div>

@@ -30,6 +30,13 @@ export class ProtectedComponent {
     this.http.get(this.utils.url).subscribe(res => {
       this.data = res.json();
       this.agents = this.utils.getAgents(this.data);
+      if(this.utils.firstLoad4==true) {
+        for(var i=0;i<this.agents.length;i++) {
+          this.utils.comparecheckboxes.push(false);
+        }
+      }
+      console.log(this.utils.comparecheckboxes);
+      this.utils.firstLoad4 = false;
       console.log(this.data);
       this.metrics = this.utils.getHeaderNames(this.data);
     })
@@ -115,12 +122,10 @@ export class ProtectedComponent {
   }
 
   modalclosed3() {
-
   }
 
   checkboxcheck(i) {
-    i=i+1;
-    
+    this.utils.comparecheckboxes[i] = !this.utils.comparecheckboxes[i];
   }
 
   slidetogglechecked() {

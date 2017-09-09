@@ -20,7 +20,6 @@ export class CompareagentComponent implements OnInit {
 
   ngOnInit() {
     this.chartdiv = this.agentname+"";
-    console.log(this.agentname);
     this.metaData = new Object({
       "type": "serial",
       "categoryField": "category",
@@ -212,7 +211,6 @@ export class CompareagentComponent implements OnInit {
         "column-12": parseInt(this.data[this.agentname][headers[j++]][months[i]])
       })
     }
-    this.utils.loaded.emit(true);
     return this.AmCharts.makeChart(""+this.chartdiv, this.metaData);
   }
 
