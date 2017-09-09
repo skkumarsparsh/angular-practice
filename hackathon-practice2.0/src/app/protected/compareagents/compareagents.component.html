@@ -1,0 +1,17 @@
+<div style="padding-bottom:20px">
+  <div style="padding-left:20px">
+    <br>
+    <br>
+    <span>Choose the agents you want to compare : </span>
+    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" data-toggle="modal" data-target="#myModal3">Choose Agents</button>
+  </div>
+  <br>
+  <br>
+  <div *ngIf="agents">
+    <div *ngFor="let agent of agents">
+      <div [dragula]='"bag-one"'>
+        <app-compareagent [agentname]="agent"></app-compareagent>
+      </div>
+    </div>
+  </div>
+</div>

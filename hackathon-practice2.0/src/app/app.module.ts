@@ -5,6 +5,7 @@ import { FormsModule }   from '@angular/forms';
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { MdSidenavModule } from '@angular/material';
+import { MdCheckboxModule } from '@angular/material';
 import { MdSlideToggleModule } from '@angular/material';
 import { MdSelectModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
@@ -40,6 +41,7 @@ const routes: Routes = [
     ProtectedModule,
     PopoverModule,
     FormsModule,
+    MdCheckboxModule,
     MdSlideToggleModule,
     MdButtonModule,
     BrowserAnimationsModule,

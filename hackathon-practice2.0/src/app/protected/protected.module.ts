@@ -14,6 +14,7 @@ import { MdButtonModule } from '@angular/material';
 import { MdCardModule } from '@angular/material';
 import { MdSnackBarModule } from '@angular/material';
 import { PopoverModule } from 'ngx-popover';
+import { DragulaModule } from 'ng2-dragula';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AmChartsModule } from "@amcharts/amcharts3-angular";
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -27,6 +28,8 @@ import { AgentComponent } from './agent/agent.component';
 import { HomeComponent } from './home/home.component';
 import { AgentsComponent } from './agents/agents.component';
 import { MetricsComponent } from './metrics/metrics.component';
+import { CompareagentsComponent } from './compareagents/compareagents.component';
+import { CompareagentComponent } from './compareagent/compareagent.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -39,6 +42,7 @@ export const routes: Routes = [
     { path: 'agent', redirectTo: 'agent/1', pathMatch: 'full' },
     { path: 'agent/:id', component: AgentComponent },
     { path: 'agents', component: AgentsComponent },
+    { path: 'compare-agents', component: CompareagentsComponent },
     { path: 'metrics', component: MetricsComponent }
 ];
 
@@ -52,7 +56,9 @@ export const routes: Routes = [
         Collapse,
         HomeComponent,
         AgentsComponent,
-        MetricsComponent
+        MetricsComponent,
+        CompareagentsComponent,
+        CompareagentComponent
     ],
     exports: [
         MainComponent,
@@ -64,6 +70,7 @@ export const routes: Routes = [
         HttpModule,
         PopoverModule,
         MdCardModule,
+        DragulaModule,
         NgxChartsModule,
         MdButtonModule,
         MdSnackBarModule,

@@ -14,6 +14,7 @@ export class ProtectedComponent {
   loaded=false;
   data;
   title: string;
+  agents;
   metrics;
   k = 0;
   z = 0;
@@ -28,6 +29,7 @@ export class ProtectedComponent {
     this.utils.loaded.subscribe(res => this.loaded = res);
     this.http.get(this.utils.url).subscribe(res => {
       this.data = res.json();
+      this.agents = this.utils.getAgents(this.data);
       console.log(this.data);
       this.metrics = this.utils.getHeaderNames(this.data);
     })
@@ -110,6 +112,15 @@ export class ProtectedComponent {
 
   modalclosed2() {
     this.utils.goalsChanged.emit();
+  }
+
+  modalclosed3() {
+
+  }
+
+  checkboxcheck(i) {
+    i=i+1;
+    
   }
 
   slidetogglechecked() {

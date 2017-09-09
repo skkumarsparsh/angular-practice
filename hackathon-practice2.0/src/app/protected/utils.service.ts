@@ -35,6 +35,7 @@ export class UtilsService {
   data2 = [];
   data3 = [];
   data4 = [];
+  comparecheckboxes = [];
 
   constructor() {
     this.title = "Dashboard";
