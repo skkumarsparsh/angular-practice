@@ -12,6 +12,10 @@ md-sidenav {
   border: 1px solid black;
 }
 
+.mdl-data-table tbody tr:hover {
+  background-color: #7E7E7E;
+}
+
 .card {
   width: 100%;
   transition: 0.3s;

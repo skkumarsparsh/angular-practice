@@ -11,3 +11,7 @@
     width: 60%;
     transition: 0.3s;
 }
+
+.mdl-data-table tbody tr:hover {
+    background-color: #7E7E7E;
+  }

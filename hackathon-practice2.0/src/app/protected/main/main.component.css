@@ -12,3 +12,7 @@
 .text {
     text-align: center;
 }
+
+.mdl-data-table tbody tr:hover {
+    background-color: #7E7E7E;
+  }
