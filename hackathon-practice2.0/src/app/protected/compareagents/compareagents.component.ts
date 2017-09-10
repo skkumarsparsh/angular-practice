@@ -24,6 +24,20 @@ export class CompareagentsComponent implements OnInit {
       this.utils.loaded.emit(true);
       this.agents = this.utils.getAgents(this.data);
     })
+    this.utils.slidetoggle.subscribe(res => {
+      this.loading(res);
+    })
+    this.loading(this.utils.checked);
+  }
+
+  loading(res) {
+    if(document.getElementById("text")) {
+      if(res==true) {
+        document.getElementById("text").setAttribute("style","color:white");
+      } else {
+        document.getElementById("text").setAttribute("style","color:black");
+      }
+    }
   }
 
 }

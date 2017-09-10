@@ -60,7 +60,7 @@ type='text/css'>
           </label>
         <hr>
           <div style="padding-left:4%">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" data-toggle="modal" data-target="#myModal">Choose Core</button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" data-toggle="modal" data-target="#myModal">Change Core</button>
           </div>
         <hr>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" data-toggle="modal" data-target="#myModal2">Change Goals</button>
@@ -101,9 +101,9 @@ type='text/css'>
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog" style="width:400px">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" style="background-color:rgb(63,81,181);text-align:center">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" style="font-weight:600;font-size:20px">Core Metrics</h4>
+          <h4 class="modal-title" style="font-weight:600;font-size:20px;color:white">Core Metrics</h4>
         </div>
         <div class="modal-body">
           <label for="sel1">Core Metric 1:</label>
@@ -124,7 +124,7 @@ type='text/css'>
           </select>
           <br>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" style="background-color:rgb(63,81,181);">
           <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modalclosed()">OK</button>
         </div>
       </div>
@@ -134,9 +134,9 @@ type='text/css'>
   <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog" style="width:600px">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" style="background-color:rgb(63,81,181);text-align:center">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title" style="font-weight:600;font-size:20px">Goals</h4>
+          <h4 class="modal-title" style="font-weight:600;font-size:20px;color:white">Goals</h4>
         </div>
         <div class="modal-body">
           <div *ngIf="metrics">
@@ -226,7 +226,7 @@ type='text/css'>
           </div>
         </div>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" style="background-color:rgb(63,81,181);">
           <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modalclosed2()">OK</button>
         </div>
       </div>

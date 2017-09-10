@@ -1,11 +1,13 @@
 <div style="padding-bottom:20px;min-height:100vh">
-  <div style="padding-left:20px">
+  <div style="padding-left:20px;text-align:center;border-bottom:1px solid #BEBEBE">
     <br>
     <br>
-    <span>Choose the agents you want to compare : </span>
+    <span id="text">Choose the agents you want to compare : </span>
     <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" data-toggle="modal" data-target="#myModal3">Choose Agents</button>
+    <br>
+    <br>
+    <br>
   </div>
-  <br>
   <br>
   <div *ngIf="agents">
     <div *ngFor="let agent of agents;let i=index">

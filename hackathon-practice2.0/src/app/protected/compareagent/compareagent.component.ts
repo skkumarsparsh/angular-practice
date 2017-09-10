@@ -35,7 +35,7 @@ export class CompareagentComponent implements OnInit {
         "#0000CC",
         "#BF360C",
         "#F50057",
-        "#333333",
+        "#78909C",
         "#990000"
       ],
       "startDuration": 0.2,
@@ -187,6 +187,42 @@ export class CompareagentComponent implements OnInit {
       this.data = res.json();
       this.chart = this.afterAssignData();
     })
+    this.utils.slidetoggle.subscribe(res => {
+      if(res==true) {
+        this.metaData.theme = "dark";
+        this.AmCharts.destroyChart(this.chart);
+        this.chart = this.afterAssignData();
+        this.chart.invalidateSize();
+      } else {
+        this.metaData.theme = "default";
+        this.AmCharts.destroyChart(this.chart);
+        this.chart = this.afterAssignData();
+        this.chart.invalidateSize();
+      }
+      this.loading(res);
+    })
+    setTimeout(()=>{
+      this.loading(this.utils.checked);
+    },50)
+  }
+
+  loading(res) {
+    let ag = this.utils.getAgents(this.data);
+      if(res==true) {
+        this.metaData.theme = "dark";
+        for(var i=0;i<ag.length;i++) {
+          if(document.getElementById("card"+ag[i])) {
+            document.getElementById("card"+ag[i]).setAttribute("style","background-color:rgb(51, 51, 51)");
+          }
+        }
+      } else {
+        this.metaData.theme = "default";
+        for(var i=0;i<ag.length;i++) {
+          if(document.getElementById("card"+ag[i])) {
+            document.getElementById("card"+ag[i]).setAttribute("style","background-color:white");
+          }
+        }
+      }
   }
 
   afterAssignData() {
