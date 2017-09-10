@@ -38,7 +38,7 @@ export class CompareagentComponent implements OnInit {
         "#333333",
         "#990000"
       ],
-      "startDuration": 0.4,
+      "startDuration": 0.2,
       "categoryAxis": {
         "gridPosition": "start"
       },
@@ -192,7 +192,7 @@ export class CompareagentComponent implements OnInit {
   afterAssignData() {
     this.metaData["dataProvider"] = [];
     let headers = this.utils.getHeaderNames(this.data);
-    let months = this.utils.months;
+    let months = this.utils.getMonths(this.data);
     for (var i = 0; i < months.length; i++) {
       let j = 0;
       this.metaData["dataProvider"].push({

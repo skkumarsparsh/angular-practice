@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
   calValue() {
     let lead = "Lead Agent";
     let core = this.utils.coreMetrics;
-    let months = this.utils.months;
+    let months = this.utils.getMonths(this.data);
     this.metricname1 = core[0];
     this.metricname2 = core[1];
     this.metricname3 = core[2];
@@ -109,7 +109,8 @@ export class HomeComponent implements OnInit {
   }
 
   putValue() {
-    var latestmon = this.utils.months[this.utils.months.length-1]
+    var mon = this.utils.getMonths(this.data);
+    var latestmon = mon[mon.length-1]
     this.data1 = [];
     this.data2 = [];
     this.data3 = [];

@@ -10,7 +10,7 @@ export class UtilsService {
   goalsChanged = new EventEmitter<any>();
   checkboxesChanged = new EventEmitter<any>();
   coreMetrics = ["Sales No", "New Customer No", "Real Misses No"];
-  months = ["Jan-17", "Feb-17", "Mar-17"];
+  // months = ["Jan-17", "Feb-17", "Mar-17"];
   firstLoad = true;
   firstLoad2 = true;
   firstLoad3 = true;
@@ -70,6 +70,17 @@ export class UtilsService {
       monthValues[k++] = data[i];
     }
     return monthValues;
+  }
+
+  getMonths(data) {
+    let month=[];
+    let z=0;
+    let i="Agent 1";
+    let j="Sales No";
+    for(var k in data[i][j]) {
+      month[z++] = k;
+    }
+    return month;
   }
 
 }

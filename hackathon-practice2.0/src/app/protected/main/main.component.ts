@@ -131,7 +131,7 @@ export class MainComponent implements OnInit {
       this.metrics = this.utils.getHeaderNames(this.data);
       this.agents = this.utils.getAgents(this.data);
       this.agents = this.agents.slice(0, this.agents.length - 1);
-      this.months = this.utils.months;
+      this.months = this.utils.getMonths(this.data);
       this.chart = this.afterAssignDataForLeadAgent();
     });
     this.utils.coreMetricsChanged.subscribe(res => {
@@ -199,7 +199,7 @@ export class MainComponent implements OnInit {
     let lead = "Lead Agent";
     this.metaData["dataProvider"] = [];
     let core = this.utils.coreMetrics;
-    let months = this.utils.months;
+    let months = this.utils.getMonths(this.data);
     let k;
     for (var i = 0; i < core.length; i++) {
       k = 0;

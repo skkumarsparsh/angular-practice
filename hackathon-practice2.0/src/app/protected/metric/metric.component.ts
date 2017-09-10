@@ -113,7 +113,7 @@ export class MetricComponent implements OnInit {
     this.metaData["dataProvider"] = [];
     this.agents = this.utils.getAgents(this.data);
     let headers = this.utils.getHeaderNames(this.data);
-    let months = this.utils.months;
+    let months = this.utils.getMonths(this.data);
     for (var i = 0; i < this.agents.length; i++) {
       let j = 0;
       this.metaData["dataProvider"].push({
