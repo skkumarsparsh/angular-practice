@@ -152,7 +152,9 @@ export class HomeComponent implements OnInit {
   loading(res) {
     if(document.getElementById("cardcolor") && document.getElementById("textcolor") && document.getElementById("bordercolor") &&
       document.getElementById("cardcolor1") && document.getElementById("textcolor1") && document.getElementById("bordercolor1") &&
-      document.getElementById("cardcolor2") && document.getElementById("textcolor2") && document.getElementById("bordercolor2")) {
+      document.getElementById("cardcolor2") && document.getElementById("textcolor2") && document.getElementById("bordercolor2") &&
+      document.getElementById("cardcolor3") && document.getElementById("textcolor3") && document.getElementById("bordercolor3") &&
+      document.getElementById("backgroundcard")) {
       if(res==true) {
         document.getElementById("cardcolor").setAttribute("style","background-color:rgb(51, 51, 51);");
         document.getElementById("textcolor").setAttribute("style","color:white");
@@ -166,6 +168,11 @@ export class HomeComponent implements OnInit {
         document.getElementById("textcolor2").setAttribute("style","color:white");
         document.getElementById("bordercolor2").setAttribute("style","border-top: 1px solid rgba(255,255,255,.1)");
         document.getElementById("linkcolor2").setAttribute("style","color:#8FAEEE");
+        document.getElementById("cardcolor3").setAttribute("style","background-color:rgb(51, 51, 51);");
+        document.getElementById("textcolor3").setAttribute("style","color:white");
+        document.getElementById("bordercolor3").setAttribute("style","border-top: 1px solid rgba(255,255,255,.1)");
+        document.getElementById("linkcolor3").setAttribute("style","color:#8FAEEE");
+        document.getElementById("backgroundcard").setAttribute("style","background-color:rgb(51, 51, 51);");
       } else {
         document.getElementById("cardcolor").setAttribute("style","background-color:white");
         document.getElementById("textcolor").setAttribute("style","color:rgba(0,0,0,.54)");
@@ -179,6 +186,11 @@ export class HomeComponent implements OnInit {
         document.getElementById("textcolor2").setAttribute("style","color:rgba(0,0,0,.54)");
         document.getElementById("bordercolor2").setAttribute("style","border-top: 1px solid rgba(0,0,0,.1)");
         document.getElementById("linkcolor2").setAttribute("style","color:rgb(63,81,181);");
+        document.getElementById("cardcolor3").setAttribute("style","background-color:white");
+        document.getElementById("textcolor3").setAttribute("style","color:rgba(0,0,0,.54)");
+        document.getElementById("bordercolor3").setAttribute("style","border-top: 1px solid rgba(0,0,0,.1)");
+        document.getElementById("linkcolor3").setAttribute("style","color:rgb(63,81,181);");
+        document.getElementById("backgroundcard").setAttribute("style","background-color:white");
       }
     }
   }

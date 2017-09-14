@@ -24,7 +24,19 @@
   cursor:pointer;
 }
 
+.cardnew {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  transition: 0.3s;
+  width:100%;
+  min-height:545px;
+  cursor:pointer;
+}
+
 .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+.cardnew:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
 }
 
@@ -57,4 +69,8 @@
 }
 .color4 {
   background-color: #fef100;
+}
+
+.backgroundcard {
+  width:100%;
 }

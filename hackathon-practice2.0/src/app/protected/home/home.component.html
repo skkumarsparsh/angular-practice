@@ -1,63 +1,86 @@
 <div style="min-height:-webkit-fill-available;margin-right:1%">
 <div class="row" style="padding:1%; padding-top:2%">
-  <div class="col-sm-3">
-    <div id="top1" class="mdl-card mdl-shadow--6dp topcard color1" title="Goal for {{metricname1}}">
-      <ngx-charts-gauge
-        [results]="data1"
-        [min]="0"
-        [max]="1"
-        [showAxis]=false
-        [angleSpan]="240"
-        [startAngle]="-120"
-        [units]="metricname1sub"
-        [valueFormatting]="lol"
-        [tooltipDisabled]=true >
-      </ngx-charts-gauge>
+  <div class="col-sm-8">
+    <div id="backgroundcard" class="mdl-card mdl-shadow--6dp backgroundcard">
+      <div class="row" style="padding:15px;padding-bottom:7.5px">
+        <div class="col-sm-6" style="padding-right:7.5px">
+          <div class="mdl-card mdl-shadow--6dp topcard color1" style="width:100%" title="Goal for {{metricname1}}">
+            <ngx-charts-gauge
+              [results]="data1"
+              [min]="0"
+              [max]="1"
+              [showAxis]=false
+              [angleSpan]="240"
+              [startAngle]="-120"
+              [units]="metricname1sub"
+              [valueFormatting]="lol"
+              [tooltipDisabled]=true >
+            </ngx-charts-gauge>
+          </div>
+        </div>
+        <div class="col-sm-6" style="padding-left:7.5px">
+          <div class="mdl-card mdl-shadow--6dp topcard color2" style="width:100%" title="Goal for {{metricname2}}">
+            <ngx-charts-gauge
+              [results]="data2"
+              [min]="0"
+              [max]="1"
+              [showAxis]=false
+              [angleSpan]="240"
+              [startAngle]="-120"
+              [units]="metricname2sub"
+              [valueFormatting]="lol"
+              [tooltipDisabled]=true >
+            </ngx-charts-gauge>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding:15px;padding-top:7.5px">
+        <div class="col-sm-6" style="padding-right:7.5px">
+          <div class="mdl-card mdl-shadow--6dp topcard color3" style="width:100%" title="Goal for {{metricname3}}">
+            <ngx-charts-gauge
+              [results]="data3"
+              [min]="0"
+              [max]="1"
+              [showAxis]=false
+              [angleSpan]="240"
+              [startAngle]="-120"
+              [valueFormatting]="lol"
+              [units]="metricname3sub"
+              [tooltipDisabled]=true >
+            </ngx-charts-gauge>
+          </div>
+        </div>
+        <div class="col-sm-6" style="padding-left:7.5px">
+          <div class="mdl-card mdl-shadow--6dp topcard color4" style="width:100%" title="Goal for {{metricname4}}">
+            <ngx-charts-gauge
+              [results]="data4"
+              [min]="0"
+              [max]="1"
+              [showAxis]=false
+              [angleSpan]="240"
+              [valueFormatting]="lol"
+              [startAngle]="-120"
+              [units]="metricname4sub"
+              [tooltipDisabled]=true >
+            </ngx-charts-gauge>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-sm-3">
-    <div id="top2" class="mdl-card mdl-shadow--6dp topcard color2" title="Goal for {{metricname2}}">
-      <ngx-charts-gauge
-        [results]="data2"
-        [min]="0"
-        [max]="1"
-        [showAxis]=false
-        [angleSpan]="240"
-        [startAngle]="-120"
-        [units]="metricname2sub"
-        [valueFormatting]="lol"
-        [tooltipDisabled]=true >
-      </ngx-charts-gauge>
-    </div>
-  </div>
-  <div class="col-sm-3">
-    <div id="top3" class="mdl-card mdl-shadow--6dp topcard color3" title="Goal for {{metricname3}}">
-      <ngx-charts-gauge
-        [results]="data3"
-        [min]="0"
-        [max]="1"
-        [showAxis]=false
-        [angleSpan]="240"
-        [startAngle]="-120"
-        [valueFormatting]="lol"
-        [units]="metricname3sub"
-        [tooltipDisabled]=true >
-      </ngx-charts-gauge>
-    </div>
-  </div>
-  <div class="col-sm-3">
-    <div id="top4" class="mdl-card mdl-shadow--6dp topcard color4" title="Goal for {{metricname4}}">
-      <ngx-charts-gauge
-        [results]="data4"
-        [min]="0"
-        [max]="1"
-        [showAxis]=false
-        [angleSpan]="240"
-        [valueFormatting]="lol"
-        [startAngle]="-120"
-        [units]="metricname4sub"
-        [tooltipDisabled]=true >
-      </ngx-charts-gauge>
+  <div class="col-sm-4">
+    <div id="cardcolor2" class="demo-card3 mdl-card cardnew" [routerLink]="['/logged-in/lead-agent']">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">Dashboard</h2>
+      </div>
+      <div id="textcolor2" class="mdl-card__supporting-text">
+          <h5> Click here to see the Dashboard with the Core Metrics. </h5>
+        </div>
+      <div id="bordercolor2" class="mdl-card__actions mdl-card--border">
+          <div id="linkcolor2" class="buttontext">
+          GO TO DASHBOARD
+          </div>
+      </div>
     </div>
   </div>
 </div>
@@ -81,18 +104,18 @@
     </div>
     <div class="col-sm-4">
       <div>
-        <div id="cardcolor2" class="demo-card3 mdl-card card" [routerLink]="['/logged-in/lead-agent']">
-            <div class="mdl-card__title mdl-card--expand">
-              <h2 class="mdl-card__title-text">Dashboard</h2>
+        <div id="cardcolor3" class="demo-card1 mdl-card card" [routerLink]="['/logged-in/compare-agents']">
+          <div class="mdl-card__title mdl-card--expand">
+            <h2 class="mdl-card__title-text">Compare Agents</h2>
+          </div>
+          <div id="textcolor3" class="mdl-card__supporting-text">
+            <h5> Click here to compare performance of different Agents. </h5>
+          </div>
+          <div id="bordercolor3" class="mdl-card__actions mdl-card--border">
+            <div id="linkcolor3" class="buttontext">
+              GO TO COMPARE AGENTS
             </div>
-            <div id="textcolor2" class="mdl-card__supporting-text">
-                <h5> Click here to see the Dashboard with the Core Metrics. </h5>
-              </div>
-            <div id="bordercolor2" class="mdl-card__actions mdl-card--border">
-                <div id="linkcolor2" class="buttontext">
-                GO TO DASHBOARD
-                </div>
-            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -113,25 +136,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="row" style="padding:1%">
-  <div class="col-sm-4"></div>
-  <div class="col-sm-4">
-  <div id="cardcolor3" class="demo-card1 mdl-card card" [routerLink]="['/logged-in/compare-agents']">
-    <div class="mdl-card__title mdl-card--expand">
-      <h2 class="mdl-card__title-text">Compare Agents</h2>
-    </div>
-    <div id="textcolor3" class="mdl-card__supporting-text">
-      <h5> Click here to compare performance of different Agents. </h5>
-    </div>
-    <div id="bordercolor3" class="mdl-card__actions mdl-card--border">
-      <div id="linkcolor3" class="buttontext">
-        GO TO COMPARE AGENTS
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="col-sm-4"></div>
   </div>
 </div>
 
