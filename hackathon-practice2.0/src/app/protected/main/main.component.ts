@@ -12,6 +12,7 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class MainComponent implements OnInit {
   data;
+  data2;
   metaData:any;
   chart: any;
   isCollapsed = true;
@@ -91,6 +92,24 @@ export class MainComponent implements OnInit {
           "title": "Mar 2017",
           "type": "column",
           "valueField": "column-3"
+        },
+        {
+          "balloonText": "[[category]] in [[title]]:[[value]]",
+          "fillAlphas": 0.2,
+          "dashLength": 5,
+          "id": "AmGraph-4",
+          "title": "Apr 2017",
+          "type": "column",
+          "valueField": "column-4"
+        },
+        {
+          "balloonText": "[[category]] in [[title]]:[[value]]",
+          "fillAlphas": 0.2,
+          "dashLength": 5,
+          "id": "AmGraph-5",
+          "title": "May 2017",
+          "type": "column",
+          "valueField": "column-5"
         }
       ],
       "guides": [],
@@ -132,7 +151,10 @@ export class MainComponent implements OnInit {
       this.agents = this.utils.getAgents(this.data);
       this.agents = this.agents.slice(0, this.agents.length - 1);
       this.months = this.utils.getMonths(this.data);
-      this.chart = this.afterAssignDataForLeadAgent();
+      this.http.get(this.utils.url2).subscribe(res => {
+        this.data2 = res.json();
+        this.chart = this.afterAssignDataForLeadAgent();
+      })
     });
     this.utils.coreMetricsChanged.subscribe(res => {
       this.AmCharts.destroyChart(this.chart);
@@ -200,6 +222,7 @@ export class MainComponent implements OnInit {
     this.metaData["dataProvider"] = [];
     let core = this.utils.coreMetrics;
     let months = this.utils.getMonths(this.data);
+    let months2 = this.utils.getMonths(this.data2);
     let k;
     for (var i = 0; i < core.length; i++) {
       k = 0;
@@ -208,6 +231,8 @@ export class MainComponent implements OnInit {
         "column-1": parseInt(this.data[lead][core[i]][months[k++]]),
         "column-2": parseInt(this.data[lead][core[i]][months[k++]]),
         "column-3": parseInt(this.data[lead][core[i]][months[k++]]),
+        "column-4": parseInt(this.data2[lead][core[i]][months2[0]]),
+        "column-5": parseInt(this.data2[lead][core[i]][months2[1]])
       })
     }
     if (this.utils.firstLoad) {

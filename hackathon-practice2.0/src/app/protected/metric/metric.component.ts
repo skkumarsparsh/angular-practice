@@ -13,6 +13,7 @@ export class MetricComponent implements OnInit {
   id: string;
   metaData;
   data;
+  data2;
   chartdiv;
   chart;
   metrics = ['dummy', 'Agencies No', 'Consecutive Misses 1', 'Customer No', 'New Customer No', 'Paid Up No', 'Parallel No', 'Refinance No', 'Sales Value', 'Scheduled Visit No', 'Real Misses No', 'Sales No', 'Recent New Customers No 13 Weeks']
@@ -72,6 +73,24 @@ export class MetricComponent implements OnInit {
             "title": "Mar 2017",
             "type": "column",
             "valueField": "column-3"
+          },
+          {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 0.2,
+            "id": "AmGraph-4",
+            "title": "Apr 2017",
+            "dashLength": 5,
+            "type": "column",
+            "valueField": "column-4"
+          },
+          {
+            "balloonText": "[[category]] in [[title]]:[[value]]",
+            "fillAlphas": 0.2,
+            "id": "AmGraph-5",
+            "title": "May 2017",
+            "dashLength": 5,
+            "type": "column",
+            "valueField": "column-5"
           }
         ],
         "guides": [],
@@ -104,8 +123,10 @@ export class MetricComponent implements OnInit {
 
     this.http.get(this.utils.url).subscribe(res => {
       this.data = res.json();
-      this.chart = this.afterAssignDataForLeadAgent();
-      console.log(this.data);
+      this.http.get(this.utils.url2).subscribe(res => {
+        this.data2 = res.json();
+        this.chart = this.afterAssignDataForLeadAgent();
+      })
     });
   }
 
@@ -114,13 +135,16 @@ export class MetricComponent implements OnInit {
     this.agents = this.utils.getAgents(this.data);
     let headers = this.utils.getHeaderNames(this.data);
     let months = this.utils.getMonths(this.data);
-    for (var i = 0; i < this.agents.length; i++) {
+    let months2 = this.utils.getMonths(this.data2);
+    for (var i = 0; i < this.agents.length-1; i++) {
       let j = 0;
       this.metaData["dataProvider"].push({
         "category": this.agents[i],
         "column-1": parseInt(this.data[this.agents[i]][this.metric][months[j++]]),
         "column-2": parseInt(this.data[this.agents[i]][this.metric][months[j++]]),
-        "column-3": parseInt(this.data[this.agents[i]][this.metric][months[j++]])
+        "column-3": parseInt(this.data[this.agents[i]][this.metric][months[j++]]),
+        "column-4": parseInt(this.data2[this.agents[i]][this.metric][months2[0]]),
+        "column-5": parseInt(this.data2[this.agents[i]][this.metric][months2[1]])
       })
     }
     this.utils.loaded.emit(true);

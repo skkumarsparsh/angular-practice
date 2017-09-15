@@ -11,6 +11,7 @@ import { Http } from '@angular/http';
 export class CompareagentComponent implements OnInit {
 
   data;
+  data2;
   metaData;
   chart;
   chartdiv;
@@ -49,8 +50,8 @@ export class CompareagentComponent implements OnInit {
           "bullet": "round",
           "id": "AmGraph-1",
           "title": "Agencies No",
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
           "valueField": "column-1"
         },
         {
@@ -58,9 +59,9 @@ export class CompareagentComponent implements OnInit {
           "bullet": "round",
           "id": "AmGraph-2",
           "title": "Customer No",
-          "type": "smoothedLine",
           "hidden": true,
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
           "valueField": "column-2"
         },
         {
@@ -69,8 +70,8 @@ export class CompareagentComponent implements OnInit {
           "id": "AmGraph-3",
           "title": "New Customer No",
           "valueField": "column-3",
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
         },
         {
           "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -78,8 +79,8 @@ export class CompareagentComponent implements OnInit {
           "id": "AmGraph-4",
           "title": "Paid Up No",
           "valueField": "column-4",
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
         },
         {
           "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -87,8 +88,8 @@ export class CompareagentComponent implements OnInit {
           "id": "AmGraph-5",
           "title": "Sales No",
           "valueField": "column-5",
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
         },
         {
           "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -97,8 +98,8 @@ export class CompareagentComponent implements OnInit {
           "title": "Sales Value",
           "valueField": "column-6",
           "hidden": true,
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
         },
         {
           "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -106,8 +107,8 @@ export class CompareagentComponent implements OnInit {
           "id": "AmGraph-7",
           "title": "Parallel No",
           "valueField": "column-7",
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
         },
         {
           "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -115,8 +116,8 @@ export class CompareagentComponent implements OnInit {
           "id": "AmGraph-8",
           "title": "Refinance No",
           "valueField": "column-8",
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
         },
         {
           "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -125,8 +126,8 @@ export class CompareagentComponent implements OnInit {
           "title": "Real Misses No",
           "hidden": true,
           "valueField": "column-9",
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
         },
         {
           "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -135,8 +136,8 @@ export class CompareagentComponent implements OnInit {
           "title": "Recent New Customers No 13 Weeks",
           "valueField": "column-10",
           "hidden": true,
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
         },
         {
           "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -144,8 +145,8 @@ export class CompareagentComponent implements OnInit {
           "id": "AmGraph-11",
           "title": "Consecutive Misses 1",
           "valueField": "column-11",
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
         },
         {
           "balloonText": "[[title]] in [[category]]:[[value]]",
@@ -153,8 +154,8 @@ export class CompareagentComponent implements OnInit {
           "id": "AmGraph-12",
           "title": "Scheduled Visit No",
           "valueField": "column-12",
-          "type": "smoothedLine",
-          "lineThickness": 3.75,
+          "lineThickness": 3,
+          "dashLengthField": "dashedLength",
         }
       ],
       "guides": [],
@@ -185,18 +186,24 @@ export class CompareagentComponent implements OnInit {
     });
     this.http.get(this.utils.url).subscribe(res => {
       this.data = res.json();
-      this.chart = this.afterAssignData();
+      this.afterAssignData();
+      this.http.get(this.utils.url2).subscribe(res => {
+        this.data2 = res.json();
+        this.chart = this.assignMoreData();
+      })
     })
     this.utils.slidetoggle.subscribe(res => {
       if(res==true) {
         this.metaData.theme = "dark";
         this.AmCharts.destroyChart(this.chart);
-        this.chart = this.afterAssignData();
+        this.afterAssignData();
+        this.chart = this.assignMoreData();
         this.chart.invalidateSize();
       } else {
         this.metaData.theme = "default";
         this.AmCharts.destroyChart(this.chart);
-        this.chart = this.afterAssignData();
+        this.afterAssignData();
+        this.chart = this.assignMoreData();
         this.chart.invalidateSize();
       }
       this.loading(res);
@@ -225,12 +232,39 @@ export class CompareagentComponent implements OnInit {
       }
   }
 
+  assignMoreData() {
+    let headers = this.utils.getHeaderNames(this.data2);
+    let months = this.utils.getMonths(this.data2);
+    let j;
+    for (var i = 0; i < months.length; i++) {
+      j = 0;
+      this.metaData["dataProvider"].push({
+        "category": months[i],
+        "column-1": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-2": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-3": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-4": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-5": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-6": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-7": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-8": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-9": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-10": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-11": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "column-12": parseInt(this.data2[this.agentname][headers[j++]][months[i]]),
+        "dashedLength": 4
+      })
+    }
+    return this.AmCharts.makeChart(""+this.chartdiv, this.metaData);
+  }
+
   afterAssignData() {
     this.metaData["dataProvider"] = [];
     let headers = this.utils.getHeaderNames(this.data);
     let months = this.utils.getMonths(this.data);
-    for (var i = 0; i < months.length; i++) {
-      let j = 0;
+    let j;
+    for (var i = 0; i < months.length-1; i++) {
+      j = 0;
       this.metaData["dataProvider"].push({
         "category": months[i],
         "column-1": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
@@ -247,7 +281,23 @@ export class CompareagentComponent implements OnInit {
         "column-12": parseInt(this.data[this.agentname][headers[j++]][months[i]])
       })
     }
-    return this.AmCharts.makeChart(""+this.chartdiv, this.metaData);
+    j = 0;
+    this.metaData["dataProvider"].push({
+      "category": months[i],
+      "column-1": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-2": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-3": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-4": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-5": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-6": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-7": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-8": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-9": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-10": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-11": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "column-12": parseInt(this.data[this.agentname][headers[j++]][months[i]]),
+      "dashedLength": 4
+    })
   }
 
   ngOnDestroy() {

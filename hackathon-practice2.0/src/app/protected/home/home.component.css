@@ -16,6 +16,12 @@
       url('/assets/d1.png') bottom 50% right 15% no-repeat #673ab7;
   }
 
+  .demo-card4 > .mdl-card__title {
+    color: #fff;
+    background:
+      url('/assets/d1.png') bottom 50% right 15% no-repeat #673ab7;
+  }
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   transition: 0.3s;
