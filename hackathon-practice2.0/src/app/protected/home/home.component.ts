@@ -190,7 +190,7 @@ export class HomeComponent implements OnInit {
         document.getElementById("textcolor3").setAttribute("style","color:rgba(0,0,0,.54)");
         document.getElementById("bordercolor3").setAttribute("style","border-top: 1px solid rgba(0,0,0,.1)");
         document.getElementById("linkcolor3").setAttribute("style","color:rgb(63,81,181);");
-        document.getElementById("backgroundcard").setAttribute("style","background-color:white");
+        document.getElementById("backgroundcard").setAttribute("style","background-color:#264b00");
       }
     }
   }
