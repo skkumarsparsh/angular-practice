@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
     })
     setTimeout(()=>{
       this.loading(this.utils.checked);
-    },5);
+    },10);
   }
 
   loading(res) {

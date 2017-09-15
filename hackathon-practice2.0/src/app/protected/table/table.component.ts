@@ -31,7 +31,7 @@ export class TableComponent implements OnInit {
     })
     setTimeout(() => {
       this.loading(this.utils.checked);
-    },50)
+    },200)
   }
 
   afterDataReceived() {

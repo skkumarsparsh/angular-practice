@@ -158,7 +158,7 @@ export class MetricComponent implements OnInit {
   ngOnInit() {
     setTimeout(()=>{
       this.loading(this.utils.checked);
-    },50)
+    },200)
     this.utils.slidetoggle.subscribe(res => {
       if(res==true) {
         this.metaData.theme = "dark";

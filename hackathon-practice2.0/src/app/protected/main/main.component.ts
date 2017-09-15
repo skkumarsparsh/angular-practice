@@ -143,7 +143,7 @@ export class MainComponent implements OnInit {
     }
     setTimeout(()=>{
       this.loading(this.utils.checked);
-    },50)
+    },200)
     this.http.get(this.utils.url).subscribe(res => {
       this.data = res.json();
       console.log(this.data);

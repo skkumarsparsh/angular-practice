@@ -210,7 +210,7 @@ export class CompareagentComponent implements OnInit {
     })
     setTimeout(()=>{
       this.loading(this.utils.checked);
-    },50)
+    },200)
   }
 
   loading(res) {

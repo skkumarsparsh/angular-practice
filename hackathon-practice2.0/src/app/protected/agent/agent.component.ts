@@ -339,7 +339,7 @@ export class AgentComponent implements OnInit {
     })
     setTimeout(()=>{
       this.loading(this.utils.checked);
-    },50)
+    },200)
   }
 
   afterAssignDataForLeadAgent() {
